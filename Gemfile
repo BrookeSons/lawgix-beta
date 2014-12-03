@@ -14,7 +14,6 @@ gem "jquery-rails"
 gem "neat", "~> 1.5.1"
 gem "newrelic_rpm"
 gem "normalize-rails", "~> 3.0.0"
-# gem "pg"
 gem 'mysql2'
 gem "rack-timeout"
 gem "rails", "4.1.8"
@@ -24,6 +23,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem 'devise'
 
 group :development do
   gem "bundler-audit"
