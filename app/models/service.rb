@@ -1,12 +1,14 @@
 class Service < ActiveRecord::Base
 
-  attr_accessor :flows
+ has_many :flows
 
-  def initialize
-    @flows = []
-  end
+
+ def incomplete_flows
+   flows.reject(&:complete?)
+ end
+
 
   def done?
-  flows.reject(&:complete?).empty?
+    incomplete_flows.empty?
   end
 end

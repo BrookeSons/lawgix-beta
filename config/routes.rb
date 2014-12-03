@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :flows
+
+  resources :services
+
   devise_for :users
 
-  root to:services#index
 
 end
