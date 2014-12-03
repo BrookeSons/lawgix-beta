@@ -8,9 +8,10 @@ describe 'with users and role' do
     click_button('Log in')
   end
 
-  let(:user) {User.create(email 'test@example.com', password: 'pasword')
+  let(:user) {User.create(email: 'test@example.com', password: 'pasword')
     }
   it 'allows a logged--in user to view the lawgix index page' do
+    pending
     log_in_as(user)
     visit(services_path)
     expect(current_path).to eq(services_path)
