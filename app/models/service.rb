@@ -1,5 +1,12 @@
 class Service
+
+  attr_accessor :flows
+
+  def initialize
+    @flows = []
+  end
+
   def done?
-    true
+  flows.reject(&:complete?).empty?
   end
 end
