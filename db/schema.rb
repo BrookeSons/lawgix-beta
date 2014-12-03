@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203152229) do
+ActiveRecord::Schema.define(version: 20141203210526) do
+
+  create_table "flows", force: true do |t|
+    t.string   "flow_type"
+    t.string   "assignee"
+    t.date     "received_at"
+    t.date     "completed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "lease_number"
+    t.string   "lesee_first_name"
+    t.string   "lessee_last_name"
+    t.string   "county"
+    t.string   "parcel_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.date     "requested_delivery"
+    t.string   "lease_file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
