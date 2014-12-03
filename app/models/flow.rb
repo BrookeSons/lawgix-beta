@@ -1,14 +1,12 @@
 class Flow
+ belongs_to :service
 
-  def initialize
-    @completed = false
-  end
-
-  def mark_completed
-    @completed = true
+  def mark_completed(date = nil)
+    self.completed_at = (date || Time.current)
   end
 
   def complete?
-    @completed
+    completed_at.present?
   end
+
 end
