@@ -1,6 +1,5 @@
 class AddServiceIdToFlows < ActiveRecord::Migration
   def change
-    add_column :service_id, :integer
-    add_index :service_id
+  add_reference :flows, :service, index: true   
   end
 end
