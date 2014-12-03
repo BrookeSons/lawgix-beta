@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'with sers and role' do
+describe 'with users and role' do
   def log_in_as(user)
     visit new_user_session_path
     fill_in('user_email', :with => user.email)

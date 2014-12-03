@@ -254,6 +254,7 @@ DEPENDENCIES
   bourbon (~> 3.2.1)
   bundler-audit
   byebug
+  capybara
   capybara-webkit (>= 1.2.0)
   coffee-rails
   database_cleaner

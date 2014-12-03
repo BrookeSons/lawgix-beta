@@ -1,4 +1,4 @@
-class Service
+class Service < ActiveRecord::Base
 
   attr_accessor :flows
 
