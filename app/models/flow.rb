@@ -1,4 +1,5 @@
-class Flow
+class Flow < ActiveRecord::Base
+
  belongs_to :service
 
   def mark_completed(date = nil)
