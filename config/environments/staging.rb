@@ -1,7 +1,7 @@
 require_relative "production"
 
 Mail.register_interceptor(
-  RecipientInterceptor.new(ENV.fetch("EMAIL_RECIPIENTS"))
+  RecipientInterceptor.new('tom.brooke@gmail.com')
 )
 
 Rails.application.configure do
