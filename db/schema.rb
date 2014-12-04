@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203214442) do
+ActiveRecord::Schema.define(version: 20141204145832) do
 
   create_table "flows", force: true do |t|
     t.string   "flow_type"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20141203214442) do
 
   create_table "services", force: true do |t|
     t.string   "lease_number"
-    t.string   "lesee_first_name"
+    t.string   "lessee_first_name"
     t.string   "lessee_last_name"
     t.string   "county"
     t.string   "parcel_id"

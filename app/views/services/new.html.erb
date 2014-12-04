@@ -1,0 +1,13 @@
+<h1>New Service</h1>
+
+<%= form_for @service do
+           | f| %>
+    <%= f.label :lease_number %>
+    <%= f.text_field :lease_number %>
+    <%= f.label :lessee_first_name %>
+    <%= f.text_field :lessee_first_name %>
+    <br>
+    <%= f.label :flows %>
+    <%= text_area_tag :"service[flows]" %>
+    <%= f.submit %>
+<% end %>
