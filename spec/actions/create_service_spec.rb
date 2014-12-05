@@ -1,9 +1,13 @@
-require 'rspec'
+require 'rails_helper'
 
-describe 'My behaviour' do
+RSpec.describe ServiceCreator do
 
-  it 'should do something' do
+  it 'creates a service given a lease number' do
 
-    true.should == false
+    creator = ServiceCreator.new(lease_number: '123456')
+    creator.build
+    expect(creator.service.lease_number).to
+    eq('123456')
   end
+
 end
