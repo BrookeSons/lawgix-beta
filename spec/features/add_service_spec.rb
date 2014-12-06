@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+
+RSpec.describe ServiceCreator do
+
 describe 'adding services' do
 
   it 'allows a user to create a service with flows' do
@@ -12,5 +15,6 @@ describe 'adding services' do
     expect(page).to have_content('Services')
     expect(page).to have_content('Exxon')
   end
+end
 
 end
