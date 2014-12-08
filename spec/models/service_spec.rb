@@ -13,7 +13,7 @@ RSpec.describe Service do
       expect(service).to be_done
     end
 
-    it 'knows that a service with and incomplete workflow is not done' do
+    it 'knows that a service with an incomplete workflow is not done' do
       service.flows << flow
       expect(service).not_to be_done
     end

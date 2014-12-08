@@ -13,10 +13,10 @@ class ServicesController < ApplicationController
   def create
     @action = ServiceCreator.new(
         lease_number: params[:service][:lease_number],
+        lessee_last_name: params[:service][:lessee_last_name],
         flow_string: params[:service] [:flows])
     @action.create
-    redirect_to_services_path
+    redirect_to services_path
   end
-
 
 end

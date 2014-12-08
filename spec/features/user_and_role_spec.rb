@@ -11,10 +11,16 @@ describe 'with users and role' do
   let(:user) {User.create(email: 'test@example.com', password: 'pasword')
     }
   it 'allows a logged--in user to view the lawgix index page' do
-    pending
     log_in_as(user)
     visit(services_path)
     expect(current_path).to eq(services_path)
   end
+
+  it 'does not allow the user to view the index page if not logged in' do
+    visit(services_path)
+    expect(current_path).to eq(new_user_session_path)
+  end
+
+
 
 end
