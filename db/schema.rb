@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204145832) do
+ActiveRecord::Schema.define(version: 20141209031153) do
 
   create_table "flows", force: true do |t|
     t.string   "flow_type"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20141204145832) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
