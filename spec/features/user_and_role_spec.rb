@@ -8,7 +8,7 @@ describe 'with users and role' do
     click_button('Log in')
   end
 
-  let(:user) {User.create(email: 'test@example.com', password: 'pasword')
+  let(:user) {User.create(email: 'test@example.com', password: 'password')
     }
   it 'allows a logged--in user to view the lawgix index page' do
     log_in_as(user)
