@@ -8,9 +8,9 @@ feature 'Home page' do
   #   Given I am a visitor
   #   When I visit the home page
   #   Then I see "Welcome"
-  scenario 'visit the home page' do
+  scenario 'visit the home page (lawgix Sign in)' do
     visit root_path
-    expect(page).to have_content 'Welcome'
+    expect(page).to have_content 'Lawgix'
   end
 
 end
