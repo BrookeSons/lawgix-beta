@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210023922) do
+ActiveRecord::Schema.define(version: 20141210195314) do
 
   create_table "flows", force: true do |t|
     t.string   "flow_type"
@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(version: 20141210023922) do
   add_index "flows", ["service_id"], name: "index_flows_on_service_id", using: :btree
 
   create_table "services", force: true do |t|
-    t.string   "lease_number"
-    t.string   "lessee_first_name"
-    t.string   "lessee_last_name"
     t.string   "county"
     t.string   "parcel_id"
     t.date     "start_date"
@@ -37,6 +34,9 @@ ActiveRecord::Schema.define(version: 20141210023922) do
     t.string   "lease_file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lease_id"
+    t.integer  "lessee_id"
+    t.integer  "flow_type"
   end
 
   create_table "users", force: true do |t|
