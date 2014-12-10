@@ -5,6 +5,10 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
+  def show
+    @service = Service.find(params[:id])
+    authorize @service
+  end
 
   def index
     @services = Service.all

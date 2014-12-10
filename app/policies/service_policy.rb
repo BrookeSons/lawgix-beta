@@ -1,4 +1,4 @@
-class ServicePolicy
+class ServicePolicy < ApplicationPolicy
 
   attr_reader :user, :service
 
@@ -7,7 +7,7 @@ class ServicePolicy
     @service = service
   end
 
- def view?
-   user.ogx_admin?
+ def show?
+   true
  end
 end
