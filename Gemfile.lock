@@ -34,6 +34,10 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     bcrypt (3.1.9)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -145,6 +149,8 @@ GEM
       pry (>= 0.9.10)
     pundit (0.3.0)
       activesupport (>= 3.0.0)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -251,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   airbrake
   awesome_print
+  better_errors
   bourbon (~> 3.2.1)
   bundler-audit
   byebug
@@ -275,6 +282,7 @@ DEPENDENCIES
   normalize-rails (~> 3.0.0)
   pry-rails
   pundit
+  quiet_assets
   rack-timeout
   rails (= 4.1.8)
   rails_12factor

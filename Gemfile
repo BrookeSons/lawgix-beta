@@ -27,6 +27,8 @@ gem 'devise'
 gem 'pundit'
 
 group :development do
+  gem 'better_errors'
+  gem 'quiet_assets'
   gem 'bundler-audit'
   gem 'spring'
   gem 'spring-commands-rspec'
