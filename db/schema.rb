@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210204450) do
+ActiveRecord::Schema.define(version: 20141210210525) do
 
   create_table "contacts", force: true do |t|
     t.string   "first_name"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20141210204450) do
   end
 
   add_index "flows", ["service_id"], name: "index_flows_on_service_id", using: :btree
+
+  create_table "leases", force: true do |t|
+    t.string   "lease_number"
+    t.integer  "lessee"
+    t.string   "description"
+    t.text     "comments"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "services", force: true do |t|
     t.string   "county"
