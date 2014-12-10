@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210195314) do
+ActiveRecord::Schema.define(version: 20141210200601) do
 
   create_table "flows", force: true do |t|
     t.string   "flow_type"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141210195314) do
     t.datetime "updated_at"
     t.integer  "lease_id"
     t.integer  "lessee_id"
-    t.integer  "flow_type"
+    t.integer  "flow_id"
   end
 
   create_table "users", force: true do |t|

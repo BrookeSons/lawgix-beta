@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
 
+  resources :contacts
 
   root 'visitors#index'
 
-  resources :flows
+  devise_for :users
 
+  resources :flows
   resources :services
 
-  devise_for :users
+
   resources :users
 
 
