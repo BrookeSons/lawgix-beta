@@ -27,6 +27,7 @@ gem 'devise'
 gem 'pundit'
 
 group :development do
+  gem 'railroady'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'bundler-audit'

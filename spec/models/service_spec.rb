@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 
-
 RSpec.describe Service do
 
   describe 'initialization' do
@@ -19,6 +18,8 @@ RSpec.describe Service do
     end
 
     it 'considers a service complete if the flows are complete' do
+
+
       service.flows << flow
       flow.mark_completed
       expect(service).to be_done

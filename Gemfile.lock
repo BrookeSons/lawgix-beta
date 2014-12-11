@@ -160,6 +160,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.1.1)
+    railroady (1.2.0)
     rails (4.1.8)
       actionmailer (= 4.1.8)
       actionpack (= 4.1.8)
@@ -289,6 +290,7 @@ DEPENDENCIES
   pundit
   quiet_assets
   rack-timeout
+  railroady
   rails (= 4.1.8)
   rails_12factor
   recipient_interceptor
