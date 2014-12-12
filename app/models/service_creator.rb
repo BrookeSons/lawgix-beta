@@ -1,6 +1,6 @@
 class ServiceCreator
 
-  attr_accessor :lease_number, :lessee_last_name, :flow_string, :service
+  attr_accessor :lease_number, :lessee_last_name, :flow_string, :service,:lessee
 
   def initialize(lease_number: "", lessee_last_name: "", flow_string: "")
     @lease_number = Lease.new

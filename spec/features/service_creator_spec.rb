@@ -16,7 +16,7 @@ include Warden::Test::Helpers
 
     it 'allows a user to create a service' do
       visit new_service_path
-      fill_in "Lease number", with: "123456"
+      fill_in 'Lease number', with: "123456"
       fill_in "Lessee last name", with: "Exxon"
       click_on("Create Service")
       visit services_path
