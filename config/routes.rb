@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :leases
 
   resources :contacts
-  resources :lessees, controller: 'Lessees', type: 'Lessee'
+  resources :lessees, controller: 'contacts', type: 'Lessee'
 
   root 'visitors#index'
 
