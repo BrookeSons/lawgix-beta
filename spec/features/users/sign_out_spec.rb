@@ -9,11 +9,10 @@ feature 'Sign out', :devise do
   #   When I sign out
   #   Then I see a signed out message
   scenario 'user signs out successfully' do
-    pending 'duplicate Email Issue'
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
-    click_link 'Sign out'
+    click_link 'Sign Out'
     expect(page).to have_content I18n.t 'devise.sessions.signed_out'
   end
 

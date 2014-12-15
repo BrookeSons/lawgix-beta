@@ -1,6 +1,5 @@
 class ContactsController < ApplicationController
   
-  before_action :set_type
 
   def index
     @contacts = Contacts.all
@@ -13,7 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def type
-    Contact.types.include?(params[:type]) ? params[:type] = "Lessee"
+    Contact.types.include?(params[:type]) ? params[:type] : "Lessee"
   end
 
 end

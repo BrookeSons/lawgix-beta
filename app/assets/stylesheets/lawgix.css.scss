@@ -10,6 +10,20 @@
   }
 
 }
+#service_form {
+  width: 600px;
+  label {
+    display: inline;
+  }
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input[type="checkbox"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
 
 .horse {
   text-align: center;
