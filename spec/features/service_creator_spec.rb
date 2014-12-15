@@ -18,6 +18,7 @@ include Warden::Test::Helpers
       visit new_service_path
       fill_in 'Lease number', with: "123456"
       fill_in "Lessee last name", with: "Exxon"
+      fill_in "County", with: "Rowan"
       click_on("Create Service")
       visit services_path
       expect(page).to have_content('Services')
@@ -27,7 +28,7 @@ include Warden::Test::Helpers
 
   it 'allows a user to create a Service with workflows' do
     visit new_service_path
-    fill_in "Flows",  with: "Abstract\nOpinion\nCurative"
+    check("Flows"), with: "Abstract\nOpinion\nCurative"
     click_on("Create Service")
 
 
