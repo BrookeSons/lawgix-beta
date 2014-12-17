@@ -14,6 +14,7 @@ include Warden::Test::Helpers
       login_as users(:user)
     end
 
+
     it 'allows a user to create a service' do
       visit new_service_path
       fill_in "Lease number", with: "123456"

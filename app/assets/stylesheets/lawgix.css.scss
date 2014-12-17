@@ -1,4 +1,3 @@
-
 #service-index {
   margin: 20px;
   h1 {
@@ -10,10 +9,13 @@
   }
 
 }
-#service_form {
+#new_service_form {
   width: 600px;
   label {
     display: inline;
+  }
+  h1 {
+    text-align: center;
   }
   margin-right: auto;
   margin-left: auto;

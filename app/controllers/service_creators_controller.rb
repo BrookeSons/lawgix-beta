@@ -1,0 +1,3 @@
+class ServiceCreatorsController < ApplicationController
+
+end

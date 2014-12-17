@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :leases
-
+  resource :ServiceCreator, only: [:create]
   resources :contacts
   resources :lessees, controller: 'contacts', type: 'Lessee'
 
