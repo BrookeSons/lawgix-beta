@@ -1,6 +1,4 @@
 class ServiceCreator
-  # < ActiveRecord::Base
-  # include Rails.application.routes.url_helpers
 
   attr_accessor :lease_number, :lessee_last_name, :state, :county, :flow_string, :service, :lessee
 
@@ -13,7 +11,7 @@ class ServiceCreator
 
 
   def build
-    self.service = Service.new(lease_number: lease_number, state: state,  county: county)
+    self.service = ServiceCreator.new(lease_number: lease_number, state: state,  county: county)
      # service.flows = checkbox_to_flows
     # checkbox_to_flows
     service

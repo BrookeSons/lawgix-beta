@@ -28,7 +28,9 @@ include Warden::Test::Helpers
       click_on("Create Service")
       visit services_path
       expect(page).to have_content('Services')
-      expect(page).to have_content('Exxon')
+      expect(page).to have_content('123456')
+      expect(page).to have_content('Rowan')
+      expect(page).to have_content('Ohio')
     end
   end
 
