@@ -16,6 +16,15 @@ include Warden::Test::Helpers
      expect(creator.county).to eq('Rowan')
   end
 
+  it "creates a Service Creator object and iniitalizes a lessee" do
+     lessee = Lessee.new(last_name: 'Jones')
+     creator = ServiceCreator.new(lease_number: '12345', state: 'Ohio', county: 'Rowan', lessee: lessee)
+     creator.build
+     expect(creator.lease_number).to eq('12345')
+     expect(creator.state).to eq('Ohio')
+     expect(creator.county).to eq('Rowan')
+     expect(creator.lessee.last_name).to eq('Jones')
+  end
     before(:example) do
       login_as users(:user)
     end
@@ -33,19 +42,16 @@ include Warden::Test::Helpers
       expect(page).to have_content('Ohio')
     end
   end
+ 
+ it 'allows a user to create a Service with a lessee' do
 
-  # it 'allows a user to create a Service with workflows' do
-  #   pending
-  #   visit new_service_path
-  #   click_on("Create Service")
-  #
-  #
-  #   visit services_path
-  #   expect(page).to have_content("123456")
-  #   expect(page).to have_content("Abstract")
-  #   expect(page).to have_content("Opinion")
-  #   expect(page).to have_content("Curative")
-  # end
-  #
-
+   visit new_service_path
+   fill_in "Lease number", with: "123456"
+   fill_in "County", with: "Wake"
+   file_in 'Lessee Last Name', with: 'Jones'
+   click_on("Create Service")
+   visit services_path
+   expect(page).to have_content("123456")
+   expect(page).to have_content("Jones")
+  end
 end

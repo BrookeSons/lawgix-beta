@@ -15,7 +15,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @action = Service.new(
+    @action = ServiceCreator.new(
         lease_number: params[:service][:lease_number],
         state: params[:service][:state],
         county: params[:service][:county])

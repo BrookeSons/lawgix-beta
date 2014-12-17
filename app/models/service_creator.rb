@@ -1,18 +1,18 @@
 class ServiceCreator
 
-  attr_accessor :lease_number, :lessee_last_name, :state, :county, :flow_string, :service, :lessee
+  attr_accessor :lease_number, :last_name, :state, :county, :service
 
   def initialize(lease_number: "", lessee_last_name: "", state: "", county: "")
     @state = state
     @county = county
     @lease_number = lease_number
-    @last_name = lessee_last_name
   end
 
 
   def build
-    self.service = ServiceCreator.new(lease_number: lease_number, state: state,  county: county)
-     # service.flows = checkbox_to_flows
+    self.service = Service.new(lease_number: lease_number, state: state,  county: county)
+    service.lessees = Lessee.new(last_name: last_name)
+    # service.flows = checkbox_to_flows
     # checkbox_to_flows
     service
   end
@@ -27,17 +27,5 @@ class ServiceCreator
       Flow.new(flow_type: flow_string)
     end
   end
-
-  private
-
-  def lease
-    self.lease
-  end
-
-  def lease_numnber
-    self.lease.lease_number
-  end
-
-
 
 end

@@ -4,7 +4,7 @@
     <thead>
     <tr>
       <td>Lease Number</td>
-      <td>Lessee Last Name</td>
+      <td>State</td>
       <td>County</td>
       <td>Workflows</td>
     </tr>
@@ -12,10 +12,9 @@
     <tbody>
     <% @services.each do |service| %>
         <tr>
-          <td><%= lease_number %></td>
-          <td><%= lessee_last_name %></td>
-          <td><%= state %></td>
-          <td><%= county %></td>
+          <td><%= service.lease_number %></td>
+          <td><%= service.state %></td>
+          <td><%= service.county %></td>
           <td><%= service.flows.count %></td>
         </tr>
     <% end %>
