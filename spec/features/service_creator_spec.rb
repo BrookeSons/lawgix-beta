@@ -17,8 +17,7 @@ include Warden::Test::Helpers
   end
 
   it "creates a Service Creator object and iniitalizes a lessee" do
-     lessee = Lessee.new(last_name: 'Jones')
-     creator = ServiceCreator.new(lease_number: '12345', state: 'Ohio', county: 'Rowan', lessee: lessee)
+     creator = ServiceCreator.new(lease_number: '12345', state: 'Ohio', county: 'Rowan', last_name: last_name)
      creator.build
      expect(creator.lease_number).to eq('12345')
      expect(creator.state).to eq('Ohio')
