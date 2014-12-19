@@ -1,6 +1,6 @@
 class ServiceCreator
 
-  attr_accessor :lease_number, :last_name, :state, :county, :service
+  attr_accessor :lease_number, :last_name, :state, :county, :description, :requested_delivery,  :service
 
   def initialize(lease_number: "", state: "", county: "", last_name: "")
     @state = state
@@ -11,7 +11,8 @@ class ServiceCreator
 
 
   def build
-    self.service = Service.new(lease_number: lease_number, state: state,  county: county)
+    self.service = Service.new(lease_number: lease_number, state: state,  county: county, 
+                               description: description, requested_delivery: requested_delivery)
     service.lessees = [Lessee.new(last_name: last_name)]
        # service.flows = Lease.new(last_name: last_name)
     # checkbox_to_flows

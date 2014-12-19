@@ -7,6 +7,11 @@
     text-align: center;
     margin-left: 20px;
   }
+}
+
+#request {
+  text-align: center;
+  margin-top: 15px;
 
 }
 #new_service_form {
@@ -16,9 +21,18 @@
   }
   h1 {
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
   }
   margin-right: auto;
   margin-left: auto;
+  input[type="checkbox"] {
+    display: inline;
+    margin-right: 0.375em;
+    margin-left: 4em;
+  }
 }
 
 input[type="checkbox"] {
