@@ -4,6 +4,7 @@
     <thead>
     <tr>
       <td>Lease Number</td>
+      <td>Description</td>
       <td>State</td>
       <td>County</td>
       <td>Workflows</td>
@@ -13,6 +14,7 @@
     <% @services.each do |service| %>
         <tr>
           <td><%= service.lease_number %></td>
+          <td><%= service.description %></td>
           <td><%= service.state %></td>
           <td><%= service.county %></td>
           <td><%= service.flows.count %></td>
