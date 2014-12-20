@@ -1,3 +1,3 @@
-class LesseesController < :ApplicationController
+class LesseesController < ApplicationController
 
 end
