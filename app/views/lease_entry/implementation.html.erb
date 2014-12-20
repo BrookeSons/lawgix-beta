@@ -7,7 +7,16 @@
   <%= @lessees.each do |lessee| %>
     <%= lessee %>
   <% end %>
-  <h1>Tax Parcel ID and Location Information</h1>
+  <h1>Implement Request</h1>
 
+<%= form_for @service do |f| %>
+    <%= f.label 'Delivery Date'  %>
+    <%= f.date_field :requested_delivery  %>
+    <%= f.check_box(:flows, {:multiple => true },'Opinion',nil) %>
+    <%= f.label 'Abstract' %>
+    <%= f.check_box(:flows, {:multiple => true },'Abstract',nil) %>
+    <%= f.label 'Opinion' %>
+    <%= f.check_box(:flows, {:multiple => true },'Curative',nil) %>
+  <% end %>
 </div>
 

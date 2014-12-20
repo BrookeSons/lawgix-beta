@@ -1,12 +1,13 @@
 class ServiceCreator
 
-  attr_accessor :lease_number, :last_name, :state, :county, :description, :requested_delivery,  :service
+  attr_accessor :lease_number, :state, :county, :description, :requested_delivery,  :service
 
-  def initialize(lease_number: "", state: "", county: "", last_name: "", description: "", requested_delivery: "")
+  def initialize(lease_number: "", state: "", county: "", description: "", requested_delivery: "")
     @state = state
-    @last_name = last_name
     @county = county
     @lease_number = lease_number
+    @description = description
+    @requested_delivery = requested_delivery
   end
 
 

@@ -1,6 +1,6 @@
 
 <div id="new_service_form">
-<h1>New Service</h1>
+<h1>New Service Request</h1>
 <fieldset>
 
 <%= form_for @service do |f| %>
@@ -14,12 +14,6 @@
     <%= f.text_field :description %>
     <%= f.label 'Delivery Date'  %>
     <%= f.date_field :requested_delivery  %>
-    <%= f.check_box(:flows, {:multiple => true },'Opinion',nil) %>
-    <%= f.label 'Abstract' %>
-    <%= f.check_box(:flows, {:multiple => true },'Abstract',nil) %>
-    <%= f.label 'Opinion' %>
-    <%= f.check_box(:flows, {:multiple => true },'Curative',nil) %>
-    <%= f.label 'Curative' %>
     <div id='request'>
       <%= f.submit 'Create Service Request' %>
     </div>
