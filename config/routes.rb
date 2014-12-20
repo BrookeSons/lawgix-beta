@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'visitors#index'
   resources :services
   resources :leases
+  resources :lease_entry
   resource :servicecreator, only: [:create]
   resources :contacts
   resources :lessees, controller: 'contacts', type: 'Lessee'

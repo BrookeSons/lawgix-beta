@@ -19,8 +19,10 @@ class ServicesController < ApplicationController
         lease_number: params[:service][:lease_number],
         state: params[:service][:state],
         county: params[:service][:county],
-        last_name: params[:service][:lessees] || "") 
+        description:  params[:service][:description],
+        requested_delivery: params[:service][:requested_delivery])
     @action.create
+   
     redirect_to services_path
   end
 
