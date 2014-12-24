@@ -22,15 +22,15 @@ class ServiceCreator
     service.save
   end
 
-  # def lessee_to_lessees
-  #   lessees.each do |lessee|
-  #     Lessee.new(last_name: last_name)
+  def lessee_to_lessees
+     lessees.each do |lessee|
+       Lessee.new(last_name: last_name)
+     end
+  end
+  # def checkbox_to_flows
+  #   flow_string.split('\n').map do |flow_string|
+  #     Flow.new(flow_type: flow_string)
   #   end
   # end
-  def checkbox_to_flows
-    flow_string.split('\n').map do |flow_string|
-      Flow.new(flow_type: flow_string)
-    end
-  end
 
 end
