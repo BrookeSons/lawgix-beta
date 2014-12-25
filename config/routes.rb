@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :parcels
+
   root 'visitors#index'
   resources :services
   resources :leases
