@@ -13,10 +13,27 @@
             </li>
           </ul>
         </li>
-        <li class="nav-link"><a href="javascript:void(0)">Lawyers</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Clients</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Admin</a></li>
-      </ul>
+        <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
+          <ul class="submenu">
+            <li><%= link_to "Lawyers", services_path %></li>
+            <li><%= link_to "New Lawyer",new_service_path %></li>
+            </li>
+          </ul>
+          </li>
+        <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
+          <ul class="submenu">
+            <li><%= link_to "Companys", services_path %></li>
+            <li><%= link_to "Clients",new_service_path %></li>
+            </li>
+          </ul>
+          </li>
+        <li class="nav-link more"><a href="javascript:void(0)">Admin</a>
+          <ul class="submenu">
+            <li><%= link_to "Companys", services_path %></li>
+            <li><%= link_to "Clients",new_service_path %></li>
+            </li>
+          </ul>
+          </li>
     </div>
     <div class="navigation-tools">
       <div class="search-bar">

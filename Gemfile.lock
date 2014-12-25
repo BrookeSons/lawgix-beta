@@ -1,47 +1,59 @@
 GIT
   remote: git@github.com:bmabey/database_cleaner.git
-  revision: 34c7cabb02d1fb1be1b257307158bc730afeb7c1
+  revision: f7c32e62e995086c04e465853ed4f4167f4002bc
   specs:
     database_cleaner (1.3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    aasm (4.0.5)
-    actionmailer (4.1.8)
-      actionpack (= 4.1.8)
-      actionview (= 4.1.8)
+    actionmailer (4.2.0)
+      actionpack (= 4.2.0)
+      actionview (= 4.2.0)
+      activejob (= 4.2.0)
       mail (~> 2.5, >= 2.5.4)
-    actionpack (4.1.8)
-      actionview (= 4.1.8)
-      activesupport (= 4.1.8)
-      rack (~> 1.5.2)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+    actionpack (4.2.0)
+      actionview (= 4.2.0)
+      activesupport (= 4.2.0)
+      rack (~> 1.6.0)
       rack-test (~> 0.6.2)
-    actionview (4.1.8)
-      activesupport (= 4.1.8)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    actionview (4.2.0)
+      activesupport (= 4.2.0)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    activemodel (4.1.8)
-      activesupport (= 4.1.8)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    activejob (4.2.0)
+      activesupport (= 4.2.0)
+      globalid (>= 0.3.0)
+    activemodel (4.2.0)
+      activesupport (= 4.2.0)
       builder (~> 3.1)
-    activerecord (4.1.8)
-      activemodel (= 4.1.8)
-      activesupport (= 4.1.8)
-      arel (~> 5.0.0)
-    activesupport (4.1.8)
-      i18n (~> 0.6, >= 0.6.9)
+    activerecord (4.2.0)
+      activemodel (= 4.2.0)
+      activesupport (= 4.2.0)
+      arel (~> 6.0)
+    activesupport (4.2.0)
+      i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.1)
+      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
     airbrake (4.1.0)
       builder
       multi_json
-    arel (5.0.1.20140414130214)
+    arel (6.0.0)
     awesome_print (1.2.0)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.9)
-    better_errors (2.0.0)
+    better_errors (2.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
@@ -69,6 +81,8 @@ GEM
       json
     cocoon (1.2.6)
     coderay (1.1.0)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -76,16 +90,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    columnize (0.8.9)
+    columnize (0.9.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
-    delayed_job (4.0.4)
-      activesupport (>= 3.0, < 4.2)
-    delayed_job_active_record (4.0.2)
-      activerecord (>= 3.0, < 4.2)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
       delayed_job (>= 3.0, < 4.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -101,8 +117,9 @@ GEM
       json
       thread
       thread_safe
-    email_validator (1.4.0)
+    email_validator (1.5.0)
       activemodel
+    equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -111,15 +128,17 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     flutie (2.0.0)
-    formulaic (0.1.2)
+    formulaic (0.1.3)
       activesupport
       capybara
       i18n
+    globalid (0.3.0)
+      activesupport (>= 4.1.0)
     high_voltage (2.2.1)
     highline (1.6.21)
     hike (1.2.3)
-    i18n (0.6.11)
-    i18n-tasks (0.7.8)
+    i18n (0.7.0)
+    i18n-tasks (0.7.10)
       activesupport
       easy_translate (>= 0.5.0)
       erubis
@@ -128,25 +147,29 @@ GEM
       slop (>= 3.5.0)
       term-ansicolor
       terminal-table
-    jquery-rails (3.1.2)
-      railties (>= 3.0, < 5.0)
+    ice_nine (0.11.1)
+    jquery-rails (4.0.2)
+      rails-dom-testing (~> 1.0)
+      railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
     launchy (2.4.3)
       addressable (~> 2.3)
+    loofah (2.0.1)
+      nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.3)
+    minitest (5.5.0)
     multi_json (1.10.1)
     mysql2 (0.3.17)
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
-    newrelic_rpm (3.9.7.266)
+    newrelic_rpm (3.9.8.273)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     normalize-rails (3.0.1)
@@ -159,39 +182,48 @@ GEM
       pry (>= 0.9.10)
     pundit (0.3.0)
       activesupport (>= 3.0.0)
-    quiet_assets (1.0.3)
+    quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.5.2)
+    rack (1.6.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.1.1)
     railroady (1.2.0)
-    rails (4.1.8)
-      actionmailer (= 4.1.8)
-      actionpack (= 4.1.8)
-      actionview (= 4.1.8)
-      activemodel (= 4.1.8)
-      activerecord (= 4.1.8)
-      activesupport (= 4.1.8)
+    rails (4.2.0)
+      actionmailer (= 4.2.0)
+      actionpack (= 4.2.0)
+      actionview (= 4.2.0)
+      activejob (= 4.2.0)
+      activemodel (= 4.2.0)
+      activerecord (= 4.2.0)
+      activesupport (= 4.2.0)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.1.8)
-      sprockets-rails (~> 2.0)
+      railties (= 4.2.0)
+      sprockets-rails
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.5)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.1)
+      loofah (~> 2.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_serve_static_assets (0.0.2)
+    rails_serve_static_assets (0.0.3)
     rails_stdout_logging (0.0.3)
-    railties (4.1.8)
-      actionpack (= 4.1.8)
-      activesupport (= 4.1.8)
+    railties (4.2.0)
+      actionpack (= 4.2.0)
+      activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.4.0)
+    rake (10.4.2)
     recipient_interceptor (0.1.2)
       mail
-    responders (1.1.2)
-      railties (>= 3.2, < 4.2)
+    responders (2.0.2)
+      railties (>= 4.2.0.alpha, < 5)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -220,11 +252,11 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
-    skylight (0.5.1)
+    skylight (0.5.2)
       activesupport (>= 3.0.0)
     slop (3.6.0)
     spring (1.2.0)
-    spring-commands-rspec (1.0.2)
+    spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -235,6 +267,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    statesman (1.1.0)
     term-ansicolor (1.3.0)
       tins (~> 1.0)
     terminal-table (1.4.5)
@@ -249,20 +282,23 @@ GEM
       rails (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.5.3)
+    uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    virtus (1.0.3)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.3)
       rack (>= 1.0)
     webmock (1.20.4)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-    wicked (1.1.0)
-      rails (>= 3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -270,7 +306,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aasm
   airbrake
   awesome_print
   better_errors
@@ -303,7 +338,7 @@ DEPENDENCIES
   quiet_assets
   rack-timeout
   railroady
-  rails (= 4.1.8)
+  rails (= 4.2.0)
   rails_12factor
   recipient_interceptor
   rspec-rails (~> 3.1)
@@ -313,9 +348,10 @@ DEPENDENCIES
   skylight
   spring
   spring-commands-rspec
+  statesman
   timecop
   title
   uglifier
   unicorn
+  virtus
   webmock
-  wicked

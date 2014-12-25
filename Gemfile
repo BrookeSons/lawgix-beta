@@ -17,10 +17,10 @@ gem 'newrelic_rpm'
 gem 'normalize-rails', '~> 3.0.0'
 gem 'mysql2'
 gem 'rack-timeout'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 # Two State machines !! One for Creating Services one for Workflows
-gem 'aasm'
-gem 'wicked'
+gem 'virtus'
+gem 'statesman'
 ###
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 4.0.3'

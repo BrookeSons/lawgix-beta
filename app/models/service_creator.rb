@@ -1,6 +1,6 @@
 class ServiceCreator
-
-  attr_accessor :lease_number, :state, :county, :description, :requested_delivery,  :service
+  include ActiveModel::Model
+  # attr_accessor :lease_number, :state, :county, :description, :requested_delivery,  :service
 
   def initialize(lease_number: "", state: "", county: "", description: "", requested_delivery: "")
     @state = state
