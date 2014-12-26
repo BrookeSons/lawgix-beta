@@ -6,6 +6,13 @@
   <%= form_for @service do |f| %>
     <%= f.label :lease_number %>
     <%= f.text_field :lease_number  %>
+    <%= f.fields_for :lessees do |l| %>
+      <%= l.text_field :first_name %>
+      <%= l.label :last_name %>
+      <%= l.text_field :last_name %>
+      <%= l.label :first_name %>
+      <%= l.text_field :first_name %>
+    <% end%>  
     <%= f.label :state %>
     <%= f.text_field :state  %>
     <%= f.label :county %>

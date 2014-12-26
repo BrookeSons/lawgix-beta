@@ -20,10 +20,18 @@ class ServicesController < ApplicationController
         state: params[:service][:state],
         county: params[:service][:county],
         description:  params[:service][:description],
-        requested_delivery: params[:service][:requested_delivery])
+        requested_delivery: params[:service][:requested_delivery],
+        lessees: params[:service][:lessees]
+        )
+
     @action.create
-   
     redirect_to services_path
+  end
+
+  private
+
+  def lessees
+    Lessee.new(last_name: last_name, first_name: first_name)
   end
 
 end
