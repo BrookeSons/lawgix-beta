@@ -1,3 +1,0 @@
-class LesseesController < ApplicationController
-
-end
