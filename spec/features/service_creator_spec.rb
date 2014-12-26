@@ -10,7 +10,7 @@ include Warden::Test::Helpers
 
   it "creates a Service Creator object given a lease number, State and county" do
      creator = ServiceCreator.new(lease_number: '12345', state: 'Ohio', county: 'Rowan')
-     creator.build
+     creator.save
      expect(creator.lease_number).to eq('12345')
      expect(creator.state).to eq('Ohio')
      expect(creator.county).to eq('Rowan')
@@ -18,7 +18,7 @@ include Warden::Test::Helpers
 
   it "creates a Service Creator object and iniitalizes a lessee" do
      creator = ServiceCreator.new(lease_number: '12345', state: 'Ohio', county: 'Rowan', last_name: 'Jones')
-     creator.build
+     creator.save
      expect(creator.lease_number).to eq('12345')
      expect(creator.state).to eq('Ohio')
      expect(creator.county).to eq('Rowan')

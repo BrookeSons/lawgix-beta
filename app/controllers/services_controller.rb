@@ -1,8 +1,7 @@
 class ServicesController < ApplicationController
 
-
   def new
-    @service = Service.new
+    @service = ServiceCreator.new
   end
 
   def show
@@ -15,15 +14,17 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @action = ServiceCreator.new(
-        lease_number: params[:service][:lease_number],
-        state: params[:service][:state],
-        county: params[:service][:county],
-        description:  params[:service][:description],
-        requested_delivery: params[:service][:requested_delivery])
-    @action.create
-   
-    redirect_to services_path
+
+    @service = ServiceCreator.new(service_params)
+     if @service.save
+       redirect_to services_path
+     else
+       render :new
+     end
+  end 
+
+  def service_params
+    params.require(:service_creator).permit!
   end
 
 end
