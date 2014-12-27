@@ -16,8 +16,9 @@
     <% @services.each do |service| %>
         <tr>
           <td><%= service.lease_number %></td>
-          <td><%= service.requested_delivery %>
           <td><%= service.description %></td>
+          <td><%= service.lessees.count %><td>
+          <td><%= service.requested_delivery %><td>
           <td><%= service.state %></td>
           <td><%= service.county %></td>
           <td><%= service.flows.count %></td>

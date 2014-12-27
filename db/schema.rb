@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226143152) do
+ActiveRecord::Schema.define(version: 20141226195110) do
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type",    limit: 255
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141226143152) do
     t.string   "bus_phone",  limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "service_id", limit: 4
   end
 
   create_table "parcels", force: :cascade do |t|

@@ -7,12 +7,27 @@
     <%= f.label :lease_number %>
     <%= f.text_field :lease_number  %>
     <%= f.fields_for :lessees do |l| %>
+      <%= l.label :first_name %>
       <%= l.text_field :first_name %>
       <%= l.label :last_name %>
       <%= l.text_field :last_name %>
-      <%= l.label :first_name %>
-      <%= l.text_field :first_name %>
-    <% end%>  
+      <%= l.label :company %>
+      <%= l.text_field :company %>
+      <%= l.label :bus_phone %>
+      <%= l.text_field :bus_phone %>
+      <%= l.label :phone %>
+      <%= l.text_field :phone %>
+      <%= l.label :address %>
+      <%= l.text_field :address %>
+      <%= l.label :city %>
+      <%= l.text_field :city %>
+      <%= l.label :state %>
+      <%= l.text_field :state %>
+      <%= l.label :zip %>
+      <%= l.text_field :zip %>
+      <%= l.label :email %>
+      <%= l.text_field :email %>
+    <% end %>  
     <%= f.label :state %>
     <%= f.text_field :state  %>
     <%= f.label :county %>

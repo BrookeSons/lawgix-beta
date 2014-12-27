@@ -3,6 +3,8 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
+    @service.lessees.build
+    @service.flows.build
   end
 
   def show
@@ -15,23 +17,19 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @action = ServiceCreator.new(
-        lease_number: params[:service][:lease_number],
-        state: params[:service][:state],
-        county: params[:service][:county],
-        description:  params[:service][:description],
-        requested_delivery: params[:service][:requested_delivery],
-        lessees: params[:service][:lessees]
-        )
+    @service = Service.new(secure_params)
+    @service.save
 
-    @action.create
-    redirect_to services_path
+       redirect_to services_path
   end
 
   private
 
-  def lessees
-    Lessee.new(last_name: last_name, first_name: first_name)
+  def secure_params
+    params.require(:service).permit(:lease_number,  :state, :county, :description, :requested_delivery,
+                                    lessees_attributes: [:last_name, :first_name], flows_attributes: [:flow_type] )  
+
   end
 
 end
+
