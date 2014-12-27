@@ -18,7 +18,7 @@ gem 'normalize-rails', '~> 3.0.0'
 gem 'mysql2'
 gem 'rack-timeout'
 gem 'rails', '4.2.0'
-# Two State machines !! One for Creating Services one for Workflows
+# Virtus and Statesman
 gem 'virtus'
 gem 'statesman'
 ###
