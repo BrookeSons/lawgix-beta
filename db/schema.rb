@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226195110) do
+ActiveRecord::Schema.define(version: 20141227021537) do
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type",    limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141226195110) do
     t.integer  "deed_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "service_id", limit: 4
   end
 
   create_table "services", force: :cascade do |t|

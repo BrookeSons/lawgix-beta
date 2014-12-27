@@ -2,10 +2,20 @@
 <div id="new_service_form">
 <h1>New Service Request</h1>
 <fieldset>
-
+ <ul class="accordion-tabs-minimal">
+ <li class="tab-header-and-content">
+  <a href="#" class="tab-link is-active">Request</a>
+  <div class="tab-content">
   <%= form_for @service do |f| %>
     <%= f.label :lease_number %>
     <%= f.text_field :lease_number  %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  </li>
+  <li class="tab-header-and-content">
+  <a href="#" class="tab-link is-active">Lessee</a>
+  <div class="tab-content">
     <%= f.fields_for :lessees do |l| %>
       <%= l.label :first_name %>
       <%= l.text_field :first_name %>
@@ -27,15 +37,38 @@
       <%= l.text_field :zip %>
       <%= l.label :email %>
       <%= l.text_field :email %>
-    <% end %>  
+    <% end %>
+     </div>
+  </li>
+ <li class="tab-header-and-content">
+  <a href="#" class="tab-link is-active">Parcel</a>
+  <div class="tab-content">
+
     <%= f.label :state %>
     <%= f.text_field :state  %>
+    <%= f.fields_for :parcels do |pc| %>
+      <%= pc.label :tax_map %>
+      <%= pc.text_field :tax_map %>
+      <%= pc.label :tax_parcel %>
+      <%= pc.text_field :tax_parcel %>
+    <% end %>
     <%= f.label :county %>
     <%= f.text_field :county %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  </div>
+  </li>
+ <li class="tab-header-and-content">
+  <a href="#" class="tab-link is-active">Implementation</a>
+  <div class="tab-content">
+       <%= f.check_box(:flows, {:multiple => true },'Opinion',nil) %>
+    <%= f.label 'Abstract' %>
+    <%= f.check_box(:flows, {:multiple => true },'Abstract',nil) %>
+    <%= f.label 'Opinion' %>
+    <%= f.check_box(:flows, {:multiple => true },'Curative',nil) %>
+    <%= f.label 'Curative' %>
     <%= f.label 'Delivery Date'  %>
     <%= f.date_field :requested_delivery  %>
+  </div>
+  </li>
     <div id='request'>
       <%= f.submit 'Create Service Request' %>
     </div>
