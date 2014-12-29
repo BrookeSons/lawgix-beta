@@ -8,6 +8,10 @@
     margin-left: 20px;
   }
 }
+
+.inline {
+  display: inline;
+}
 #company-index {
   margin: 20px;
   h1 {
@@ -69,6 +73,7 @@
   }
 }
 #new_service_form {
+  height: 100%;
   width: 600px;
   label {
     display: inline;

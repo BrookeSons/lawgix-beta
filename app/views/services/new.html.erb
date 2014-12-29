@@ -17,9 +17,9 @@
               <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Lessee</a>
                 <div class="tab-content">
-                  <%= f.fields_for :lessees do |l| %>
-                      <%= l.label :first_name %>
-                      <%= l.text_field :first_name %>
+                  <%= f.simple_fields_for :lessees do |l| %>
+                      <%= l.label :first_name, size: 150 %>
+                      <%= l.text_field :first_name, size: 150 %>
                       <%= l.label :last_name %>
                       <%= l.text_field :last_name %>
                       <%= l.label :company %>
@@ -41,7 +41,7 @@
                   <% end %>
                 </div>
               </li>
-              <li class="tab-header-and-content">
+            <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Parcel</a>
                 <div class="tab-content">
                      <%= f.fields_for :parcels do |pc| %>
@@ -58,7 +58,6 @@
                 <a href="#" class="tab-link">Implementation</a>
                 <div class="tab-content">
                   <%= f.check_box(:flows, {:multiple => true}, 'Opinion', nil) %>
-
                   <%= f.label 'Abstract' %>
                   <%= f.check_box(:flows, {:multiple => true}, 'Abstract', nil) %>
                   <%= f.label 'Opinion' %>
