@@ -5,13 +5,11 @@
       <li class="tab-header-and-content">
         <a href="#" class="tab-link is-active">Request</a>
         <div class="tab-content">
-          <%= form_for @service do |f| %>  
-              <%= f.label :state %>
-              <%= f.select :state, collection: ['Ohio','West Virginia'] %>
+          <%= form_for @service do |f| %>
               <%= f.label :lease_number %>
               <%= f.text_field :lease_number %>
               <%= f.label :description %>
-              <%= f.text_area :description %>
+              <%= f.text_field :description %>
               </div>
               </li>
               <li class="tab-header-and-content">
@@ -44,7 +42,9 @@
               <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Parcel</a>
                 <div class="tab-content">
-                     <%= f.fields_for :parcels do |pc| %>
+                  <%= f.label :state %>
+                  <%= f.text_field :state %>
+                  <%= f.fields_for :parcels do |pc| %>
                       <%= pc.label :tax_map %>
                       <%= pc.text_field :tax_map %>
                       <%= pc.label :tax_parcel %>
@@ -58,7 +58,6 @@
                 <a href="#" class="tab-link">Implementation</a>
                 <div class="tab-content">
                   <%= f.check_box(:flows, {:multiple => true}, 'Opinion', nil) %>
-
                   <%= f.label 'Abstract' %>
                   <%= f.check_box(:flows, {:multiple => true}, 'Abstract', nil) %>
                   <%= f.label 'Opinion' %>

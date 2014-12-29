@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227033603) do
+ActiveRecord::Schema.define(version: 20141229022256) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20141227033603) do
 
   create_table "services", force: :cascade do |t|
     t.string   "county",             limit: 255
-    t.string   "parcel_id",          limit: 255
     t.date     "start_date"
     t.date     "end_date"
     t.date     "requested_delivery"
@@ -88,6 +87,7 @@ ActiveRecord::Schema.define(version: 20141227033603) do
     t.string   "lease_number",       limit: 255
     t.string   "state",              limit: 255
     t.string   "description",        limit: 255
+    t.integer  "parcel_id",          limit: 4
   end
 
   create_table "users", force: :cascade do |t|

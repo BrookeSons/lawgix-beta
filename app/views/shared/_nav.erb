@@ -22,15 +22,16 @@
           </li>
         <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
           <ul class="submenu">
-            <li><%= link_to "Companys", services_path %></li>
-            <li><%= link_to "Clients",new_service_path %></li>
+            <li><%= link_to "New Company", new_company_path %></li>
+            <li><%= link_to "Companies", companies_path %></li>
+            <li><%= link_to "Clients", new_user_path %></li>
             </li>
           </ul>
           </li>
         <li class="nav-link more"><a href="javascript:void(0)">Admin</a>
           <ul class="submenu">
             <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Admin", services_path %></li>
+                       <li><%= link_to "Admin", services_path %></li>
             <li><%= link_to "Settings",new_service_path %></li>
             </li>
           </ul>

@@ -1,0 +1,29 @@
+<div id="service-index">
+  <h1>Lawgix OGX Services</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Lease Number</td>
+      <td>Description</td>
+      <td>Lessee<td>
+      <td>Delivery Date</td>
+      <td>State</td>
+      <td>County</td>
+      <td>Workflows</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @services.each do |service| %>
+        <tr>
+          <td><%= service.lease_number %></td>
+          <td><%= service.description %></td>
+          <td><%= service.lessees.count %><td>
+          <td><%= service.requested_delivery %><td>
+          <td><%= service.state %></td>
+          <td><%= service.county %></td>
+          <td><%= service.flows.count %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

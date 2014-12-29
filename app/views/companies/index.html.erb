@@ -1,16 +1,23 @@
-<div class="container">
-  <div class="row">
-    <h3>Companies</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @companies.each do |company| %>
-            <tr>
-              <%= render company %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div id="company-index">
+  <h1>Companies</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Billing Contact</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @companies.each do |company| %>
+        <tr>
+          <td><%= link_to(company.name, company_path(company))  %></td>
+          <td><%= company.billing_contact %></td>
+          <td><%= company.phone %></td>
+          <td><%= company.email %><td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

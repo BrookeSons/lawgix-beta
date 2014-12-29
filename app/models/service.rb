@@ -5,6 +5,8 @@ class Service < ActiveRecord::Base
  has_many :leases
  has_many :parcels
  belongs_to :user
+ belongs_to :company
+  
 
  accepts_nested_attributes_for :lessees
  accepts_nested_attributes_for :flows
