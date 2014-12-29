@@ -6,14 +6,18 @@ describe UserPolicy do
 
   let (:current_user) { FactoryGirl.build_stubbed :user }
   let (:other_user) { FactoryGirl.build_stubbed :user }
+  let (:ogx_admin) { FactoryGirl.build_stubbed :user, :ogx_admin }
   let (:admin) { FactoryGirl.build_stubbed :user, :admin }
 
   permissions :index? do
-    it "denies access if not an admin" do
+    it "denies access if not an admin or ogx_admin" do
       expect(UserPolicy).not_to permit(current_user)
     end
     it "allows access for an admin" do
       expect(UserPolicy).to permit(admin)
+    end
+    it "allows access for an ogx_admin" do
+      expect(UserPolicy).to permit(ogx_admin)
     end
   end
 
@@ -27,14 +31,20 @@ describe UserPolicy do
     it "allows an admin to see any profile" do
       expect(subject).to permit(admin)
     end
+    it "allows an ogx_admin to see any profile" do
+      expect(subject).to permit(ogx_admin)
+    end
   end
 
   permissions :update? do
-    it "prevents updates if not an admin" do
+    it "prevents updates if not an ogx_admin" do
       expect(subject).not_to permit(current_user)
     end
-    it "allows an admin to make updates" do
-      expect(subject).to permit(admin)
+    it "prevents updates if an admin" do
+      expect(subject).not_to permit(admin)
+    end
+    it "allows an ogx_admin to make updates" do
+      expect(subject).to permit(ogx_admin)
     end
   end
 
@@ -42,8 +52,11 @@ describe UserPolicy do
     it "prevents deleting yourself" do
       expect(subject).not_to permit(current_user, current_user)
     end
-    it "allows an admin to delete any user" do
-      expect(subject).to permit(admin, other_user)
+    it "prevents admin from deleting user" do
+      expect(subject).not_to permit(admin)
+    end
+    it "allows an ogx_admin to delete any user" do
+      expect(subject).to permit(ogx_admin, other_user)
     end
   end
 

@@ -9,5 +9,9 @@ FactoryGirl.define do
       role 'admin'
     end
 
+    trait :ogx_admin do
+      role 'ogx_admin'
+    end
+
   end
 end
