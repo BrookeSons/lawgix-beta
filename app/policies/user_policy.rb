@@ -11,6 +11,10 @@ class UserPolicy < ApplicationPolicy
      @current_user.admin? or @current_user.ogx_admin?
   end
 
+  def new?
+    @current_user.ogx_admin?
+  end
+
   def show?
      @current_user.admin? or @current_user == @user or current_user.ogx_admin?
   end

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :flows
   resources :users
+  resources :clients
 end

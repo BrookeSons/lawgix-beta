@@ -18,6 +18,7 @@ gem 'normalize-rails', '~> 3.0.0'
 gem 'mysql2'
 gem 'rack-timeout'
 gem 'rails', '4.2.0'
+gem 'active_model_serializers'
 # Virtus and Statesman
 gem 'virtus'
 gem 'statesman'

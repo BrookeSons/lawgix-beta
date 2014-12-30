@@ -17,6 +17,7 @@
               <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Lessee</a>
                 <div class="tab-content">
+                  <div id="lessee-entry">
                   <%= f.simple_fields_for :lessees do |l| %>
                       <%= l.label :first_name, size: 150 %>
                       <%= l.text_field :first_name, size: 150 %>
@@ -39,6 +40,7 @@
                       <%= l.label :email %>
                       <%= l.text_field :email %>
                   <% end %>
+                    </div>
                 </div>
               </li>
             <li class="tab-header-and-content">
@@ -72,5 +74,4 @@
                 <%= f.submit 'Create Service Request' %>
               </div>
           <% end %>
-          </fieldset>
 </div>

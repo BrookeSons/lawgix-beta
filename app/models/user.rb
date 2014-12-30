@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
     self.role ||= :user
   end
 
+  def name
+    if first_name && last_name
+      first_name + " " + last_name
+    end
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

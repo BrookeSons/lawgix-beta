@@ -11,11 +11,16 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    authorize User
   end
 
   def show
     @user = User.find(params[:id])
     authorize @user
+  end
+
+  def create
+    @User.new
   end
 
   def update
@@ -38,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:role, :last_name, :first_name, :phone, :email,  )
   end
 
 end
