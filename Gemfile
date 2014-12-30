@@ -19,6 +19,7 @@ gem 'mysql2'
 gem 'rack-timeout'
 gem 'rails', '4.2.0'
 gem 'active_model_serializers'
+gem 'rails_admin'
 # Virtus and Statesman
 gem 'virtus'
 gem 'statesman'
