@@ -6,6 +6,7 @@
 /.idea
 /.env
 /.foreman
+/doc
 /coverage/*
 /db/*.sqlite3
 /log/*
