@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   enum role: [ :user, :ogx_admin, :admin, :client, :lawyer ]
 
   belongs_to :company
-  has_many :services
+  has_and_belongs_to_many :services
 
   after_initialize :set_default_role, :if => :new_record?
 
