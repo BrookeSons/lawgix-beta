@@ -12,6 +12,12 @@
               <%= f.text_field :lease_number %>
               <%= f.label :description %>
               <%= f.text_area :description %>
+                  <%= f.simple_fields_for :parcels do |pc| %>
+                  <%= pc.label :tax_map %>
+                  <%= pc.text_field :tax_map %>
+                  <%= pc.label :tax_parcel %>
+                  <%= pc.text_field :tax_parcel %>
+                <% end %>
               </div>
               </li>
               <li class="tab-header-and-content">
@@ -19,8 +25,8 @@
                 <div class="tab-content">
                   <div id="lessee-entry">
                   <%= f.simple_fields_for :lessees do |l| %>
-                      <%= l.label :first_name, size: 150 %>
-                      <%= l.text_field :first_name, size: 150 %>
+                      <%= l.label :first_name %>
+                      <%= l.text_field :first_name %>
                       <%= l.label :last_name %>
                       <%= l.text_field :last_name %>
                       <%= l.label :company %>
@@ -46,14 +52,15 @@
             <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Parcel</a>
                 <div class="tab-content">
-                     <%= f.fields_for :parcels do |pc| %>
-                      <%= pc.label :tax_map %>
-                      <%= pc.text_field :tax_map %>
-                      <%= pc.label :tax_parcel %>
-                      <%= pc.text_field :tax_parcel %>
-                  <% end %>
-                  <%= f.label :county %>
-                  <%= f.text_field :county %>
+                <%= f.label :county %>
+                <%= f.text_field :county %>
+                <%= f.simple_fields_for :parcels do |pc| %>
+                  <%= pc.label :tax_map %>
+                  <%= pc.text_field :tax_map %>
+                  <%= pc.label :tax_parcel %>
+                  <%= pc.text_field :tax_parcel %>
+                <% end %>
+
                 </div>
               </li>
               <li class="tab-header-and-content">

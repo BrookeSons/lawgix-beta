@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231023335) do
+ActiveRecord::Schema.define(version: 20141231032204) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(version: 20141231023335) do
     t.integer  "parcel_id",          limit: 4
   end
 
+  create_table "services_users", id: false, force: :cascade do |t|
+    t.integer "service_id", limit: 4
+    t.integer "user_id",    limit: 4
+  end
+
+  add_index "services_users", ["service_id"], name: "index_services_users_on_service_id", using: :btree
+  add_index "services_users", ["user_id"], name: "index_services_users_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -132,13 +140,5 @@ ActiveRecord::Schema.define(version: 20141231023335) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_services", id: false, force: :cascade do |t|
-    t.integer "service_id", limit: 4
-    t.integer "user_id",    limit: 4
-  end
-
-  add_index "users_services", ["service_id"], name: "index_users_services_on_service_id", using: :btree
-  add_index "users_services", ["user_id"], name: "index_users_services_on_user_id", using: :btree
 
 end
