@@ -1,5 +1,5 @@
 class Client < User
-  belongs_to :Company
+  belongs_to :company
 
 end
 

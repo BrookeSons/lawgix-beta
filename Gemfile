@@ -32,7 +32,6 @@ gem 'uglifier'
 gem 'unicorn'
 gem 'devise'
 gem 'pundit'
-gem "skylight"
 
 group :development do
   gem 'railroady'
