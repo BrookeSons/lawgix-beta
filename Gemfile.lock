@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/sudosu/rails_admin_pundit.git
+  revision: 285e3e79a37242cf7a527053e9b438782801557a
+  specs:
+    rails_admin_pundit (0.0.1)
+      pundit (>= 0.2.3)
+      rails_admin (>= 0.6.2)
+
+GIT
   remote: git@github.com:bmabey/database_cleaner.git
   revision: f7c32e62e995086c04e465853ed4f4167f4002bc
   specs:
@@ -370,6 +378,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   rails_admin
+  rails_admin_pundit!
   recipient_interceptor
   rspec-rails (~> 3.1)
   sass-rails (~> 4.0.3)

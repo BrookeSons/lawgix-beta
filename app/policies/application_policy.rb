@@ -38,6 +38,47 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 
+
+
+  def rails_admin?(action)
+    case action
+      when :dashboard
+        true
+        # user.ogx_admin
+      when :index
+        true
+        # user.ogx_admin
+      when :show
+        true
+        # user.ogx_admin
+      when :new
+        true
+        # user.ogx_admin
+      when :edit
+        true
+        # user.ogx_admin
+      when :destroy
+        true
+        # user.ogx_admin
+      when :export
+        true
+        # user.ogx_admin
+      when :history
+        true
+        # user.ogx_admin
+      when :show_in_app
+        true
+        # user.ogx_admin
+      else
+        raise ::Pundit::NotDefinedError, "unable to find policy #{action} for #{record}."
+    end
+  end
+
+
+
+
+
+
   class Scope
     attr_reader :user, :scope
 

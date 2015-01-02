@@ -7,12 +7,16 @@ class UserPolicy < ApplicationPolicy
     @user = model
   end
 
+  # def ogx_admin?
+  #   self.ogx_admin?
+  # end
+
   def index?
      @current_user.admin? or @current_user.ogx_admin?
   end
 
   def new?
-    @current_user.ogx_admin?
+    @current_user.ogx_admin? or  @current_user.admin?
   end
 
   def show?
@@ -20,12 +24,12 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-     @current_user.ogx_admin?
+     @current_user.ogx_admin? or @current_user.admin?
   end
 
   def destroy?
     return false if @current_user == @user
-    @current_user.ogx_admin?
+    @current_user.ogx_admin? of @current_user.admin?
   end
 
 end

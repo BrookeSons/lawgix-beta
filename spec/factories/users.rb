@@ -13,5 +13,26 @@ FactoryGirl.define do
       role 'ogx_admin'
     end
 
+    trait :client do
+      role 'client'
+    end
+
+    trait :lawyer do
+      role 'lawyer'
+    end
+
+    factory :client, class: Client, parent: :user do
+      name "Tom Client"
+      email "tom.client@gmail.com"
+      password "brooke8518"
+    end
+
+    factory :lawyer, class: Lawyer, parent: :user do
+      name "Tom Lawyer"
+      email "tom.lawyer@gmail.com"
+      password "brooke8518"
+    end
+
+
   end
 end
