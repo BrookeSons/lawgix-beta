@@ -1,5 +1,6 @@
 <div id="service-index">
   <h1>Lawgix OGX Services</h1>
+
   <table>
     <thead>
     <tr>
@@ -14,6 +15,7 @@
     </tr>
     </thead>
     <tbody>
+    <%= will_paginate @services %>
     <% @services.each do |service| %>
         <tr>
           <td><%= link_to service.lease_number, service %></td>

@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    setup_sti_model
-     authorize User
+    @user = User.new(params[:user])
+    authorize User
   end
 
   def show
@@ -20,7 +20,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    setup_sti_model
+    @user = User.new(params[:user])
+    @user.save
   end
 
   def update
@@ -42,40 +43,6 @@ class UsersController < ApplicationController
 
   private
 
-
-  def setup_sti_model
-    # Attempt to instantiate the correct User subclass based on the type
-    # parameter sent from forms and querystrings
-    # logger.debug "Attempting to detect implied User subclass"
-    if !params[:user].blank? and !params[:user][:type].blank?
-      # Type param found, let's see if it's a valid subclass
-      type = params[:user].delete(:type)
-      # logger.debug "Type param '#{type}' found. Looking for match in list of User.descendants:"
-      begin
-        # logger.debug "Attempting to constantize '#{type}' to a model class"
-        model = type.constantize
-        # logger.debug "Attempting to instantiate '#{type}' model class"
-        @user = model.new(params[:user])
-          # logger.debug @user inspect
-      rescue => e
-        # Type param found, but an error prevented us from creating the
-        # object. Fall through to create a generic User object
-        # logger.debug "Type param '#{type}' found, but an error prevented us from creating the object: #{e}"
-      else
-        # No errors encountered, return having instantiated the proper
-        # subclass
-        # logger.debug "No errors encountered, returning"
-        return
-      end
-    else
-      # No type param was found, fall through to create a generic Kase object
-      # logger.debug "Type param not found"
-    end
-    # If all else fails just instantiate a generic User object
-    # logger.debug "Could not instantiate a subclass. Creating generic User object instead"
-    @user = User.new(params[:user])
-    # logger.debug @user.inspect
-  end
 
 
 

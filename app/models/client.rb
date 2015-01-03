@@ -1,2 +1,2 @@
-class Client < User
+class Client
 end
