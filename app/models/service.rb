@@ -21,7 +21,7 @@ class Service < ActiveRecord::Base
  end
 
  # Optionally delegate some methods
- delegate :can_transition_to?, :transition_to!, :transition_to, :current_state,
+ delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, :allowed_transitions,
           to: :state_machine
  
 end
