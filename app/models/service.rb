@@ -17,7 +17,7 @@ class Service < ActiveRecord::Base
 
  # Initialize the state machine
  def state_machine
-  @state_machine ||= ServiceRequest.new(self, transition_class: ServiceRequest)
+  @state_machine ||= RequestStateMachine.new(self, transition_class: ServiceRequest)
  end
 
  # Optionally delegate some methods

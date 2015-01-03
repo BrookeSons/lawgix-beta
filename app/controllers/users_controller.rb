@@ -81,7 +81,7 @@ class UsersController < ApplicationController
 
 
   def secure_params
-    params.require(:user).permit(:role, :last_name, :first_name, :phone, :email,  )
+    params.require(:user).permit(:role, :last_name, :first_name, :phone, :email, :name )
   end
 
 

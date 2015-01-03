@@ -6,6 +6,7 @@
       <td>Lease Number</td>
       <td>Description</td>
       <td>Lessee<td>
+      <td>Status</td>
       <td>Delivery Date</td>
       <td>State</td>
       <td>County</td>
@@ -15,9 +16,10 @@
     <tbody>
     <% @services.each do |service| %>
         <tr>
-          <td><%= service.lease_number %></td>
+          <td><%= link_to service.lease_number, service %></td>
           <td><%= service.description %></td>
           <td><%= service.lessees.count %><td>
+          <td><%= if service.current_state; service.current_state; end %></td>
           <td><%= service.requested_delivery %><td>
           <td><%= service.state %></td>
           <td><%= service.county %></td>

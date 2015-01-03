@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-    authorize @service
+    # authorize @user
   end
 
   def index
@@ -26,13 +26,16 @@ class ServicesController < ApplicationController
   private
 
   def secure_params
-    params.require(:service).permit(:lease_number,:state, :county, :description,:flows, :requested_delivery,
+    params.require(:service).permit(:lease_number,:state, :county, :description, :flows, :requested_delivery,
                                     lessees_attributes: [:last_name, :first_name, 
                                     :address, :city, :state, :zip,
                                     :phone, :email, :company, :bus_phone],
                                     flows_attributes: [:flow_type],
-                                   parcels_attributes: [:tax_map, :tax_parcel, :deed_id ])
+                                    parcels_attributes: [:tax_map, :tax_parcel, :deed_id ])
   end
 
+  def req_params
+    params.require(:service_request).permit(:to_state)
+  end
 end
 

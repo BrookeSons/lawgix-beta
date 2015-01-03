@@ -29,7 +29,7 @@ class UserPolicy < ApplicationPolicy
 
   def destroy?
     return false if @current_user == @user
-    @current_user.ogx_admin? of @current_user.admin?
+    @current_user.ogx_admin? or @current_user.admin?
   end
 
 end
