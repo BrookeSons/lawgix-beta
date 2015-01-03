@@ -1,27 +1,18 @@
-<div id="service-index">
-  <h1>Lawgix OGX Services</h1>
+<div id="parcel-index">
+  <h1>Parcels</h1>
   <table>
     <thead>
     <tr>
-      <td>Lease Number</td>
-      <td>Description</td>
-      <td>Lessee<td>
-      <td>Delivery Date</td>
-      <td>State</td>
-      <td>County</td>
-      <td>Workflows</td>
+      <td>Tax Map</td>
+      <td>Tax Parcel</td>
+      <td>Service<td>
     </tr>
     </thead>
     <tbody>
-    <% @services.each do |service| %>
+    <% @parcels.each do |parcel| %>
         <tr>
-          <td><%= service.lease_number %></td>
-          <td><%= service.description %></td>
-          <td><%= service.lessees.count %><td>
-          <td><%= service.requested_delivery %><td>
-          <td><%= service.state %></td>
-          <td><%= service.county %></td>
-          <td><%= service.flows.count %></td>
+          <td><%= parcel.tax_map %></td>
+          <td><%= parcel.tax_parcel %></td>
         </tr>
     <% end %>
     </tbody>

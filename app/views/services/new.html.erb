@@ -5,19 +5,13 @@
       <li class="tab-header-and-content">
         <a href="#" class="tab-link is-active">Request</a>
         <div class="tab-content">
-          <%= form_for @service do |f| %>  
+          <%= form_for @service do |f| %>
               <%= f.label :state %>
               <%= f.select :state, collection: ['Ohio','West Virginia'] %>
               <%= f.label :lease_number %>
               <%= f.text_field :lease_number %>
               <%= f.label :description %>
               <%= f.text_area :description %>
-                  <%= f.simple_fields_for :parcels do |pc| %>
-                  <%= pc.label :tax_map %>
-                  <%= pc.text_field :tax_map %>
-                  <%= pc.label :tax_parcel %>
-                  <%= pc.text_field :tax_parcel %>
-                <% end %>
               </div>
               </li>
               <li class="tab-header-and-content">

@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     @service.lessees.build
+    @service.parcels.build
     @service.flows.build
   end
 
@@ -23,15 +24,24 @@ class ServicesController < ApplicationController
        redirect_to services_path
   end
 
+  def update
+    @service = Service.find(params[:id])
+    if @service.update_attributes(secure_params)
+      redirect_to services_path, :notice => "Service Request updated."
+    else
+      redirect_to services_path, :alert => "Unable to update Service Request."
+    end
+  end
+
   private
 
   def secure_params
-    params.require(:service).permit(:lease_number,:state, :county, :description, :flows, :requested_delivery,
+    params.require(:service).permit(:lease_number,:state, :county, :description, :requested_delivery,
                                     lessees_attributes: [:last_name, :first_name, 
                                     :address, :city, :state, :zip,
-                                    :phone, :email, :company, :bus_phone],
+                                    :phone, :email, :company, :bus_phone, :id],
                                     flows_attributes: [:flow_type],
-                                    parcels_attributes: [:tax_map, :tax_parcel, :deed_id ])
+                                    parcels_attributes: [:tax_map, :tax_parcel, :deed_id,:id])
   end
 
   def req_params
