@@ -13,5 +13,15 @@ class Service < ActiveRecord::Base
  accepts_nested_attributes_for :flows
  accepts_nested_attributes_for :leases
  accepts_nested_attributes_for :parcels
+
+
+ # Initialize the state machine
+ def state_machine
+  @state_machine ||= ServiceRequest.new(self, transition_class: ServiceRequest)
+ end
+
+ # Optionally delegate some methods
+ delegate :can_transition_to?, :transition_to!, :transition_to, :current_state,
+          to: :state_machine
  
 end

@@ -31,15 +31,13 @@ class User < ActiveRecord::Base
   end
 
 
-
   def name
     [first_name, last_name].compact.join(' ')
 
-    end
   end
 
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :trackable, :validatable
 
 end
