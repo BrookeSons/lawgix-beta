@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   enum role: [:user, :ogx_admin, :admin, :client, :lawyer]
+  has_paper_trail
 
   belongs_to :company
   has_and_belongs_to_many :services
