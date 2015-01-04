@@ -3,6 +3,7 @@ class ServiceRequest < ActiveRecord::Base
 
   belongs_to :service, inverse_of: :service_requests
 
+  has_paper_trail
 
 
 end

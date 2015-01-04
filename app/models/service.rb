@@ -14,6 +14,7 @@ class Service < ActiveRecord::Base
  accepts_nested_attributes_for :leases
  accepts_nested_attributes_for :parcels
 
+ has_paper_trail
 
  # Initialize the state machine
  def state_machine
