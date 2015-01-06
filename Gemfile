@@ -23,6 +23,7 @@ gem 'rails_admin'
 gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 gem 'paper_trail', '~> 3.0.6'
 gem 'will_paginate'
+gem 'groupdocs'
 # Virtus and Statesman
 gem 'virtus'
 gem 'statesman'
