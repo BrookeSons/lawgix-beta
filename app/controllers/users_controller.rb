@@ -6,12 +6,12 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    authorize User
+    # authorize User
   end
 
   def new
-    @user = User.new(params[:user])
-    authorize User
+    @user = User.new
+    # authorize User
   end
 
   def show
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(secure_params)
     @user.save
   end
 
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
 
   def secure_params
-    params.require(:user).permit(:role, :last_name, :first_name, :phone, :email, :name )
+    params.require(:user).permit(:role, :last_name, :first_name, :phone, :email, :name, :company_id )
   end
 
 

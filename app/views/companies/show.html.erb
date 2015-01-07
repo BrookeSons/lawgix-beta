@@ -2,7 +2,7 @@
 <div id="company_form">
   <h1><%= @company.name %></h1>
          <fieldset>
-          <%= form_for @company do |f| %>
+          <%= simple_form_for @company do |f| %>
               <%= f.label :name %>
               <%= f.text_field :name %>
               <%= f.label :billing_contact %>

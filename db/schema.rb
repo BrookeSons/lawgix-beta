@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104034421) do
+ActiveRecord::Schema.define(version: 20150107021856) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -150,8 +150,10 @@ ActiveRecord::Schema.define(version: 20150104034421) do
     t.string   "phone",                  limit: 255
     t.string   "type",                   limit: 255
     t.integer  "service_id",             limit: 4
+    t.integer  "company_id",             limit: 4
   end
 
+  add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

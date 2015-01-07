@@ -27,7 +27,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-     @current_user.ogx_admin? or @current_user.admin?
+     @current_user.lawgix? or @current_user.admin?
   end
 
   def destroy?

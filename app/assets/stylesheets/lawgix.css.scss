@@ -72,6 +72,26 @@
     margin-left: 4em;
   }
 }
+#new_client_form {
+  width: 600px;
+  label {
+    display: inline;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-right: auto;
+  margin-left: auto;
+  input[type="checkbox"] {
+    display: inline;
+    margin-right: 0.375em;
+    margin-left: 4em;
+  }
+}
 #new_service_form {
   height: 100%;
   width: 600px;

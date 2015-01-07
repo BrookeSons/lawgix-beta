@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :leases
   resources :contacts
   resources :lessees
+  resources :companies
   devise_for :users
   resources :flows
   resources :users

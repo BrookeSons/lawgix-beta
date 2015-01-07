@@ -7,29 +7,29 @@ class ClientPolicy < ApplicationPolicy
     @user = model
   end
 
-  def ogx_admin?
-    self.ogx_admin?
+  def lawgix?
+    self.lawgix?
   end
 
   def index?
-    @current_user.admin? or @current_user.ogx_admin?
+    @current_user.admin? or @current_user.lawgix?
   end
 
   def new?
-    @current_user.ogx_admin?
+    @current_user.lawgix?
   end
 
   def show?
-    @current_user.admin? or @current_user == @user or current_user.ogx_admin?
+    @current_user.admin? or @current_user == @user or current_user.lawgix?
   end
 
   def update?
-    @current_user.ogx_admin?
+    @current_user.lawgix?
   end
 
   def destroy?
     return false if @current_user == @user
-    @current_user.ogx_admin?
+    @current_user.lawgix?
   end
 
 end

@@ -9,4 +9,7 @@ class Client
                :type,
                :password,
                :confirmed_password
+
+
+
 end
