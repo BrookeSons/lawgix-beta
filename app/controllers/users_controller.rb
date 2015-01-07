@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    # authorize User
+    authorize User
   end
 
   def new
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    authorize @user
+    authorize User
     if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
     else
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    authorize @user
+    authorize User
     @user.destroy
     redirect_to users_path, :notice => "User deleted."
   end

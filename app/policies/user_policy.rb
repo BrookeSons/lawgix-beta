@@ -12,27 +12,24 @@ class UserPolicy < ApplicationPolicy
   # end
 
   def index?
-    true
-     # @current_user.admin? or @current_user.ogx_admin?
+    @current_user.lawgix?
   end
 
   def new?
-    true
-    # @current_user.ogx_admin? or  @current_user.admin?
+     @current_user.lawgix?
   end
 
   def show?
-    true
-     # @current_user.admin? or @current_user == @user or current_user.ogx_admin?
+     @current_user.lawgix? or @current_user == @user
   end
 
   def update?
-     @current_user.lawgix? or @current_user.admin?
+     @current_user.lawgix? or @current_user == @user
   end
 
   def destroy?
     return false if @current_user == @user
-    # @current_user.ogx_admin? or @current_user.admin?
+    @current_user.lawgix?
     true
   end
 
