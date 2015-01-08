@@ -1,71 +1,63 @@
 require 'rails_helper'
 require 'pundit/rspec'
 
-describe 'ClientPolicy' do
+describe ClientPolicy do
 
-  it 'should Set a policy for a client' do
+  subject { ClientPolicy }
 
+  let (:current_user) { FactoryGirl.build_stubbed :user }
+  let (:other_user) { FactoryGirl.build_stubbed :user }
+  let (:lawgix) { FactoryGirl.build_stubbed :user, :lawgix }
+  let (:client) {FactoryGirl.build_stubbed :user, :lawgix}
 
-    subject { ClientPolicy }
+  permissions :index? do
+    it "denies access if not lawgix" do
+      expect(UserPolicy).not_to permit(current_user)
+    end
+    it "allows access for lawgix" do
+      expect(UserPolicy).to permit(lawgix)
+    end
+  end
 
-    let (:current_user) { FactoryGirl.build_stubbed :user }
-    let (:other_user) { FactoryGirl.build_stubbed :user }
-    let (:lawgix) { FactoryGirl.build_stubbed :user, :lawgix }
-    let (:admin) { FactoryGirl.build_stubbed :user, :admin }
+  permissions :show? do
+    it "prevents other users from seeing your profile" do
+      expect(subject).not_to permit(current_user, other_user)
+    end
+    it "allows you to see your own profile" do
+      expect(subject).to permit(current_user, current_user)
+    end
+    it "allows lawgix to see any profile" do
+      expect(subject).to permit(lawgix)
+    end
+  end
 
-    permissions :index? do
-      it "denies access if not an admin or lawgix" do
-        expect(UserPolicy).not_to permit(current_user)
-      end
-      it "allows access for an admin" do
-        expect(UserPolicy).to permit(admin)
-      end
-      it "allows access for an lawgix" do
-        expect(UserPolicy).to permit(lawgix)
-      end
+  permissions :update? do
+    it "prevents other users from updating your profile" do
+      expect(subject).not_to permit(current_user, other_user)
+    end
+    it "allows you to update your own profile" do
+      expect(subject).to permit(current_user, current_user)
+    end
+    it "allows a lawgix to update any profile" do
+      expect(subject).to permit(lawgix)
     end
 
-    permissions :show? do
-      it "prevents other users from seeing your profile" do
-        expect(subject).not_to permit(current_user, other_user)
-      end
-      it "allows you to see your own profile" do
-        expect(subject).to permit(current_user, current_user)
-      end
-      it "allows an admin to see any profile" do
-        expect(subject).to permit(admin)
-      end
-      it "allows an lawgix to see any profile" do
-        expect(subject).to permit(lawgix)
-      end
-    end
+  end
 
-    permissions :update? do
-      it "prevents updates if not an lawgix" do
-        expect(subject).not_to permit(current_user)
-      end
-      it "prevents updates if an admin" do
-        expect(subject).not_to permit(admin)
-      end
-      it "allows an lawgix to make updates" do
-        expect(subject).to permit(lawgix)
-      end
+  permissions :destroy? do
+    it "prevents deleting yourself" do
+      expect(subject).not_to permit(current_user, current_user)
     end
+    it "allows lawgix to delete any user" do
+      expect(subject).to permit(lawgix, other_user)
+    end
+  end
 
-    permissions :destroy? do
-      it "prevents deleting yourself" do
-        expect(subject).not_to permit(current_user, current_user)
-      end
-      it "prevents admin from deleting user" do
-        expect(subject).not_to permit(admin)
-      end
-      it "allows an lawgix to delete any user" do
-        expect(subject).to permit(lawgix, other_user)
-      end
+  permissions :new? do
+    it "allows lawgix to create a new user" do
+      expect(subject).to permit(lawgix)
     end
   end
 end
-
-
 
 

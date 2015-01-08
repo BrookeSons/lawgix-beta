@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pundit/rspec'
 
 describe UserPolicy do
 
@@ -7,6 +8,7 @@ describe UserPolicy do
   let (:current_user) { FactoryGirl.build_stubbed :user }
   let (:other_user) { FactoryGirl.build_stubbed :user }
   let (:lawgix) { FactoryGirl.build_stubbed :user, :lawgix }
+  let (:client) {FactoryGirl.build_stubbed :user, :lawgix}
 
   permissions :index? do
     it "denies access if not lawgix" do

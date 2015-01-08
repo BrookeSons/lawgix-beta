@@ -8,11 +8,15 @@ class ClientPolicy < ApplicationPolicy
   end
 
   def lawgix?
-    self.lawgix?
+    current_user.lawgix?
+  end
+
+  def client?
+    current_user.client?
   end
 
   def index?
-    @current_user.admin? or @current_user.lawgix?
+    @current_user.client? or @current_user.lawgix?
   end
 
   def new?
@@ -20,11 +24,11 @@ class ClientPolicy < ApplicationPolicy
   end
 
   def show?
-    @current_user.admin? or @current_user == @user or current_user.lawgix?
+    @current_user.lawgix? or @current_user == @user
   end
 
   def update?
-    @current_user.lawgix?
+    @current_user.lawgix? or @current_user == @user
   end
 
   def destroy?

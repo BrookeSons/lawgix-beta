@@ -7,9 +7,6 @@ class UserPolicy < ApplicationPolicy
     @user = model
   end
 
-  # def ogx_admin?
-  #   self.ogx_admin?
-  # end
 
   def index?
     @current_user.lawgix?
