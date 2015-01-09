@@ -1,2 +1,2 @@
-class Lawyer
+class Lawyer < User
 end
