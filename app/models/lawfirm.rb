@@ -1,3 +1,2 @@
-class Lawfirm < Company
-  has_many :lawyers
+class Lawfirm < ActiveRecord::Base
 end
