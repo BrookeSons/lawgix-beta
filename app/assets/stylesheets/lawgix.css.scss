@@ -1,3 +1,6 @@
+#container {
+  @include outer-container;
+}
 #service-index {
   margin: 20px;
   h1 {
@@ -9,6 +12,16 @@
   }
 }
 
+#contact-index {
+  margin: 20px;
+  h1 {
+    text-align: center;
+  }
+  img {
+    text-align: center;
+    margin-left: 20px;
+  }
+}
 .inline {
   display: inline;
 }
@@ -33,7 +46,7 @@
 
 }
 #company_form {
-  width: 600px;
+  width: 750px;
   label {
     display: inline;
   }
@@ -53,7 +66,7 @@
   }
 }
 #new_company_form {
-  width: 600px;
+  width: 740px;
   label {
     display: inline;
   }
@@ -73,7 +86,28 @@
   }
 }
 #new_client_form {
-  width: 600px;
+  width: 750px;
+  label {
+    display: inline;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-right: auto;
+  margin-left: auto;
+  input[type="checkbox"] {
+    display: inline;
+    margin-right: 0.375em;
+    margin-left: 4em;
+  }
+}
+#new_contact_form {
+  height: 100%;
+  width: 750px;
   label {
     display: inline;
   }
@@ -93,9 +127,11 @@
   }
 }
 #new_service_form {
-  height: 100%;
-  width: 600px;
+  width: 730px;
   label {
+    display: inline;
+  }
+  input {
     display: inline;
   }
   h1 {
@@ -132,6 +168,55 @@ input[type="checkbox"] {
   h1 {
     text-align: center;
   }
+}
+
+#l1 {
+  margin-left: 40px;
+  @include span-columns(5);
+}
+
+#l2 {
+  @include span-columns(5);
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+#l3 {
+  margin-left: 20px;
+  @include span-columns(11);
+}
+
+#l4 {
+  margin-left: 20px;
+  @include span-columns(3);
+}
+
+#l5 {
+  @include span-columns(3);
+}
+
+#l6 {
+  @include span_columns(5);
+}
+
+#l7{
+  margin-left: 20px;
+  @include span-columns(11);
+}
+
+#l8 {
+  margin-left: 20px;
+  @include span-columns(5);
+}
+
+#l9 {
+  @include span-columns(3);
+}
+
+#l10 {
+  @include span-columns(3);
+
+
 }
 
 .accordion-tabs-minimal {
@@ -171,7 +256,7 @@ input[type="checkbox"] {
 
     &:focus {
       outline: none;
-    }
+    }     
 
     &.is-active {
       border-bottom: 0;
@@ -187,12 +272,12 @@ input[type="checkbox"] {
   .tab-content {
     display: none;
     padding: $base-spacing $gutter;
-    width: 520px;
+    width:750px;
     height: 440px;
 
     @include media($tab-mode) {
       border-top: $tab-border;
-      float: left;
+       float: left;
     }
   }
 }

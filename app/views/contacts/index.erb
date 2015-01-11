@@ -1,0 +1,21 @@
+<div id="contact-index">
+  <h1>Contacts</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= link_to(contact.name, contact_path(contact))  %></td>
+          <td><%= contact.phone %></td>
+          <td><%= contact.email %><td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
