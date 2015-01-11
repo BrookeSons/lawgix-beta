@@ -22,8 +22,10 @@
           </li>
         <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
           <ul class="submenu">
-            <li><%= link_to "Lawyers", services_path %></li>
-            <li><%= link_to "New Lawyer",new_service_path %></li>
+            <li><%= link_to "Lawyers", lawyers_path %></li>
+            <li><%= link_to "New Lawyer",new_lawyer_path %></li>
+            <li><%= link_to "Law Firms",lawfirms_path %></li>
+            <li><%= link_to "New Law Firm",new_lawfirm_path %></li>
             </li>
           </ul>
           </li>
@@ -31,8 +33,8 @@
           <ul class="submenu">
             <li><%= link_to "New Company", new_company_path %></li>
             <li><%= link_to "Companies", companies_path %></li>
-            <li><%= link_to "New Client",new_user_path %></li>
-            <li><%= link_to "Clients", users_path %></li>
+            <li><%= link_to "New Client", new_client_path %></li>
+            <li><%= link_to "Clients", clients_path %></li>
             </li>
           </ul>
           </li>

@@ -1,8 +1,8 @@
-<div id="new_client_form">
-  <h1>New Client </h1>
+<div id="new_lawyer_form">
+  <h1>New Lawyer </h1>
   <fieldset>
-    <%= simple_form_for @client  do |f| %>
-        <%= f.association :company %>
+    <%= simple_form_for @lawyer  do |f| %>
+        <%= f.association :lawfirm %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
         <%= f.label :last_name %>
@@ -13,7 +13,7 @@
         <%= f.text_field :email %>
         <%= f.label :password %>
         <%= f.text_field :password %>
-        <%= f.submit 'Create Client' %>
+        <%= f.submit 'Create Lawyer' %>
         </div>
         </li>
     <% end %>

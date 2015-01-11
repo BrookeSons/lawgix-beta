@@ -1,0 +1,21 @@
+<div id="lawfirm-index">
+  <h1>Law Firms</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @lawfirms.each do |lawfirm| %>
+        <tr>
+          <td><%= link_to(lawfirm.name, lawfirm_path(lawfirm))  %></td>
+          <td><%= lawfirm.phone %></td>
+          <td><%= lawfirm.email %><td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

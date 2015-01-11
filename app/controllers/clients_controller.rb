@@ -5,24 +5,24 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
+    @client = Client.find(params[:id])
     # authorize @company
   end
 
   def index
-    @companies = Company.all
+    @clients =  Client.all
   end
 
   def create
-    @company = Company.new(secure_params)
-    @company.save
+    @client = Client.new(secure_params)
+    @client.save
 
-    redirect_to companies_path
+    redirect_to clients_path
   end
 
   private
 
   def secure_params
-    params.require(:company).permit(:name, :billing_address,:billing_contact,:city, :state, :zip, :phone, :email)
+    params.require(:client).permit(:first_name, :last_name,:company_id, :password, :name, :city, :state, :zip, :phone, :email)
   end
 end

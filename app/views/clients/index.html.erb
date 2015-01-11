@@ -3,8 +3,8 @@
   <table>
     <thead>
     <tr>
+      <td>Company</td>
       <td>Name</td>
-      <td>Billing Contact</td>
       <td>Phone</td>
       <td>Email<td>
     </tr>
@@ -12,6 +12,8 @@
     <tbody>
     <% @clients.each do |client| %>
         <tr>
+          <% company = client.company %>
+          <td><%= link_to(company.name, company_path(company))  %></td>
           <td><%= link_to(client.last_name, client_path(client))  %></td>
           <td><%= client.phone %></td>
           <td><%= client.email %><td>
