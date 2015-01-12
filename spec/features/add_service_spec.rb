@@ -9,7 +9,6 @@ include Warden::Test::Helpers
 
   describe 'adding services' do
 
-
     before(:example) do
       login_as users(:user)
     end
