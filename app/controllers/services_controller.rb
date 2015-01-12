@@ -36,7 +36,8 @@ class ServicesController < ApplicationController
   private
 
   def secure_params
-    params.require(:service).permit(:lease_number,:state, :county, :description, :requested_delivery,
+    params.require(:service).permit(:lease_number,:state, :county, :description,
+                                    :requested_delivery, :flows,
                                     lessees_attributes: [:last_name, :first_name, 
                                     :address, :city, :state, :zip,
                                     :phone, :email, :company, :bus_phone, :id],

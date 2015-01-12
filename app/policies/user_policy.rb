@@ -9,7 +9,8 @@ class UserPolicy < ApplicationPolicy
 
 
   def index?
-    @current_user.lawgix?
+    true
+    # @current_user.lawgix?
   end
 
   def new?
