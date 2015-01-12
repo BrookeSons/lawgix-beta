@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
                                     lessees_attributes: [:last_name, :first_name, 
                                     :address, :city, :state, :zip,
                                     :phone, :email, :company, :bus_phone, :id],
-                                    flows_attributes: [:flow_type],
+                                    flows_attributes: [:flow_type, :assignee],
                                     parcels_attributes: [:tax_map, :tax_parcel, :deed_id,:id])
   end
 

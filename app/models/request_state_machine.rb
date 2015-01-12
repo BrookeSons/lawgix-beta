@@ -12,9 +12,19 @@ class RequestStateMachine
   state :resource_check
   state :assigned
 
-  # Transition rules
+
+
 
   transition from: :pending, to: :received
+
+  ServiceRequest.guard_transition(from: :pending, to: received) do |service|
+    service.accepted?
+  end
+
+
+
+  # Transition rules
+
   transition from: :received, to: :resource_check
   transition from: :resource_check, to: [:accepted, :declined, :modified]
   transition from: :accepted, to: :assigned
