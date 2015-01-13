@@ -4,7 +4,7 @@ RSpec.describe Flow do
 
   let(:service) {Service.new}
   let(:flow) {Flow.new}
-
+   pending "Needs Flow Models"
   it 'can distinguish a completed flow' do
     expect(flow).not_to be_complete
     flow.mark_completed
