@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  enum role: [:user, :lawgix, :client, :lawyer]
+  enum role: [:user, :lawgix, :admin]
   has_paper_trail
 
   belongs_to :company
