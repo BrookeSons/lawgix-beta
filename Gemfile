@@ -26,12 +26,9 @@ gem 'will_paginate'
 gem 'groupdocs'
 
 # Virtus and Statesman
-gem 'virtus'
-gem 'reform'
 gem 'statesman'
 ###
 gem 'recipient_interceptor'
-gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'simple_form'
 gem 'title'

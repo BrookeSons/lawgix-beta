@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/reactjs/react-rails.git
-  revision: 3e28789960dbf4e85bbc5ff516eb2cb8b9788a44
-  specs:
-    react-rails (1.0.0.pre)
-      connection_pool
-      execjs
-      rails (>= 3.1)
-      react-source (= 0.12)
-
-GIT
   remote: git://github.com/sudosu/rails_admin_pundit.git
   revision: 285e3e79a37242cf7a527053e9b438782801557a
   specs:
@@ -68,10 +58,6 @@ GEM
       multi_json
     arel (6.0.0)
     awesome_print (1.2.0)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.9)
     better_errors (2.1.0)
       coderay (>= 1.0.0)
@@ -101,8 +87,6 @@ GEM
       json
     cocoon (1.2.6)
     coderay (1.1.0)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -111,7 +95,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
-    connection_pool (2.1.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
@@ -121,8 +104,6 @@ GEM
     delayed_job_active_record (4.0.3)
       activerecord (>= 3.0, < 5.0)
       delayed_job (>= 3.0, < 4.1)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -131,9 +112,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    disposable (0.0.9)
-      representable (~> 2.0)
-      uber
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
@@ -143,7 +121,6 @@ GEM
       thread_safe
     email_validator (1.5.0)
       activemodel
-    equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -178,7 +155,6 @@ GEM
       slop (>= 3.5.0)
       term-ansicolor
       terminal-table
-    ice_nine (0.11.1)
     jquery-rails (4.0.2)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -278,19 +254,9 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
-    react-source (0.12.0)
     recipient_interceptor (0.1.2)
       mail
-    reform (1.2.4)
-      activemodel
-      disposable (~> 0.0.5)
-      representable (~> 2.1.0)
-      uber (~> 0.0.11)
     remotipart (1.2.1)
-    representable (2.1.3)
-      multi_json
-      nokogiri
-      uber (~> 0.0.7)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rest-client (1.7.2)
@@ -352,7 +318,6 @@ GEM
       rails (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.12)
     uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -360,11 +325,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    virtus (1.0.3)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.3)
       rack (>= 1.0)
     webmock (1.20.4)
@@ -417,9 +377,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rails_admin_pundit!
-  react-rails (~> 1.0.0.pre)!
   recipient_interceptor
-  reform
   rspec-rails (~> 3.1)
   sass-rails (~> 4.0.3)
   shoulda-matchers
@@ -431,6 +389,5 @@ DEPENDENCIES
   title
   uglifier
   unicorn
-  virtus
   webmock
   will_paginate
