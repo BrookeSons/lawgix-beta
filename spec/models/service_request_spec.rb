@@ -12,9 +12,9 @@ describe "service_request" do
     expect { service.transition_to!(:received).to_not raise_error }
   end
 
-  it "cannot transition from state pending to state received unless accepted" do
-
-    expect { service.transition_to!(:received) }.to raise_error(Statesman::GuardFailedError)
+  it "transitions from state pending to state received when accepted" do
+       service.accepted
+    expect { service.current_state(:received) }.to_not raise_error(Statesman::GuardFailedError)
   end
 
 end

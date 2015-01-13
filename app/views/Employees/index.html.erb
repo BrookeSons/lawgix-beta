@@ -10,7 +10,7 @@
     </tr>
     </thead>
     <tbody>
-    <% @clients.each do |client| %>
+    <% @employees.each do |client| %>
         <tr>
           <% company = client.company %>
           <td><%= link_to(company.name, company_path(company))  %></td>

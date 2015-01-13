@@ -32,11 +32,17 @@ class Service < ActiveRecord::Base
           to: :state_machine
 
 
+ def accepted
+
+ end
+
  private
+
 
  def self.transition_class
   ServiceRequest
  end
+
 
  def self.initial_state
   :pending

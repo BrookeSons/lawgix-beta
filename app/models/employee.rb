@@ -1,4 +1,4 @@
-class Client < User
+class Employee < User
 
   belongs_to :company
   has_many :services

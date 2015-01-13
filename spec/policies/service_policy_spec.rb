@@ -12,14 +12,14 @@ describe 'ClientPolicy' do
     let (:current_user) { FactoryGirl.build_stubbed :user }
     let (:other_user) { FactoryGirl.build_stubbed :user }
     let (:lawgix) { FactoryGirl.build_stubbed :user, :lawgix }
-    let (:client) {FactoryGirl.build_stubbed :user, :client}
+    let (:employee) {FactoryGirl.build_stubbed :user, :employee}
 
     permissions :index? do
       it "denies access if not a client" do
         expect(UserPolicy).not_to permit(current_user)
       end
       it "allows access for client in a company" do
-        expect(UserPolicy).to permit(client,customer)
+        expect(UserPolicy).to permit(employee,customer)
       end
       it "allows access for lawgix" do
         expect(UserPolicy).to permit(lawgix)
