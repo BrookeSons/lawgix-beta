@@ -1,0 +1,12 @@
+<td>
+  <%= link_to employee.email, employee %>
+</td>
+<td>
+  <%= form_for(employee) do |f| %>
+    <%= f.select(:role, Employee.roles.keys.map {|role| [role.titleize,role]}) %>
+    <%= f.submit 'Change Role', :class => 'button-xs' %>
+  <% end %>
+</td>
+<td>
+  <%= link_to("Delete client", employee_path(employee), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless employee == current_user %>
+</td>

@@ -1,4 +1,4 @@
-class ClientPolicy < ApplicationPolicy
+class EmployeePolicy < ApplicationPolicy
 
   attr_reader :current_user, :model
 
@@ -11,12 +11,12 @@ class ClientPolicy < ApplicationPolicy
     current_user.lawgix?
   end
 
-  def client?
-    current_user.client?
+  def employee?
+    current_user.employee?
   end
 
   def index?
-    @current_user.client? or @current_user.lawgix?
+    @current_user.employee? or @current_user.lawgix?
   end
 
   def new?

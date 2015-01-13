@@ -1,18 +1,18 @@
-describe Client do
+describe Employee do
 
-  before(:each) { @client = Client.new(email: 'user@example.com') }
+  before(:each) { @employee = Employee.new(email: 'user@example.com') }
 
-  subject { @client }
+  subject { @employee }
 
   it { should respond_to(:email) }
 
   it "#email returns a string" do
-    expect(@client.email).to match 'user@example.com'
+    expect(@employee.email).to match 'user@example.com'
   end
 
 
 
-  describe Client do
+  describe Employee do
     # it { should belong_to(:Company) }
 
     [:name, :email].each do |attribute|
@@ -20,7 +20,7 @@ describe Client do
         it 'delegates to the user' do
           user = build_stubbed(:user)
           user.stubs(attribute).returns('text')
-          client = build_stubbed(:client, user: user)
+          client = build_stubbed(:employee, user: user)
 
           client.send(attribute)
 

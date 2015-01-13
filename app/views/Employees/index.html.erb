@@ -1,5 +1,5 @@
 <div id="client-index">
-  <h1>Clients</h1>
+  <h1>Employees</h1>
   <table>
     <thead>
     <tr>
@@ -10,13 +10,13 @@
     </tr>
     </thead>
     <tbody>
-    <% @clients.each do |client| %>
+    <% @employees.each do |employee| %>
         <tr>
-          <% company = client.company %>
+          <% company = employee.company %>
           <td><%= link_to(company.name, company_path(company))  %></td>
-          <td><%= link_to(client.last_name, client_path(client))  %></td>
-          <td><%= client.phone %></td>
-          <td><%= client.email %><td>
+          <td><%= link_to(employee.last_name, employee_path(employee))  %></td>
+          <td><%= employee.phone %></td>
+          <td><%= employee.email %><td>
         </tr>
     <% end %>
     </tbody>
