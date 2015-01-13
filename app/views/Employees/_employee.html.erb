@@ -8,5 +8,5 @@
   <% end %>
 </td>
 <td>
-  <%= link_to("Delete client", client_path(employee), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless employee == current_user %>
+  <%= link_to("Delete client", employee_path(employee), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless employee == current_user %>
 </td>

@@ -17,7 +17,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(secure_params)
     @employee.save
 
-    redirect_to clients_path
+    redirect_to employees_path
   end
 
   private

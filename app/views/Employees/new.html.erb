@@ -1,5 +1,5 @@
 <div id="new_client_form">
-  <h1>New Client </h1>
+  <h1>New Employee </h1>
   <fieldset>
     <%= simple_form_for @employee  do |f| %>
         <%= f.association :company %>
@@ -13,7 +13,7 @@
         <%= f.text_field :email %>
         <%= f.label :password %>
         <%= f.text_field :password %>
-        <%= f.submit 'Create Client' %>
+        <%= f.submit 'Create Employee' %>
         </div>
         </li>
     <% end %>
