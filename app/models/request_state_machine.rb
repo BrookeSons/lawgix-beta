@@ -17,11 +17,6 @@ class RequestStateMachine
 
   transition from: :pending, to: :received
 
-  ServiceRequest.guard_transition(from: :pending, to: received) do |service|
-    service.accepted?
-  end
-
-
 
   # Transition rules
 
