@@ -13,15 +13,9 @@ class RequestStateMachine
   state :assigned
 
 
-
-
   event :start do
      transition from: :pending, to: :received
   end
-
-    # ServiceRequest.guard_transition(from: :pending, to: received) do |service|
-    #   service.accepted?
-    # end
 
   event :check do
     transition from: :received, to: :resource_check

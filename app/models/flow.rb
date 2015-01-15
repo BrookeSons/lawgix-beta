@@ -4,6 +4,7 @@ class Flow < ActiveRecord::Base
  belongs_to :lease
  has_many :users
  belongs_to :company
+ belongs_to :lawfirm
 
 
   def mark_completed(date = nil)
