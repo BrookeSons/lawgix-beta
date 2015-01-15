@@ -4,7 +4,7 @@ class Service < ActiveRecord::Base
 
  include Statesman::Adapters::ActiveRecordQueries
 
- has_many :service_requests
+ has_many :service_transitions
 
  has_many :flows
  has_many :lessees
@@ -24,7 +24,7 @@ class Service < ActiveRecord::Base
  # Initialize the state machine
 
  def state_machine
-  @state_machine ||= RequestStateMachine.new(self, transition_class: ServiceRequest)
+  @state_machine ||= RequestStateMachine.new(self, transition_class: ServiceTransition)
  end
 
  # Optionally delegate some methods

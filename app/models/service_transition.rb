@@ -3,4 +3,6 @@ class ServiceTransition < ActiveRecord::Base
 
   
   belongs_to :service, inverse_of: :service_transitions
+  has_paper_trail
+
 end
