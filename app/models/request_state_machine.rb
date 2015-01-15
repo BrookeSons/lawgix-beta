@@ -11,6 +11,7 @@ class RequestStateMachine
   state :declined
   state :resource_check
   state :assigned
+  state :completed
 
 
   event :start do
@@ -27,5 +28,9 @@ class RequestStateMachine
 
   event :assign do
     transition from: :accepted, to: :assigned
+  end
+
+  event :completed do
+    transition from: :accepted, to: :completed
   end
 end
