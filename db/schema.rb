@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115021907) do
+ActiveRecord::Schema.define(version: 20150115140554) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -115,6 +115,18 @@ ActiveRecord::Schema.define(version: 20150115021907) do
   add_index "service_requests", ["sort_key", "service_id"], name: "index_service_requests_on_sort_key_and_service_id", unique: true, using: :btree
   add_index "service_requests", ["sort_key", "user_id"], name: "index_service_requests_on_sort_key_and_user_id", unique: true, using: :btree
   add_index "service_requests", ["user_id"], name: "index_service_requests_on_user_id", using: :btree
+
+  create_table "service_transitions", force: :cascade do |t|
+    t.string   "to_state",   limit: 255,   null: false
+    t.text     "metadata",   limit: 65535
+    t.integer  "sort_key",   limit: 4,     null: false
+    t.integer  "service_id", limit: 4,     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "service_transitions", ["service_id"], name: "index_service_transitions_on_service_id", using: :btree
+  add_index "service_transitions", ["sort_key", "service_id"], name: "index_service_transitions_on_sort_key_and_service_id", unique: true, using: :btree
 
   create_table "services", force: :cascade do |t|
     t.string   "county",             limit: 255
