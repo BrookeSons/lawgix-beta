@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   has_paper_trail
 
   belongs_to :company
-  has_and_belongs_to_many :services
-  has_and_belongs_to_many :services_requests
+  belongs_to :services
+  has_many :services_requests
 
   after_initialize :set_default_role, :if => :new_record?
 
