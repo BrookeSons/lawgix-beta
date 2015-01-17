@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :parcel
   resources :lawfirms
   resources :lawyers
+  resources :service_transitions
 
   root 'visitors#index'
   resources :services

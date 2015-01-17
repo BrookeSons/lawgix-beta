@@ -7,9 +7,11 @@ class RequestStateMachine
   state :pending, initial: :true
   state :received
   state :accepted
+  state :modify
   state :modified
   state :declined
   state :resource_check
+
   state :priced
   state :assigned
   state :completed
@@ -40,7 +42,7 @@ class RequestStateMachine
   end
 
   event :dispatch do
-    transition from: :accepted to: [:abstract, :opinion, :curative]
+    transition from: :accepted, to: [:abstract, :opinion, :curative]
   end
 
   event :assign do

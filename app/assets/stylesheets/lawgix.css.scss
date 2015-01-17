@@ -13,7 +13,58 @@
 }
 
 #service-dashboard {
+  margin: 20px;
   @include outer_container;
+  h1 {
+    text-align: center;
+  }
+}
+
+#new-requests {
+  @include span-columns(12);
+  background-color: #009926;
+}
+
+
+
+#pre-dispatch {
+  @include span-columns(4);
+  background-color: #00ff98;
+  h2 {
+    text-align:center;
+  }
+}
+
+#assigned-requests{
+  @include span-columns(8);
+  background-color: #2aa198;
+  h2 {
+    text-align: center;
+  }
+}
+
+#abstract-table {
+  @include span-columns(4);
+  background-color: #62c462;
+  h4 {
+    text-align: center;
+  }
+}
+
+#opinion-table {
+  @include span-columns(4);
+  background-color: #149bdf;
+  h4 {
+    text-align: center;
+  }
+}
+
+#curative-table {
+  @include span-columns(4);
+  background-color: #00ff98;
+  h4 {
+    text-align: center;
+  }
 }
 
 
