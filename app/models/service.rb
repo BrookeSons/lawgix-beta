@@ -10,7 +10,8 @@ class Service < ActiveRecord::Base
  has_many :lessees
  has_many :leases
  has_many :parcels
- has_many :users
+ has_many :employees
+ has_many :lawyers
  belongs_to :company
   
 
