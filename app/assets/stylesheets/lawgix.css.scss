@@ -12,6 +12,11 @@
   }
 }
 
+#service-dashboard {
+  @include outer_container;
+}
+
+
 #contact-index {
   margin: 20px;
   h1 {
