@@ -1,3 +1,0 @@
-class ServicePresenter
-
-end
