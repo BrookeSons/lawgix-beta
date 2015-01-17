@@ -1,0 +1,2 @@
+class CurativeBuilder
+end
