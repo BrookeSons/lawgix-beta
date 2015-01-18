@@ -6,6 +6,6 @@ class ServiceTransition < ActiveRecord::Base
 
   has_paper_trail
 
-
+  scope :new, -> { where()}
 
 end

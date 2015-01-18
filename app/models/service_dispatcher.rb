@@ -1,5 +1,6 @@
-class ServiceDispatcher
-  # Form object to transition states
+class ServiceDispatcher < ActiveRecord::Base
+  # Form object to display and transition states at the Service Request Level
+
 
 
 
