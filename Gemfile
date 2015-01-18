@@ -59,7 +59,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit', '>= 1.2.0'
-  gem 'database_cleaner', git: 'git@github.com:bmabey/database_cleaner.git'
+  # gem 'database_cleaner', git: 'git@github.com:bmabey/database_cleaner.git'
   gem 'formulaic'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
