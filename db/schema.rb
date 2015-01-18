@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115141211) do
+ActiveRecord::Schema.define(version: 20150118222729) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -129,6 +129,8 @@ ActiveRecord::Schema.define(version: 20150115141211) do
     t.string   "description",        limit: 255
     t.integer  "parcel_id",          limit: 4
   end
+
+  add_index "services", ["state"], name: "index_services_on_state", using: :btree
 
   create_table "services_users", id: false, force: :cascade do |t|
     t.integer "service_id", limit: 4
