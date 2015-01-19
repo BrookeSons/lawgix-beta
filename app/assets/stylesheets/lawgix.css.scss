@@ -1,3 +1,17 @@
+
+$new-background: #BFA659;
+$dispatch-background: #93B5E4;
+$assigned-background: #5353D1;
+$abstract-background: #FFD24A ;
+$opinion-background: #A67118;
+$curative-background: #4E6D98;
+
+
+
+
+
+
+
 #container {
   @include outer-container;
 }
@@ -28,7 +42,7 @@
   h2 {
     padding-left: 10px;
   }
-  background-color: #009926;
+  background-color: $new-background;
 }
 
 
@@ -36,7 +50,7 @@
 #pre-dispatch {
 
   @include span-columns(4, $display: block-collapse);
-  background-color: #00ff98;
+  background-color: $dispatch-background;
   h2 {
     text-align:center;
   }
@@ -44,7 +58,7 @@
 
 #assigned-requests{
   @include span-columns(8, $display: block-collapse);
-  background-color: #2aa198;
+  background-color: $assigned-background;
   h2 {
     text-align: center;
   }
@@ -53,7 +67,7 @@
 
 #abstract-table {
   @include span-columns(4, $display: block-collapse);
-  background-color: #62c462;
+  background-color: $abstract-background ;
   h4 {
     text-align: center;
   }
@@ -61,7 +75,7 @@
 
 #opinion-table {
   @include span-columns(4, $display: block-collapse);
-  background-color: #149bdf;
+  background-color: $opinion-background;
   h4 {
     text-align: center;
   }
@@ -69,7 +83,7 @@
 
 #curative-table {
   @include span-columns(4, $display: block-collapse);
-  background-color: #00ff98;
+  background-color: $curative-background;
   h4 {
     text-align: center;
   }
