@@ -19,7 +19,7 @@ RailsAdmin.config do |config|
 
    ## Included models
 
-   config.included_models = %w(User Company Employee Lawfirm Service ServiceTransition)
+   config.included_models = %w(User Company Employee Lawfirm Service ServiceTransition TitleAbstract)
 
 
 
