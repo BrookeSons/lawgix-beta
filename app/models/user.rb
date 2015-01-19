@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :services
-  has_many :services_requests
 
   after_initialize :set_default_role, :if => :new_record?
 
