@@ -7,7 +7,7 @@ grantor "MyString"
 grantee "MyString"
 d_type "MyString"
 comments "MyText"
-d-image ""
+d_image "MyFile"
   end
 
 end

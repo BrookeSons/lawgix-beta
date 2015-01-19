@@ -8,7 +8,7 @@ class CreateDeeds < ActiveRecord::Migration
       t.string :grantee
       t.string :d_type
       t.text :comments
-      t.file :d-image
+      t.string :d_image
 
       t.timestamps null: false
     end
