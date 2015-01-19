@@ -14,4 +14,6 @@ class ServiceTransitionsController < ApplicationController
     @service = Service.pending
   end
 
+
+
 end

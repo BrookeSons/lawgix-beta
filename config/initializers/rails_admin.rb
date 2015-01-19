@@ -17,6 +17,11 @@ RailsAdmin.config do |config|
   ## == Pundit ==
    config.authorize_with :pundit
 
+   ## Exclude models
+
+   config.excluded_models << [ 'Dashboards', 'ServiceDispatcher' ]
+
+
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
@@ -30,8 +35,9 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+
     ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+     history_index
+     history_show
   end
 end

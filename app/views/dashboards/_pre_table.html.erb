@@ -1,15 +1,15 @@
 <table>
   <thead>
   <tr>
-    <td>Lease Number</td>
-    <td>Description</td>
+    <td>Lease</td>
+    <td>Status</td>
   </tr>
   </thead>
   <tbody>
   <% @services.each do |service| %>
       <tr>
         <td><%= link_to service.lease_number, service %></td>
-        <td><%= service.description %></td>
+        <td><%= service.current_state %></td>
       </tr>
   <% end %>
   </tbody>

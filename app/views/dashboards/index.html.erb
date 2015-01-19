@@ -3,12 +3,12 @@
 
   <div id="new-requests">
     <h2>New Requests</h2>
-    <%= render partial: 'new_table',collection: @services.in_state(:pending) %>
+    <%= render partial: 'new_table' %>
   </div>
 
   <div id="pre-dispatch">
     <h2>Dispatch</h2>
-    <%= render partial: 'pre_table', collection: @services.in_state(:received) %>
+    <%= render 'pre_table' %>
   </div>
 
   <div id="assigned-requests">

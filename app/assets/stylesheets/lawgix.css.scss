@@ -18,17 +18,24 @@
   h1 {
     text-align: center;
   }
+  td {
+    padding-left: 10px;
+  }
 }
 
 #new-requests {
   @include span-columns(12);
+  h2 {
+    padding-left: 10px;
+  }
   background-color: #009926;
 }
 
 
 
 #pre-dispatch {
-  @include span-columns(4);
+
+  @include span-columns(4, $display: block-collapse);
   background-color: #00ff98;
   h2 {
     text-align:center;
@@ -36,15 +43,16 @@
 }
 
 #assigned-requests{
-  @include span-columns(8);
+  @include span-columns(8, $display: block-collapse);
   background-color: #2aa198;
   h2 {
     text-align: center;
   }
+
 }
 
 #abstract-table {
-  @include span-columns(4);
+  @include span-columns(4, $display: block-collapse);
   background-color: #62c462;
   h4 {
     text-align: center;
@@ -52,7 +60,7 @@
 }
 
 #opinion-table {
-  @include span-columns(4);
+  @include span-columns(4, $display: block-collapse);
   background-color: #149bdf;
   h4 {
     text-align: center;
@@ -60,7 +68,7 @@
 }
 
 #curative-table {
-  @include span-columns(4);
+  @include span-columns(4, $display: block-collapse);
   background-color: #00ff98;
   h4 {
     text-align: center;
