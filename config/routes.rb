@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :title_abstracts
+
   resources :deeds
 
   resources :lawfirms
