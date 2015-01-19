@@ -17,9 +17,10 @@ RailsAdmin.config do |config|
   ## == Pundit ==
    config.authorize_with :pundit
 
-   ## Exclude models
+   ## Included models
 
-   config.excluded_models << [ 'Dashboards', 'ServiceDispatcher' ]
+   config.included_models = %w(User Company Employee Lawfirm Service ServiceTransition)
+
 
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration

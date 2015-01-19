@@ -1,18 +1,18 @@
 
 <div id="service-index">
-  <h1>Lawgix Service States</h1>
+  <h1>Lawgix Service Status</h1>
   <table>
     <thead>
     <tr>
       <td>Lease Number</td>
-      <td>Current State</td>
+      <td>Current Status</td>
     </tr>
     </thead>
     <tbody>
-    <% @service_transitions.each do |transition| %>
+    <% @transitions.each do |transition| %>
         <tr>
-          <td><%= transition.service.lease_id %></td>
-          <td><%= transition.current_state %></td>
+          <td><%= transition.service.lease_number %></td>
+          <td><%= transition.to_state %></td>
         </tr>
     <% end %>
     </tbody>
