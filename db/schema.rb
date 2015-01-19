@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119160925) do
+ActiveRecord::Schema.define(version: 20150119165415) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -40,17 +40,20 @@ ActiveRecord::Schema.define(version: 20150119160925) do
   end
 
   create_table "deeds", force: :cascade do |t|
-    t.string   "db",         limit: 255
-    t.string   "db_page",    limit: 255
+    t.string   "db",                 limit: 255
+    t.string   "db_page",            limit: 255
     t.date     "d_date"
-    t.string   "grantor",    limit: 255
-    t.string   "grantee",    limit: 255
-    t.string   "d_type",     limit: 255
-    t.text     "comments",   limit: 65535
-    t.string   "d_image",    limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "grantor",            limit: 255
+    t.string   "grantee",            limit: 255
+    t.string   "d_type",             limit: 255
+    t.text     "comments",           limit: 65535
+    t.string   "d_image",            limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "title_abstracts_id", limit: 4
   end
+
+  add_index "deeds", ["title_abstracts_id"], name: "index_deeds_on_title_abstracts_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type",    limit: 255
@@ -152,6 +155,14 @@ ActiveRecord::Schema.define(version: 20150119160925) do
 
   add_index "services_users", ["service_id"], name: "index_services_users_on_service_id", using: :btree
   add_index "services_users", ["user_id"], name: "index_services_users_on_user_id", using: :btree
+
+  create_table "title_abstracts", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.date     "due_date"
+    t.text     "comments",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

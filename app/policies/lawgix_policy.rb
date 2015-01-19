@@ -1,0 +1,2 @@
+class LawgixPolicy
+end

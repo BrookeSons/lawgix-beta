@@ -1,0 +1,2 @@
+class LawyerPolicy
+end

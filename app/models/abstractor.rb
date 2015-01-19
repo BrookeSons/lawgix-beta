@@ -1,0 +1,2 @@
+class Abstractor < User
+end

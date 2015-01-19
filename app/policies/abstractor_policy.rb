@@ -1,0 +1,2 @@
+class AbstractorPolicy
+end
