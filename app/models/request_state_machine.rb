@@ -30,8 +30,8 @@ class RequestStateMachine
   end
 
   event :check_result do
-    transition from: :resource_check, to: [:accepted, :declined, :modify]
-    transition from: :modified, to: :accepted
+    transition from: :resource_check, to: [:submitted, :declined, :modify]
+    transition from: :modified, to: :submitted
   end
 
   event :redo do
@@ -39,11 +39,11 @@ class RequestStateMachine
   end
 
   event :price do
-    transition from: :accepted, to: :priced
+    transition from: :received, to: :priced
   end
 
   event :dispatch do
-    transition from: :accepted, to: [:abstract, :opinion, :curative]
+    transition from: :submitted, to: [:abstract, :opinion, :curative]
   end
 
   event :assign do
@@ -51,7 +51,7 @@ class RequestStateMachine
   end
 
   event :completed do
-    transition from: :accepted, to: :completed
+    transition from: :submitted, to: :completed
     transition from: :abstract, to: :completed
     transition from: :opinion,  to: :completed
     transition from: :curative, to: :completed
