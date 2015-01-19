@@ -6,13 +6,14 @@ class RequestStateMachine
 
   state :pending, initial: :true
   state :received
-  state :accepted
+  state :submitted
   state :modify
   state :modified
   state :declined
   state :resource_check
 
   state :priced
+  state :confirmed
   state :assigned
   state :completed
   state :abstract
@@ -21,11 +22,11 @@ class RequestStateMachine
 
 
   event :start do
-     transition from: :pending, to: :received
+     transition from: :pending, to: :submitted
   end
 
   event :check do
-    transition from: :received, to: :resource_check
+    transition from: :submitted, to: :resource_check
   end
 
   event :check_result do
