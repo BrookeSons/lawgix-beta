@@ -20,6 +20,9 @@ class Service < ActiveRecord::Base
  accepts_nested_attributes_for :leases
  accepts_nested_attributes_for :parcels
 
+
+
+
  has_paper_trail
 
  # Initialize the state machine
@@ -41,12 +44,12 @@ class Service < ActiveRecord::Base
 
 
  def self.transition_class
-  ServiceRequest
+  ServiceTransition
  end
 
 
  def self.initial_state
-  :pending
+   RequestStateMachine.initial_state
  end
 end
 

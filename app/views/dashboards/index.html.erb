@@ -3,23 +3,28 @@
 
   <div id="new-requests">
     <h2>New Requests</h2>
-    <%= render 'new_table' %>
+    <%= render partial: 'new_table',collection: @services.in_state(:pending) %>
   </div>
 
   <div id="pre-dispatch">
-    <%= render 'pre_table' %>
+    <h2>Dispatch</h2>
+    <%= render partial: 'pre_table', collection: @services.in_state(:received) %>
   </div>
 
   <div id="assigned-requests">
+    <h2>Assigned Requests</h2>
     <div id="abstract-table">
+      <h4>Abstracts</h4>
       <%= render 'abstract_table' %>
     </div>
 
     <div id="opinion-table">
+      <h4>Opinions</h4>
       <%= render 'opinion_table' %>
     </div>
 
     <div id="curative-table">
+      <h4>Curative</h4>
       <%= render 'curative_table' %>
     </div>
   </div>

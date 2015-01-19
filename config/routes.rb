@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :lawfirms
   resources :lawyers
   resources :service_transitions
+  resources :dashboards
 
   root 'visitors#index'
   resources :services
