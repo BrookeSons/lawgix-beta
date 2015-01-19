@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Db:</strong>
+  <%= @deed.db %>
+</p>
+
+<p>
+  <strong>Db page:</strong>
+  <%= @deed.db_page %>
+</p>
+
+<p>
+  <strong>D date:</strong>
+  <%= @deed.d_date %>
+</p>
+
+<p>
+  <strong>Grantor:</strong>
+  <%= @deed.grantor %>
+</p>
+
+<p>
+  <strong>Grantee:</strong>
+  <%= @deed.grantee %>
+</p>
+
+<p>
+  <strong>D type:</strong>
+  <%= @deed.d_type %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @deed.comments %>
+</p>
+
+<p>
+  <strong>D-image:</strong>
+  <%= @deed.d-image %>
+</p>
+
+<%= link_to 'Edit', edit_deed_path(@deed) %> |
+<%= link_to 'Back', deeds_path %>

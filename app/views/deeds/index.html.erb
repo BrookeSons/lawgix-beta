@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Deeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Db</th>
+      <th>Db page</th>
+      <th>D date</th>
+      <th>Grantor</th>
+      <th>Grantee</th>
+      <th>D type</th>
+      <th>Comments</th>
+      <th>D-image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deeds.each do |deed| %>
+      <tr>
+        <td><%= deed.db %></td>
+        <td><%= deed.db_page %></td>
+        <td><%= deed.d_date %></td>
+        <td><%= deed.grantor %></td>
+        <td><%= deed.grantee %></td>
+        <td><%= deed.d_type %></td>
+        <td><%= deed.comments %></td>
+        <td><%= deed.d-image %></td>
+        <td><%= link_to 'Show', deed %></td>
+        <td><%= link_to 'Edit', edit_deed_path(deed) %></td>
+        <td><%= link_to 'Destroy', deed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deed', new_deed_path %>

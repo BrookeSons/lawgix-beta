@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :deeds
+
   resources :lawfirms
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
