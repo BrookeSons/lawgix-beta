@@ -1,10 +1,10 @@
 
 $new-background: #BFA659;
 $dispatch-background: #93B5E4;
-$assigned-background: #5353D1;
+$assigned-background: #FFE69B;
 $abstract-background: #FFD24A ;
-$opinion-background: #A67118;
-$curative-background: #4E6D98;
+$opinion-background: #9B9BE8;
+$curative-background: #FFCC77;
 
 
 
@@ -45,15 +45,21 @@ $curative-background: #4E6D98;
   background-color: $new-background;
 }
 
-
-
-#pre-dispatch {
-
+#pre-header {
   @include span-columns(4, $display: block-collapse);
   background-color: $dispatch-background;
-  h2 {
+
+}
+
+#pre-dispatch {
+   h2 {
     text-align:center;
   }
+
+
+  @include span-columns(4, $display: block-collapse);
+
+  background-color: $dispatch-background;
 }
 
 #assigned-requests{
