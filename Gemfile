@@ -2,18 +2,15 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
-gem 'airbrake'
 gem 'bourbon', '~> 3.2.1'
 gem 'coffee-rails'
 gem 'delayed_job_active_record'
 gem 'email_validator'
 gem 'cocoon'
-gem 'flutie'
 gem 'high_voltage'
 gem 'i18n-tasks'
 gem 'jquery-rails'
 gem 'neat', '~> 1.5.1'
-gem 'newrelic_rpm'
 gem 'normalize-rails', '~> 3.0.0'
 gem 'mysql2'
 gem 'rack-timeout'
@@ -24,8 +21,7 @@ gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 gem 'paper_trail', '~> 3.0.6'
 gem 'will_paginate'
 gem 'groupdocs'
-
-# Virtus and Statesman
+gem 'active_type'
 gem 'statesman'
 ###
 gem 'recipient_interceptor'
