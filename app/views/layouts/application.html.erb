@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="ROBOTS" content="NOODP" />
-  <meta name="viewport" content="initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="ROBOTS" content="NOODP"/>
+  <meta name="viewport" content="initial-scale=1"/>
   <title><%= title %></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,9 +13,9 @@
   <%= render 'shared/nav' %>
 </header>
 <div id='container'>
-<body class="<%= body_class %>">
-    <!--<p class="notice"><%= notice %></p>-->
-    <!--<p class="alert"><%= alert %></p>-->
+  <body class="<%= body_class %>">
+  <!--<p class="notice"><%= notice %></p>-->
+  <!--<p class="alert"><%= alert %></p>-->
   <%= render "flashes" -%>
   <%= yield %>
   <%= render "javascript" %>

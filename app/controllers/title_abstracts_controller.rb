@@ -1,5 +1,11 @@
 class TitleAbstractsController < ApplicationController
+
   before_action :set_title_abstract, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!
+
+  after_action :verify_authorized
+
 
   respond_to :html
 
@@ -37,6 +43,8 @@ class TitleAbstractsController < ApplicationController
   end
 
   private
+
+
     def set_title_abstract
       @title_abstract = TitleAbstract.find(params[:id])
     end
