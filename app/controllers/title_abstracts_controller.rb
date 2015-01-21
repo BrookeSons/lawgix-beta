@@ -2,7 +2,7 @@ class TitleAbstractsController < ApplicationController
 
   before_action :set_title_abstract, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!
+   before_filter :authenticate_user!
 
   after_action :verify_authorized
 
