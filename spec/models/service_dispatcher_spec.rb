@@ -3,6 +3,7 @@ require 'rails_helper'
 
 describe 'ServiceDispatcher' do
 
+  pending
   let(:service) {Service.new(lease_number: '12345')  }
 
   it 'Should receive a service in the pending state' do
@@ -10,6 +11,7 @@ describe 'ServiceDispatcher' do
   end
  
   it "Should display the pending object in the 'New Request' view" do
+    pending
       visit service_transitions_path
       within('div#new-request') do
         expect(page).to have_content('12345')
@@ -17,6 +19,7 @@ describe 'ServiceDispatcher' do
   end
 
   it 'Service Dispatcher changes state to received when Lawgix presses ok button' do
+    pending
             visit service_path
 
              click_on received
