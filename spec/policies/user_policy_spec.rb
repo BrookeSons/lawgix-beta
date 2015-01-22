@@ -26,9 +26,7 @@ describe UserPolicy do
     it "allows you to see your own profile" do
       expect(subject).to permit(current_user, current_user)
     end
-    it "allows lawgix to see any profile" do
-      expect(subject).to permit(lawgix)
-    end
+
   end
 
   permissions :update? do

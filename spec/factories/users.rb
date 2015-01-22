@@ -6,6 +6,7 @@ FactoryGirl.define do
     password "please123"
 
 
+
     trait :lawgix do
       role 'lawgix'
     end

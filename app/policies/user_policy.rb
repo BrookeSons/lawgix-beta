@@ -9,8 +9,7 @@ class UserPolicy < ApplicationPolicy
 
 
   def index?
-    true
-    # @current_user.lawgix?
+    @current_user.lawgix?
   end
 
   def new?
@@ -18,7 +17,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-     @current_user.lawgix? or @current_user == @user
+     @current_user == @user or @current_user == @lawgix
   end
 
   def update?

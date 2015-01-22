@@ -1,9 +1,9 @@
 class ServicePolicy < ApplicationPolicy
 
-  attr_reader :user, :model
+  attr_reader :current_user, :model
 
-  def initialize(user, model)
-    @user = user
+  def initialize(current_user, model)
+    @current_user = user
     @service = model
   end
 

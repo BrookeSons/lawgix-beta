@@ -2,7 +2,7 @@
 require 'rails_helper'
 require 'pundit/rspec'
 
-describe 'ClientPolicy' do
+describe ServicePolicy do
 
   it 'should Set a policy for a client' do
 
