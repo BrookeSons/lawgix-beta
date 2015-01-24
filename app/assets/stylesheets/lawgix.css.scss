@@ -264,6 +264,13 @@ $curative-background: #FFCC77;
     margin-left: 4em;
   }
 }
+#deliv-date {
+  text-align: center;
+  @include span-columns(6);
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 input[type="checkbox"] {
   display: inline;

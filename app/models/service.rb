@@ -13,6 +13,8 @@ class Service < ActiveRecord::Base
  has_many :employees
  has_many :lawyers
  belongs_to :company
+
+ serialize :serial_flows, Array
   
 
  accepts_nested_attributes_for :lessees

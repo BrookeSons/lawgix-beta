@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119193045) do
+ActiveRecord::Schema.define(version: 20150124173625) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -137,13 +137,10 @@ ActiveRecord::Schema.define(version: 20150119193045) do
     t.string   "lease_file",         limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "lease_id",           limit: 4
-    t.integer  "lessee_id",          limit: 4
-    t.integer  "flow_id",            limit: 4
     t.string   "lease_number",       limit: 255
     t.string   "state",              limit: 255
     t.string   "description",        limit: 255
-    t.integer  "parcel_id",          limit: 4
+    t.string   "serial_flows",       limit: 255
   end
 
   add_index "services", ["state"], name: "index_services_on_state", using: :btree

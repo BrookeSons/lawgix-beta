@@ -5,7 +5,6 @@ class ServicesController < ApplicationController
     @service = Service.new
     @service.lessees.build
     @service.parcels.build
-    @service.flows.build
   end
 
   def show
