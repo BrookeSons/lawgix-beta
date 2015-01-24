@@ -1,81 +1,27 @@
-<div id="new_service_form">
+<div id="show_service_form">
   <h1>Service Request</h1>
   <fieldset>
-    <ul class="accordion-tabs-minimal">
-      <li class="tab-header-and-content">
-        <a href="#" class="tab-link is-active">Request</a>
-        <div class="tab-content">
-          <%= form_for @service do |f| %>
-              <%= f.label :state %>
-              <%= f.select :state, collection: ['Ohio','West Virginia'] %>
-              <%= f.label :lease_number %>
-              <%= f.text_field :lease_number %>
-              <%= f.label :description %>
-              <%= f.text_area :description %>
-              <%= "Current status: #{@service.current_state}" %>
-              <hr />
-              <%= "Next Transition: #{@service.allowed_transitions.join ', '}" %>
-              </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Lessee</a>
-                <div class="tab-content">
-                  <div id="lessee-entry">
-                    <%= f.simple_fields_for :lessees do |l| %>
-                        <%= l.label :first_name %>
-                        <%= l.text_field :first_name %>
-                        <%= l.label :last_name %>
-                        <%= l.text_field :last_name %>
-                        <%= l.label :company %>
-                        <%= l.text_field :company %>
-                        <%= l.label :bus_phone %>
-                        <%= l.text_field :bus_phone %>
-                        <%= l.label :phone %>
-                        <%= l.text_field :phone %>
-                        <%= l.label :address %>
-                        <%= l.text_field :address %>
-                        <%= l.label :city %>
-                        <%= l.text_field :city %>
-                        <%= l.label :state %>
-                        <%= l.text_field :state %>
-                        <%= l.label :zip %>
-                        <%= l.text_field :zip %>
-                        <%= l.label :email %>
-                        <%= l.text_field :email %>
-                    <% end %>
-                  </div>
-                </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Parcel</a>
-                <div class="tab-content">
-                  <%= f.label :county %>
-                  <%= f.text_field :county %>
-                  <%= f.simple_fields_for :parcels do |pc| %>
-                      <%= pc.label :tax_map %>
-                      <%= pc.text_field :tax_map %>
-                      <%= pc.label :tax_parcel %>
-                      <%= pc.text_field :tax_parcel %>
-                  <% end %>
-
-                </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Implementation</a>
-                <div class="tab-content">
-                  <%= f.check_box(:flows, {:multiple => true}, 'Opinion', nil) %>
-                  <%= f.label 'Abstract' %>
-                  <%= f.check_box(:flows, {:multiple => true}, 'Abstract', nil) %>
-                  <%= f.label 'Opinion' %>
-                  <%= f.check_box(:flows, {:multiple => true}, 'Curative', nil) %>
-                  <%= f.label 'Curative' %>
-                  <%= f.label 'Delivery Date' %>
-                  <%= f.date_field :requested_delivery %>
-                </div>
-              </li>
-              </ul>
-              <div id='request'>
-                <%= f.submit 'Update Service Request' %>
-              </div>
-          <% end %>
+    <%= simple_form_for @service do |f| %>
+        <ul class="accordion-tabs-minimal">
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link is-active">Request</a>
+            <%= render 'request', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Lessee</a>
+            <%= render 'lessee', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Parcel</a>
+            <%= render 'parcel', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Implementation</a>
+            <%= render 'implement', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+          </li>
+        </ul>
+        <%= f.submit 'Update Service Request' %>
+    <% end %>
 </div>

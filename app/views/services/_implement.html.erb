@@ -1,0 +1,10 @@
+<div class="tab-content">
+    <%= f.check_box(:flows, {:multiple => true}, 'Opinion', nil) %>
+    <%= f.label 'Abstract' %>
+    <%= f.check_box(:flows, {:multiple => true}, 'Abstract', nil) %>
+    <%= f.label 'Opinion' %>
+    <%= f.check_box(:flows, {:multiple => true}, 'Curative', nil) %>
+    <%= f.label 'Curative' %>
+    <%= f.label 'Delivery Date' %>
+    <%= f.date_field :requested_delivery %>
+</div>

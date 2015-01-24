@@ -45,6 +45,14 @@ $curative-background: #FFCC77;
   background-color: $new-background;
 }
 
+#show-requests {
+  @include span-columns(12);
+  h2 {
+    padding-left: 10px;
+  }
+  background-color: $new-background;
+}
+
 #pre-header {
   @include span-columns(4, $display: block-collapse);
   background-color: $dispatch-background;
@@ -211,6 +219,29 @@ $curative-background: #FFCC77;
   }
 }
 #new_service_form {
+  width: 730px;
+  label {
+    display: inline;
+  }
+  input {
+    display: inline;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-right: auto;
+  margin-left: auto;
+  input[type="checkbox"] {
+    display: inline;
+    margin-right: 0.375em;
+    margin-left: 4em;
+  }
+}
+#show_service_form {
   width: 730px;
   label {
     display: inline;

@@ -1,0 +1,10 @@
+<div class="tab-content">
+  <%= f.label :county %>
+  <%= f.text_field :county %>
+  <%= f.simple_fields_for :parcels do |pc| %>
+      <%= pc.label :tax_map %>
+      <%= pc.text_field :tax_map %>
+      <%= pc.label :tax_parcel %>
+      <%= pc.text_field :tax_parcel %>
+  <% end %>
+</div>
