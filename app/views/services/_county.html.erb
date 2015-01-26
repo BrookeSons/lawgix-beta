@@ -1,0 +1,11 @@
+<div class="tab-content">
+  <div id="county-form">
+  <%= f.label :county %>
+  <%= f.text_field :county %>
+  </div>
+  <%= f.simple_fields_for :parcels do |parcel| %>
+      <%= render 'parcel_fields', :f => parcel %>
+  <%= link_to_add_association "Add Parcel", f, :parcels, force_non_association_create: true %>
+      <% end %>
+
+</div>

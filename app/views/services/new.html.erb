@@ -1,6 +1,6 @@
 <div id="new_service_form">
-  <h1>New Service Request</h1>
   <fieldset>
+    <h1>New Service Request</h1>
   <%= simple_form_for @service do |f| %>
     <ul class="accordion-tabs-minimal">
       <li class="tab-header-and-content">
@@ -9,17 +9,11 @@
       </li>
       <li class="tab-header-and-content">
         <a href="#" class="tab-link">Lessee</a>
-        <%= render 'lessee', f: f %>
+        <%= render 'lessee_fields', f: f %>
       </li>
       <li class="tab-header-and-content">
          <a href="#" class="tab-link">Parcel</a>
-         <%= render 'parcel', f: f %>
-      </li>
-      <li class="tab-header-and-content">
-         <a href="#" class="tab-link">Implementation</a>
-        <%= render 'implement', f: f %>
-      </li>
-      <li class="tab-header-and-content">
+         <%= render 'county', f: f %>
       </li>
     </ul>
     <%= f.submit 'Create Service Request' %>

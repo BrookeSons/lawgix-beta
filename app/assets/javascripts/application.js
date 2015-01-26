@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require nav
 //= require tabs
+//= require cocoon
 //= require_tree .
