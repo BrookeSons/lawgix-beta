@@ -1,51 +1,39 @@
-<div class="tab-content">
   <fieldset>
   <div id="lessee-entry">
-    <%= f.simple_fields_for :lessees do |l| %>
       <div id="l1">
-        <%= l.label :first_name %>
-        <%= l.text_field :first_name, input_html: {style:'width=80px'} %>
+        <%= f.text_field :first_name, placeholder: 'First Name' %>
       </div>
-      <div id="l2"
-        <%= l.label :last_name %>
-        <%= l.text_field :last_name %>
+      <div id="l2">
+        <%= f.text_field :last_name, placeholder: 'Last Name' %>
       </div>
       <div id="l3">
-        <%= l.label :company %>
-        <%= l.text_field :company %>
+        <%= f.text_field :company, placeholder: 'Company' %>
       </div>
       <div id="l4">
-        <%= l.label :bus_phone %>
-        <%= l.text_field :bus_phone %>
+        <%= f.text_field :bus_phone, placeholder: 'Business Phone' %>
       </div>
       <div id="l5">
-        <%= l.label :phone %>
-        <%= l.text_field :phone %>
+        <%= f.text_field :phone, placeholder: 'Home Phone' %>
       </div>
-      <div id="l6"
-        <%= l.label :email %>
-        <%= l.text_field :email %>
+      <div id="l6">
+        <%= f.text_field :email, placeholder: 'Email' %>
       </div>
       <div id="l7">
-        <%= l.label :address %>
-        <%= l.text_field :address %>
+        <%= f.text_field :address, placeholder: 'Address' %>
       </div>
       <div id="l8">
-        <%= l.label :city %>
-        <%= l.text_field :city %>
+        <%= f.text_field :city, placeholder: 'City' %>
       </div>
-      <div id="l9"
-        <%= l.label :state %>
-        <%= l.text_field :state %>
+      <div id="l9">
+        <%= f.text_field :state, placeholder: 'State' %>
       </div>
-      <div id="l10"
-        <%= l.label :zip %>
-        <%= l.text_field :zip %>
+      <div id="l10">
+        <%= f.text_field :zip, placeholder: 'Zip' %>
       </div>
-    <% end %>
-  </div>
-    </fieldset>
-</div>
+      <div class="remove">
+        <%= link_to_remove_association "Remove Lessee", f %>
+      </div>
+</fieldset>
 
 
 

@@ -294,12 +294,12 @@ input[type="checkbox"] {
 }
 
 #l1 {
-  margin-left: 40px;
-  @include span-columns(5);
+  margin-left: 20px;
+  @include span-columns(5.30);
 }
 
 #l2 {
-  @include span-columns(5);
+  @include span-columns(5.30);
   margin-left: 20px;
   margin-right: auto;
 }

@@ -1,4 +1,4 @@
-<div id="new_service_form">
+<div id="new_service_form" data-no-turbolink >
   <fieldset>
     <h1>New Service Request</h1>
   <%= simple_form_for @service do |f| %>
@@ -9,11 +9,29 @@
       </li>
       <li class="tab-header-and-content">
         <a href="#" class="tab-link">Lessee</a>
-        <%= render 'lessee_fields', f: f %>
+        <div class="tab-content">
+         <div class="nested-fields">
+           <%= f.simple_fields_for :lessees do |lessee| %>
+           <%= render 'lessee_fields', f: lessee %>
+           <%= link_to_add_association "Add Lessee", f, :lessees %>
+          <% end %>
+          </div>
+        </div>
       </li>
       <li class="tab-header-and-content">
          <a href="#" class="tab-link">Parcel</a>
-         <%= render 'county', f: f %>
+        <div class="tab-content">
+          <div id="county-form">
+            <%= f.label :county %>
+            <%= f.text_field :county %>
+          </div>
+          <div>
+             <%= f.simple_fields_for :parcels do |parcel| %>
+             <%= render 'parcel_fields', f: parcel %>
+            <%= link_to_add_association "Add Parcel", f, :parcels %>
+          </div>
+          <% end %>
+        </div>
       </li>
     </ul>
     <%= f.submit 'Create Service Request' %>
