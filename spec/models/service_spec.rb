@@ -11,8 +11,8 @@ RSpec.describe Service do
   end
 
   it 'Should transition to received when sent received' do
-    service.transition_to!(:received) 
-    expect(service.current_state?).to eq('received')
+    service.transition_to!(:submitted)
+    expect(service.current_state).to eq('submitted')
   end
 
 end
