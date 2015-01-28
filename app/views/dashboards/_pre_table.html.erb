@@ -2,15 +2,16 @@
   <thead>
   <tr>
     <td>Lease</td>
-    <td>Status</td>
+    <td>Delivery</td>
   </tr>
   </thead>
   <tbody>
-  <% @services = @services.in_state('submitted') %>
-  <% @services.each do |service| %>
+  <% @submitted = @services.in_state('submitted') %>
+  <%= will_paginate @submitted %>
+  <% @submitted.each do |submit| %>
       <tr>
-        <td><%= link_to service.lease_number, service %></td>
-        <td><%= service.current_state %></td>
+        <td><%= link_to submit.lease_number, submit %></td>
+        <td><%= submit.requested_delivery %></td>
       </tr>
   <% end %>
   </tbody>

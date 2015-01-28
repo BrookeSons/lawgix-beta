@@ -11,9 +11,9 @@
   </tr>
   </thead>
   <tbody>
-  <%= will_paginate @services %>
-  <% @services = @services.in_state('pending') %>
-  <% @services.each do |service| %>
+  <% @pending = @services.in_state('pending') %>
+  <%= will_paginate @pending %>
+  <% @pending.each do |service| %>
       <tr>
         <td>Company</td>
         <td><%= link_to service.lease_number, service %></td>
