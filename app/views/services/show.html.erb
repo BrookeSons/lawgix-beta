@@ -1,4 +1,4 @@
-<div id="new_service_form" data-no-turbolink >
+<div id="new_service_form" data-no-turbolink>
   <fieldset>
     <h1>Service Request</h1>
     <%= simple_form_for @service do |f| %>
@@ -9,6 +9,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Lessee</a>
+
             <div class="tab-content">
               <div class="nested-fields">
                 <%= f.simple_fields_for :lessees do |lessee| %>
@@ -29,11 +30,24 @@
                 <%= f.simple_fields_for :parcels do |parcel| %>
                     <%= render 'parcel_fields', f: parcel %>
                     <%= link_to_add_association "Add Parcel", f, :parcels %>
-                    </div>
+               </div>
                 <% end %>
-                </div>
-          </li>
+             </div>
+        </li>
+        <li class="tab-header-and-content">
+          <a href="#" class="tab-link">Status</a>
+
+          <div class="tab-content">
+            <div id="status-form">
+              <h3>Current Status</h3>
+              <h4>
+                <%= @service.current_state %>
+              </h4>
+              <hr/>
+              <h4>History</h4>
+            </div>
+        </li>
         </ul>
         <%= f.submit 'Update Service Request' %>
     <% end %>
-</div>
+    </div>

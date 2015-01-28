@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :dashboards
 
   root 'visitors#index'
-  resources :services
+  resources :services do
+    member do
+      put "receive" => "services#receive", as: :receive 
+    end 
+  end
   resources :leases
   resources :contacts
   resources :lessees

@@ -3,12 +3,16 @@ require 'rails_helper'
 
 RSpec.describe Service do
 
-  describe 'initialization' do
 
-      let(:service) {Service.new}
-      let(:flow) {Flow.new}
+  let(:service) {Service.new(lease_number: '12345')  }
 
-    it ''
-
+  it 'Should receive an existing service in the pending state' do
+         expect(service.current_state).to eq('pending')
   end
+
+  it 'Should transition to received when sent received' do
+    service.transition_to!(:received) 
+    expect(service.current_state?).to eq('received')
+  end
+
 end

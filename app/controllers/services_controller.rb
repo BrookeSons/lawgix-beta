@@ -23,6 +23,13 @@ class ServicesController < ApplicationController
        redirect_to services_path
   end
 
+
+  def receive
+    service =  Service.find(params[:id])
+    service.transition_to!(:submitted)
+    redirect_to dashboards_path
+  end
+
   def update
     @service = Service.find(params[:id])
     if @service.update_attributes(service_params)

@@ -14,6 +14,8 @@ class Service < ActiveRecord::Base
  has_many :lawyers
  belongs_to :company
 
+
+
  serialize :serial_flows, Array
   
 

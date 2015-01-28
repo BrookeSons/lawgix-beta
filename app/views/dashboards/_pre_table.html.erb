@@ -6,6 +6,7 @@
   </tr>
   </thead>
   <tbody>
+  <% @services = @services.in_state('submitted') %>
   <% @services.each do |service| %>
       <tr>
         <td><%= link_to service.lease_number, service %></td>
