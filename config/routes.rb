@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :lawyers
   resources :service_transitions
   resources :dashboards
+  resources :service_dispatcher
 
   root 'visitors#index'
   resources :services do

@@ -6,12 +6,12 @@
   </tr>
   </thead>
   <tbody>
-  <% @submitted = @services.in_state('submitted') %>
+  <% @submitted = @services.in_state('submitted','approve_fee', 'fee_accepted') %>
   <%= will_paginate @submitted %>
   <% @submitted.each do |submit| %>
       <tr>
         <td><%= link_to submit.lease_number, submit %></td>
-        <td><%= submit.requested_delivery %></td>
+        <td><%= submit.current_state %></td>
       </tr>
   <% end %>
   </tbody>

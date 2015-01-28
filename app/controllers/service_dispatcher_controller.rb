@@ -1,0 +1,2 @@
+class ServiceDispatcherController < ApplicationController
+end

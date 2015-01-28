@@ -11,7 +11,9 @@ class RequestStateMachine
   state :modified
   state :declined
   state :resource_check
-
+  state :price
+  state :approve_fee
+  state :fee_accepted
   state :priced
   state :confirmed
   state :assigned
@@ -25,8 +27,12 @@ class RequestStateMachine
      transition from: :pending, to: :submitted
   end
 
-  event :check do
-    transition from: :submitted, to: :resource_check
+  event :price do
+    transition from: :submitted, to: :approve_fee
+  end
+
+  event :priced do
+    transition from: :approve_fee, to: :fee_accepted
   end
 
   event :check_result do
@@ -51,7 +57,6 @@ class RequestStateMachine
   end
 
   event :completed do
-    transition from: :submitted, to: :completed
     transition from: :abstract, to: :completed
     transition from: :opinion,  to: :completed
     transition from: :curative, to: :completed
