@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'bourbon', '~> 3.2.1'
+gem 'thin'
 gem 'coffee-rails'
 gem 'delayed_job_active_record'
 gem 'email_validator'
@@ -16,14 +17,19 @@ gem 'normalize-rails', '~> 3.0.0'
 gem 'mysql2'
 gem 'rack-timeout'
 gem 'rails', '4.2.0'
-gem 'active_model_serializers'
 gem 'rails_admin'
 gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 gem 'paper_trail', '~> 3.0.6'
 gem 'will_paginate'
 gem 'groupdocs'
 gem 'active_type'
+#### Core Gems
 gem 'statesman'
+gem 'cells', git: "https://github.com/apotonick/cells"
+gem "reform"
+gem "virtus"
+gem 'roar'
+
 ###
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 4.0.3'
@@ -54,6 +60,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rspec-cells'
   gem 'capybara'
   gem 'capybara-webkit', '>= 1.2.0'
   gem 'database_cleaner'
