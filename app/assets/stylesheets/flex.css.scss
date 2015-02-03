@@ -82,4 +82,8 @@
   .flex-box-big {
     @include flex(1 1 40em);
   }
+
+  .flex-box-full {
+    @include flex(1 1 60em);
+  }
 }
