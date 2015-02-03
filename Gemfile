@@ -25,9 +25,6 @@ gem 'groupdocs'
 gem 'active_type'
 #### Core Gems
 gem 'statesman'
-gem 'cells', git: "https://github.com/apotonick/cells"
-gem "reform"
-gem "virtus"
 gem 'roar'
 
 ###
