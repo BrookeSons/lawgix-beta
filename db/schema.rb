@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203234447) do
+ActiveRecord::Schema.define(version: 20150204015805) do
 
   create_table "abstracts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150203234447) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "service_id", limit: 4
+    t.string   "county",     limit: 255
   end
 
   create_table "service_transitions", force: :cascade do |t|
