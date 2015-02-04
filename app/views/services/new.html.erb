@@ -1,39 +1,43 @@
-<div id="new_service_form" data-no-turbolink >
-  <fieldset>
-    <h1>New Service Request</h1>
-  <%= simple_form_for @service do |f| %>
-    <ul class="accordion-tabs-minimal">
-      <li class="tab-header-and-content">
-        <a href="#" class="tab-link is-active">Request</a>
-        <%= render 'request', f: f %>
-      </li>
-      <li class="tab-header-and-content">
-        <a href="#" class="tab-link">Lessee</a>
-        <div class="tab-content">
-         <div class="nested-fields">
-           <%= f.simple_fields_for :lessees do |lessee| %>
-           <%= render 'lessee_fields', f: lessee %>
-           <%= link_to_add_association "Add Lessee", f, :lessees %>
-          <% end %>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">New Service Request</h2>
+    <fieldset>
+      <%= simple_form_for @service do |f| %>
+          <ul class="accordion-tabs-minimal">
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link is-active">Request</a>
+              <%= render 'request', f: f %>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link">Lessor</a>
+
+              <div class="tab-content">
+                <div class="nested-fields">
+                  <%= f.simple_fields_for :lessees do |lessee| %>
+                      <%= render 'lessee_fields', f: lessee %>
+                      <%= link_to_add_association "Add Lessor", f, :lessees %>
+                  <% end %>
+                </div>
+              </div>
+            </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link">Parcel</a>
+
+              <div class="tab-content">
+                <div id="county-form">
+                  <%= f.label :county %>
+                  <%= f.text_field :county %>
+                </div>
+                <div>
+                  <%= f.simple_fields_for :parcels do |parcel| %>
+                      <%= render 'parcel_fields', f: parcel %>
+                      <%= link_to_add_association "Add Parcel", f, :parcels %>
+                      </div>
+                  <% end %>
+                  </div>
+            </li>
+          </ul>
           </div>
-        </div>
-      </li>
-      <li class="tab-header-and-content">
-         <a href="#" class="tab-link">Parcel</a>
-        <div class="tab-content">
-          <div id="county-form">
-            <%= f.label :county %>
-            <%= f.text_field :county %>
-          </div>
-          <div>
-             <%= f.simple_fields_for :parcels do |parcel| %>
-             <%= render 'parcel_fields', f: parcel %>
-            <%= link_to_add_association "Add Parcel", f, :parcels %>
-          </div>
-          <% end %>
-        </div>
-      </li>
-    </ul>
-    <%= f.submit 'Create Service Request' %>
-  <% end %>
-</div>
+          <%= f.submit 'Create Service Request' %>
+      <% end %>
+      </div>

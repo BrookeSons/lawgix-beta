@@ -217,7 +217,9 @@ $curative-background: #FFCC77;
     margin-left: 4em;
   }
 }
+
 #new_service_form {
+  text-align: left;
   margin-top: 15px;
   width: 730px;
   label {
@@ -386,7 +388,7 @@ input[type="checkbox"] {
   .tab-content {
     display: none;
     padding: $base-spacing $gutter;
-    width:750px;
+    width: 60em;
     height: 440px;
 
     @include media($tab-mode) {
