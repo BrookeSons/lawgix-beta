@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :service_transitions
   resources :dashboards
   resources :service_dispatcher
+  resources :title_abstracts
 
   root 'visitors#index'
   resources :services do

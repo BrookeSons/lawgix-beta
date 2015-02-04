@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
+<div class="flex-boxes">
+  <a href="javascript:void(0)" class="flex-box flex-box-full">
+    <h2 class="flex-title">Title Abstracts</h2>
 
-<h1>Listing Title Abstracts</h1>
 
 <table>
   <thead>
@@ -23,8 +25,10 @@
         <td><%= link_to 'Destroy', title_abstract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+   </tbody>
+  </table>
+  </a>
+</div>
 
 <br>
 

@@ -1,0 +1,20 @@
+<div class="flex-box flex-box-full">
+  <h2 class="flex-title">Deed</h2>
+  <fieldset>
+    <%= f.error_notification %>
+    <div class="span3">
+      <%= f.text_field :db, placeholder: 'Book' %>
+    </div>
+    <div class="span3">
+      <%= f.text_field :db_page, placeholder: 'Page' %>
+    </div>
+    <div class="span3">
+      <%= f.date_field :d_date %>
+    </div>
+    <%= f.select :d_type,  collection: ['Deed','Easement']  %>
+    <%= f.text_field :grantor, placeholder: 'grantor' %>
+    <%= f.text_field :grantee, placeholder: 'grantee' %>
+    <%= f.text_field :comments, placeholder: 'Comments' %>
+    <%= f.input :d_image %>
+  </fieldset>
+</div>

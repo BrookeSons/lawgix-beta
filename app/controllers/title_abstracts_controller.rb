@@ -4,7 +4,7 @@ class TitleAbstractsController < ApplicationController
 
    before_filter :authenticate_user!
 
-  after_action :verify_authorized
+  # after_action :verify_authorized
 
 
   respond_to :html
@@ -50,6 +50,8 @@ class TitleAbstractsController < ApplicationController
     end
 
     def title_abstract_params
-      params.require(:title_abstract).permit(:name, :due_date, :comments)
+      params.require(:title_abstract).permit(:name, :due_date, :comments,
+            deeds_attributes: [:db, :db_page, :d_date, :grantor, :grantee, :d_type,
+            :comments, :d_image] )
     end
 end

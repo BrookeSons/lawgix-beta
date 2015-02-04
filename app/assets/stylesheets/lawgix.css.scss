@@ -292,16 +292,11 @@ input[type="checkbox"] {
   }
 }
 
-#l1 {
+.l1 {
   margin-left: 20px;
   @include span-columns(5.30);
 }
 
-#l2 {
-  @include span-columns(5.30);
-  margin-left: 20px;
-  margin-right: auto;
-}
 #pc1 {
   margin-left: 40px;
   @include span-columns(3);
@@ -313,17 +308,8 @@ input[type="checkbox"] {
   margin-right: auto;
 }
 
-#l3 {
-  margin-left: 20px;
-  @include span-columns(11);
-}
-
 #l4 {
   margin-left: 20px;
-  @include span-columns(3);
-}
-
-#l5 {
   @include span-columns(3);
 }
 
@@ -331,7 +317,8 @@ input[type="checkbox"] {
   @include span_columns(5);
 }
 
-#l7{
+
+.span11margin20 {
   margin-left: 20px;
   @include span-columns(11);
 }
@@ -341,15 +328,10 @@ input[type="checkbox"] {
   @include span-columns(5);
 }
 
-#l9 {
+.span3 {
   @include span-columns(3);
 }
 
-#l10 {
-  @include span-columns(3);
-
-
-}
 
 .accordion-tabs-minimal {
   $tab-border-color: $base-border-color;
