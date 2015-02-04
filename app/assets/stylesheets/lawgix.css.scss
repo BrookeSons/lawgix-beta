@@ -307,7 +307,11 @@ input[type="checkbox"] {
 #pc2 {
   @include span-columns(3);
   margin-left: 20px;
-  margin-right: auto;
+}
+#pc3 {
+  @include span-columns(3);
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
 #l4 {
@@ -389,7 +393,7 @@ input[type="checkbox"] {
     display: none;
     padding: $base-spacing $gutter;
     width: 60em;
-    height: 440px;
+    min-height: 440px;
 
     @include media($tab-mode) {
       border-top: $tab-border;
