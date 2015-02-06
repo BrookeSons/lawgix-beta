@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(service_params)
+    @service = ServiceDispatcher.new(service_params)
     @service.save
 
        redirect_to services_path
@@ -25,13 +25,13 @@ class ServicesController < ApplicationController
 
 
   def receive
-    service =  Service.find(params[:id])
+    service =  ServiceDispatcher.find(params[:id])
     service.transition_to!(:submitted)
     redirect_to dashboards_path
   end
 
   def update
-    @service = Service.find(params[:id])
+    @service = ServiceDispatcher.find(params[:id])
     if @service.update_attributes(service_params)
       redirect_to services_path, :notice => "Service Request updated."
     else

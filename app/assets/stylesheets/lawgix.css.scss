@@ -268,16 +268,37 @@ $curative-background: #FFCC77;
 }
 #deliv-date {
   text-align: center;
-  @include span-columns(6);
+  line-height: 1.4em;
+  @include span-columns(5);
   margin-top: 20px;
   margin-right: auto;
-  margin-left: auto;
 }
 
-input[type="checkbox"] {
-  display: inline;
-  margin-right: 0.375em;
+#state-select {
+  margin-left: 0px;
+  height: 1.5em;
+  @include span-columns(3)
 }
+
+#lease_numb {
+  float: right;
+  @include span-columns(9)
+}
+
+#flow-check {
+  margin-left: 85px;
+  margin-right: auto;
+}
+
+.check {
+  width:230px;
+  float:left;
+  display:block;
+  margin:5px 0 0;
+  padding:0;
+  text-align:center;}
+
+
 
 
 .horse {
