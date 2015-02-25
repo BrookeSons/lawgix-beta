@@ -7,6 +7,7 @@ class DashboardsController < ApplicationController
 
   def index
     @services = Service.all.paginate(page: params[:page], per_page: 8)
+    @abstractors = Abstractor.all
   end
 
  def transition

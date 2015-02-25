@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :lawfirms
   resources :lawyers
   resources :abstractors do
-    put "dispatcher" => "arbstractors#dispatch", as: :dispatcher
+    put "dispatcher" => "abstractors#dispatch", as: :dispatcher
   end
 
 

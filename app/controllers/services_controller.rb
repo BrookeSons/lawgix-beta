@@ -27,7 +27,7 @@ class ServicesController < ApplicationController
   def receive
     service =  Service.find(params[:id])
     service.transition_to!(:fee_accepted)
-    redirect_to dashboards_path
+    redirect_to new_service_dispatcher_path
   end
 
   def dispatcher
