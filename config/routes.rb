@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   resources :parcel
   resources :lawfirms
   resources :lawyers
+  resources :abstractors do
+    put "dispatcher" => "arbstractors#dispatch", as: :dispatcher
+  end
+
+
   resources :service_transitions
   resources :dashboards
   resources :service_dispatcher
@@ -21,13 +26,11 @@ Rails.application.routes.draw do
   root 'visitors#index'
   resources :services do
     member do
-      put "receive" => "services#receive", as: :receive 
+      put "receive" => "services#receive", as: :receive
+      put "dispatcher" => "services#dispatcher", as: :dispatcher
     end 
   end
-  resources :leases
   resources :contacts
-  resources :lessees
-  resources :companies
   devise_for :users
   resources :flows
   resources :users

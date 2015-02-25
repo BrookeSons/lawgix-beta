@@ -1,6 +1,21 @@
-<h3>Client</h3>
-<% @firm = @lawyer.lawfirm %>
-<p>Firm: <%= @firm.name %></p>
-<p>Email: <%= @lawyer.email if @lawyer.email %></p>
-<p>Name: <%= @lawyer.name if @lawyer.name %></p>
-<p>Phone: <%= @lawyer.phone if @lawyer.phone %> </p>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h1>New Lawyer </h1>
+    <%= simple_form_for @lawyer  do |f| %>
+        <%= f.association :lawfirm %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <%= f.submit 'Update Lawyer' %>
+    <% end %>
+ </div>
+</div>
+
+

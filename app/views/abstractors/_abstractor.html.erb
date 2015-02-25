@@ -1,0 +1,12 @@
+<td>
+  <%= link_to abstractor.email, abstractor %>
+</td>
+<td>
+  <%= form_for(abstractor) do |f| %>
+    <%= f.select(:role, Abstractor.roles.keys.map {|role| [role.titleize,role]}) %>
+    <%= f.submit 'Change Role', :class => 'button-xs' %>
+  <% end %>
+</td>
+<td>
+  <%= link_to("Delete Abstractor" abstractor_path(abstractor), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless abstractor == current_user %>
+</td>

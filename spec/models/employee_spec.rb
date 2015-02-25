@@ -11,24 +11,11 @@ describe Employee do
   end
 
 
-  #
-  # describe Employee do
-  #   # it { should belong_to(:Company) }
-  #
-  #   [:name, :email].each do |attribute|
-  #     describe "##{attribute}" do
-  #       it 'delegates to the user' do
-  #         user = build_stubbed(:user)
-  #         user.stubs(attribute).returns('text')
-  #         client = build_stubbed(:employee, user: user)
-  #
-  #         client.send(attribute)
-  #
-  #         expect(user).to have_received(attribute)
-  #       end
-  #     end
-  #   end
-  # end
+
+  describe Employee do
+     it { should belong_to(:Company) }
+
+  end
 
 
 end

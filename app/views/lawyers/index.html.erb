@@ -1,32 +1,25 @@
-<div id="client-index">
-  <h1>Lawyers Dashboard</h1>
-
-  <%= render partial: 'dashboard' %>
-
-
-
-
-
-  <!---->
-  <!--<table>-->
-    <!--<thead>-->
-    <!--<tr>-->
-      <!--<td>Firm</td>-->
-      <!--<td>Name</td>-->
-      <!--<td>Phone</td>-->
-      <!--<td>Email<td>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-    <!--<% @lawyers.each do |lawyer| %>-->
-        <!--<tr>-->
-          <!--<% firm = lawyer.lawfirm %>-->
-          <!--<td><%= link_to(firm.name, lawfirm_path(firm))  %></td>-->
-          <!--<td><%= link_to(lawyer.last_name, lawyer_path(lawyer))  %></td>-->
-          <!--<td><%= lawyer.phone %></td>-->
-          <!--<td><%= lawyer.email %><td>-->
-        <!--</tr>-->
-    <!--<% end %>-->
-    <!--</tbody>-->
-  <!--</table>-->
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+  <table>
+    <thead>
+    <tr>
+      <td>Firm</td>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @lawyers.each do |lawyer| %>
+        <tr>
+          <% firm = lawyer.lawfirm %>
+          <td><%= link_to(firm.name, lawfirm_path(firm))  %></td>
+          <td><%= link_to(lawyer.last_name, lawyer_path(lawyer))  %></td>
+          <td><%= lawyer.phone %></td>
+          <td><%= lawyer.email %><td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>

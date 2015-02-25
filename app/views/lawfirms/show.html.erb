@@ -1,6 +1,6 @@
-<div id="new_contact_form">
-  <h1>Law Firm</h1>
-  <fieldset>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h1>New Law Firm</h1>
     <%= simple_form_for @lawfirm do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -14,9 +14,7 @@
         <%= f.text_field :state %>
         <%= f.label :zip %>
         <%= f.text_field :zip %>
-        </div>
-        </li>
+        <%= f.submit 'Create Law Firm' %>
     <% end %>
-    </fieldset>
-    </div>
-
+  </div>
+</div>

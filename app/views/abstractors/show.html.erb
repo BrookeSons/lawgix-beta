@@ -1,8 +1,7 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-  <h2 class="flex-title"> New Employee </h1>
-    <%= simple_form_for @employee  do |f| %>
-        <%= f.association :company %>
+    <h3>Abstractor</h3>
+    <%= simple_form_for @abstractor do |f| %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
         <%= f.label :last_name %>
@@ -13,8 +12,7 @@
         <%= f.text_field :email %>
         <%= f.label :password %>
         <%= f.text_field :password %>
-        <%= f.submit 'Create Employee' %>
+        <%= f.submit 'Update Abstractor' %>
     <% end %>
-    </div>
-  </div>
+ </div>
 </div>

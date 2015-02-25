@@ -1,6 +1,21 @@
-<h3>Employee</h3>
-<% @company = @employee.company %>
-<p>Company: <%= @company.name %></p>
-<p>Email: <%= @employee.email if @employee.email %></p>
-<p>Name: <%= @employee.name if @employee.name %></p>
-<p>Phone: <%= @employee.phone if @employee.phone %> </p>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h3>Employee</h3>
+    <%= simple_form_for @employee  do |f| %>
+        <%= f.association :company %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <%= f.submit 'Create Employee' %>
+        </div>
+        </li>
+    <% end %>
+ </div>
+</div>

@@ -1,0 +1,33 @@
+<h1>Dispatch Requests </h1>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">New Service Requests</h2>
+    <% if @accepted %>
+    <% @accepted.each do |service| %>
+        <tr>
+          <td>Company</td>
+          <td><%= link_to service.lease_number, service %></td>
+          <td><%= service.description %></td>
+          <td><%= service.requested_delivery %></td>
+          <td><%= service.state %></td>
+          <td><%= service.county %></td>
+          <td><%= button_to 'ok', dispatcher_service_path(service), method: :put %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">Abstractors</h2>
+     <% @abstractors.each do |abstractor| %>
+        <tr>
+        <td><%= link_to(abstractor.last_name, abstractor_path(abstractor))  %></td>
+        <td><%= abstractor.phone %></td>
+        <td><%= abstractor.email %><td>
+        <td><%= button_to 'ok', abstractor_dispatcher_path(abstractor), method: :put %></td>
+        </tr>
+      <% end %>
+  </div>
+</div>

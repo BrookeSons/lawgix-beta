@@ -1,5 +1,7 @@
 class LawyersController < ApplicationController
 
+  # before_filter :authenticate_user!
+
   def new
     @lawyer = Lawyer.new
   end
@@ -22,6 +24,6 @@ class LawyersController < ApplicationController
   private
 
   def secure_params
-    params.require(:lawyer).permit(:first_name, :last_name,:lawfirm_id, :password, :name, :city, :state, :zip, :phone, :email)
+    params.require(:lawyer).permit(:first_name, :last_name, :lawfirm_id, :password, :name, :city, :state, :zip, :phone, :email)
   end
 end

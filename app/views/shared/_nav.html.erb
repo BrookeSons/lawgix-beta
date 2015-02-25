@@ -17,7 +17,8 @@
       <li class="nav-link more"><a href="javascript:void(0)"> Abstractors</a>
           <ul class="submenu">
             <li><%= link_to "Abstractor Dashboard", contacts_path %></li>
-            <li><%= link_to "New Abstractor",new_contact_path %></li>
+            <li><%= link_to "Abstractors ", abstractors_path %></li>
+            <li><%= link_to "New Abstractor",new_abstractor_path %></li>
             <li><%= link_to "New Title Abstract",new_title_abstract_path %></li>
             <li><%= link_to "Title Abstracts",title_abstracts_path %></li>
             </li>
@@ -26,7 +27,9 @@
         <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
           <ul class="submenu">
             <li><%= link_to "Lawyer Dashboard", lawyers_path %></li>
+            <li><%= link_to "Lawyers", lawyers_path %></li>
             <li><%= link_to "New Lawyer",new_lawyer_path %></li>
+            <li><%= link_to "Law Firm Dashboard", lawyers_path %></li>
             <li><%= link_to "Law Firms",lawfirms_path %></li>
             <li><%= link_to "New Law Firm",new_lawfirm_path %></li>
             </li>
@@ -35,9 +38,11 @@
         <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
           <ul class="submenu">
             <li><%= link_to "Company Dashboard", companies_path %></li>
+            <li><%= link_to "Companies", companies_path %></li>
             <li><%= link_to "New Company", new_company_path %></li>
-            <li><%= link_to "New Employee", new_employee_path %></li>
+            <li><%= link_to "Employee Dashboard", companies_path %></li>
             <li><%= link_to "Employees", employees_path %></li>
+            <li><%= link_to "New Employee", new_employee_path %></li>
             </li>
           </ul>
           </li>

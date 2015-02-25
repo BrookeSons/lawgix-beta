@@ -1,0 +1,24 @@
+<div class="flex-boxes">
+  <dic class="flex-box flex-box-full">
+  <h1>Abstractors</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Abstractor</td>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @abstractors.each do |abstractor| %>
+        <tr>
+          <td><%= link_to(abstractor.last_name, abstractor_path(abstractor))  %></td>
+          <td><%= abstractor.phone %></td>
+          <td><%= abstractor.email %><td>
+        </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>
+</div>

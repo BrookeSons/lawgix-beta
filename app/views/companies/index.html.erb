@@ -1,25 +1,28 @@
+<div class="flex-boxes">
+   <div class="flex-box flex-box-full">
 <div id="company-index">
-  <h1> Company Dashboard </h1>
-  <%= render partial: 'dashboard' %>
-  <!--<h1>Companies</h1>-->
-  <!--<table>-->
-    <!--<thead>-->
-    <!--<tr>-->
-      <!--<td>Name</td>-->
-      <!--<td>Billing Contact</td>-->
-      <!--<td>Phone</td>-->
-      <!--<td>Email<td>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-    <!--<% @companies.each do |company| %>-->
-        <!--<tr>-->
-          <!--<td><%= link_to(company.name, company_path(company))  %></td>-->
-          <!--<td><%= company.billing_contact %></td>-->
-          <!--<td><%= company.phone %></td>-->
-          <!--<td><%= company.email %><td>-->
-        <!--</tr>-->
-    <!--<% end %>-->
-    <!--</tbody>-->
-  <!--</table>-->
+  <%# <%= render partial: 'dashboard' %>
+  <h1>Companies</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Billing Contact</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @companies.each do |company| %>
+        <tr>
+          <td><%= link_to(company.name, company_path(company))  %></td>
+          <td><%= company.billing_contact %></td>
+          <td><%= company.phone %></td>
+          <td><%= company.email %><td>
+        </tr>
+       <% end %>
+     </tbody>
+   </table>
+  </div>
+ </div>
 </div>

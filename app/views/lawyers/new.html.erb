@@ -1,6 +1,6 @@
-<div id="new_lawyer_form">
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
   <h1>New Lawyer </h1>
-  <fieldset>
     <%= simple_form_for @lawyer  do |f| %>
         <%= f.association :lawfirm %>
         <%= f.label :first_name %>
@@ -14,9 +14,7 @@
         <%= f.label :password %>
         <%= f.text_field :password %>
         <%= f.submit 'Create Lawyer' %>
-        </div>
-        </li>
     <% end %>
-    </fieldset>
-    </div>
+  </div>
+</div>
 

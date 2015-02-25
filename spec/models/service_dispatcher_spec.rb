@@ -1,19 +1,20 @@
 require 'rails_helper'
-require 'spec_helper'
-include Warden::Test::Helpers
 
+describe 'Service Dispatcher' do
 
-describe 'ServiceDispatcher' do
+  let(:service) {Service.new(lease_number: '12345')  }
 
-  let(:service) {ServiceDispatcher.new(lease_number: '12345')  }
+  before(:all) do
 
-  it 'Should receive an existing service in the pending state' do
-    expect(service.current_state).to eq('pending')
-  end
-
-  it 'Should transition to received when sent received' do
     service.transition_to!(:submitted)
-    expect(service.current_state).to eq('submitted')
+    service.transition_to!(:approve_fee)
+    service.transition_to!(:fee_accepted)
   end
 
+
+  it 'should receive a service in the fee accepted state' do
+
+    expect(service.current_state).to eq('fee_accepted')
+
+  end
 end

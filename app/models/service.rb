@@ -1,7 +1,5 @@
 class Service < ActiveRecord::Base
 
- #
-
  include Statesman::Adapters::ActiveRecordQueries
 
  has_many :service_transitions

@@ -1,21 +1,19 @@
-FactoryGirl.define do
-  factory :service_request do
-    lease_number "12345"
+# FactoryGirl.define do
+#   factory : do
+#     lease_number "12345"
+#
+#     trait :received do
+#       after(:pending) do |service|
+#         FactoryGirl.create(:service_transition, :received, service: service )
+#       end
+#     end
+#   end
+#
+#   factory :service_transition do
+#     service
+#
+#     trait :received do
+#       to_state "received"
+#     end
+#   end
 
-    trait :received do
-      after(:pending) do |service|
-        FactoryGirl.create(:order_transition, received: received)
-      end
-    end
-  end
-
-  factory :order_transition do
-    service
-
-    trait :received do
-      to_state "received"
-    end
-  end
-
-
-end

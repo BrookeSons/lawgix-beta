@@ -3,24 +3,21 @@ class ServiceDispatcher
   include ActiveModel::Model
 
   # Form object to display and transition states at the Service Request Level
+   att_accessor :service, :abstractor
 
 
-  attr_accessor :service
+ def initialize
+  @accepted = Service.in_state('fee_accepted')
+  @abstractors = Abstractor.all
+ end
 
+  def get_abstractor
 
-  def receive
-    service.transition_to!(:submitted)
-    redirect_to dashboards_path
   end
 
+  def get_lawyer
 
-
-  # Optionally delegate some methods
-  delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, :allowed_transitions,
-           to: :state_machine
-
-
-
-
+  end
 
 end
+

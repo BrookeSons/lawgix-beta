@@ -1,2 +1,0 @@
-class AbstractorController < ApplicationController
-end

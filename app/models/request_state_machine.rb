@@ -24,15 +24,15 @@ class RequestStateMachine
 
 
   event :start do
-     transition from: :pending, to: :submitted
+     transition from: :pending, to: :fee_accepted
   end
 
-  event :price do
-    transition from: :submitted, to: :approve_fee
-  end
+  # event :price do
+  #   transition from: :submitted, to: :approve_fee
+  # end
 
   event :priced do
-    transition from: :approve_fee, to: :fee_accepted
+    transition from: :submitted, to: :fee_accepted
   end
 
   event :check_result do
@@ -53,7 +53,7 @@ class RequestStateMachine
   end
 
   event :assign do
-    transition from: :priced, to: :assigned
+    transition from: :fee_accepted, to: :assigned
   end
 
   event :completed do
