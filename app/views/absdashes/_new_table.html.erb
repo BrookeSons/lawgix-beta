@@ -5,9 +5,8 @@
       <td>Lease</td>
       <td>Description</td>
       <td>Delivery Date</td>
-      <td>State</td>
       <td>County</td>
-      <td>Receive</td>
+      <td></td>
     </tr>
   </thead>
   <% @pending = @services.in_state('assigned') %>
@@ -18,9 +17,8 @@
         <td><%= link_to service.lease_number, service %></td>
         <td><%= service.description %></td>
         <td><%= service.requested_delivery %></td>
-        <td><%= service.state %></td>
         <td><%= service.county %></td>
-        <%= button_to 'Accept', accept_service_path(service), method: :put %></td>
+        <td><%= button_to 'Accept', accept_service_path(service), method: :put %></td>
       </tr>
   <% end %>
 </table>
