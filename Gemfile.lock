@@ -40,6 +40,8 @@ GEM
       activemodel (= 4.2.0)
       activesupport (= 4.2.0)
       arel (~> 6.0)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activesupport (4.2.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -343,6 +345,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_type
+  activerecord-postgresql-adapter (~> 0.0.1)
   awesome_print
   better_errors
   binding_of_caller

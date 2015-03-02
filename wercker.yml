@@ -1,7 +1,7 @@
 box: wercker/rvm
 
 services:
-       - wercker/mysql
+       - wercker/postgresql
 build:
     steps:
         # Uncomment this to force RVM to use a specific Ruby version

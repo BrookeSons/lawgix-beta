@@ -18,4 +18,4 @@ notifications:
 rvm:
   - 2.2.0
 addons:
-  - mysql
+  - postgresql: "9.3"
