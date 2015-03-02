@@ -1,0 +1,2 @@
+class AbstractorDashboard
+end
