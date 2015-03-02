@@ -6,11 +6,9 @@ class User < ActiveRecord::Base
   has_paper_trail
 
   belongs_to :company
-  belongs_to :services
+  has_and_belongs_to_many :services, through: :services_users
 
   after_initialize :set_default_role, :if => :new_record?
-
-
 
   def set_default_role
     self.role ||= :user
@@ -19,7 +17,6 @@ class User < ActiveRecord::Base
 
   def name
     [first_name, last_name].compact.join(' ')
-
   end
 
 

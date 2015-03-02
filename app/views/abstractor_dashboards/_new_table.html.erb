@@ -10,7 +10,7 @@
       <td>Receive</td>
     </tr>
   </thead>
-  <% @pending = @services.in_state('pending') %>
+  <% @pending = @services.in_state('assigned') %>
   <%= will_paginate @pending %>
   <% @pending.each do |service| %>
       <tr>
@@ -20,7 +20,6 @@
         <td><%= service.requested_delivery %></td>
         <td><%= service.state %></td>
         <td><%= service.county %></td>
-        <td><%= render 'modal', service: service %>
       </tr>
   <% end %>
 </table>

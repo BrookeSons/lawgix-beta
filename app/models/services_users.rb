@@ -1,2 +1,5 @@
-class ServicesUsers
+class ServicesUsers < ActiveRecord::Base
+
+
+
 end

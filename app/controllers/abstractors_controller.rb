@@ -21,6 +21,19 @@ class AbstractorsController < ApplicationController
     # authorize Abstractor
   end
 
+  def assign
+    @service = Service.find(params[:service_id])
+    @user = User.find(params[:id])
+    @service.users << @user
+    @service.transition_to!(:assigned)
+    redirect_to dashboards_path
+  end
+
+  def dispatcher
+   @service = ServicesUsers.create!(:service_id => params[:service], :user_id => params[:abstractors])
+   @service.save
+  end
+
   def create
     @abstractor = Abstractor.new(secure_params)
     @abstractor.save
@@ -42,6 +55,6 @@ class AbstractorsController < ApplicationController
   private
 
   def secure_params
-    params.require(:abstractor).permit(:first_name, :last_name, :password, :name, :city, :state, :zip, :phone, :email)
+    params.require(:abstractors).permit(:first_name, :last_name, :password, :name, :city, :state, :zip, :phone, :email)
   end
 end

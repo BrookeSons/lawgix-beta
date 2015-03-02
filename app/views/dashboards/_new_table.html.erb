@@ -10,7 +10,6 @@
       <td>Receive</td>
     </tr>
   </thead>
-  <tbody>
   <% @pending = @services.in_state('pending') %>
   <%= will_paginate @pending %>
   <% @pending.each do |service| %>
@@ -21,31 +20,8 @@
         <td><%= service.requested_delivery %></td>
         <td><%= service.state %></td>
         <td><%= service.county %></td>
-        <td><%= button_to 'ok', receive_service_path(service), method: :put %></td>
+        <td><%= render 'modal', service: service %>
       </tr>
   <% end %>
 </table>
 
-   <div class="modal">
-      <label for="modal-1">
-        <div class="modal-trigger">Assign</div>
-      </label>
-          <input class="modal-state" id="modal-1" type="checkbox" />
-     <div class="modal-window">
-       <div class="modal-inner">
-           <label class="modal-close" for="modal-1"></label>
-         <h1>Abstractors</h1>
-         <table>
-           <% @abstractors.each do |abstractor| %>
-            <tr>
-              <td><%= check_box 'ok', abstractor_dispatcher_path(abstractor), method: :put %></td>
-              <td><%= link_to(abstractor.last_name, abstractor_path(abstractor))  %></td>
-              <td><%= abstractor.phone %></td>
-              <td><%= abstractor.email %></td>
-            </tr>
-           <% end %>
-         </table>
-       </div>
-     </div>
-   </div>
-</tbody>

@@ -1,19 +1,21 @@
 class DashboardsController < ApplicationController
 
-  def show
-    @service = Service.find(params[:id])
-    # authorize @user
-  end
+   def show
+     @services = Service.all
+     # authorize @user
+   end
 
   def index
     @services = Service.all.paginate(page: params[:page], per_page: 8)
     @abstractors = Abstractor.all
   end
+#
+#  def transition
+#    @service = Service.find(params[:id])
+# end
+#
 
- def transition
-   @service = Service.find(params[:id])
 
-end
 
 
 end

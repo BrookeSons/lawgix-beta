@@ -1,35 +1,37 @@
 Rails.application.routes.draw do
 
+  root 'visitors#index'
   resources :title_abstracts
-
   resources :deeds
-
   resources :lawfirms
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :companies
   resources :employees
   resources :lessees
-  resources :parcel
+  resources :parcels
   resources :lawfirms
   resources :lawyers
-  resources :abstractors do
-    put "dispatcher" => "abstractors#dispatch", as: :dispatcher
-  end
-
-
+  resources :services_users
+  resources :abstractors
   resources :service_transitions
-  resources :dashboards
-  resources :service_dispatcher
+  resources :dashboards, only: [:index]
   resources :title_abstracts
+  resources :abstractor_dashboards, only: [:index]
+  resources :absdashes, only: [:index]
 
-  root 'visitors#index'
   resources :services do
     member do
-      put "receive" => "services#receive", as: :receive
-      put "dispatcher" => "services#dispatcher", as: :dispatcher
-    end 
+      put "accept" => "services#accept", as: :accept
+    end
+
+    resources :abstractors  do
+       member do
+         put "assign" => "abstractors#assign", as: :assign
+       end
+    end
   end
+
   resources :contacts
   devise_for :users
   resources :flows

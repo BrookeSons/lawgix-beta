@@ -8,8 +8,10 @@ class Service < ActiveRecord::Base
  has_many :lessees
  has_many :leases
  has_many :parcels
- has_many :employees
- has_many :lawyers
+ has_and_belongs_to_many :users, through: :services_users
+ has_and_belongs_to_many :employees, through: :services_users
+ has_and_belongs_to_many :lawyers, through: :services_users
+ has_and_belongs_to_many :abstractors, through: :services_users
  belongs_to :company
 
 

@@ -12,11 +12,6 @@ describe Employee do
 
 
 
-  describe Employee do
-     it { should belong_to(:Company) }
-
-  end
-
 
 end
 

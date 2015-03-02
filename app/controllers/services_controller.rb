@@ -30,8 +30,15 @@ class ServicesController < ApplicationController
     redirect_to new_service_dispatcher_path
   end
 
-  def dispatcher
-    service =  Service.find(params[:id])
+  def accept
+    service = Service.find(params[:id])
+    service.transition_to!(:accepted_by_abstractor)
+    redirect_to absdashes_path
+  end
+
+  def assign
+    @service = Service.find(params[:service_id])
+    @service.abstractors << Abstractor.find(params[:abstractor_id])
     service.transition_to!(:assigned)
     redirect_to dashboards_path
   end

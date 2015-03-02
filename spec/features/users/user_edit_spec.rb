@@ -1,7 +1,7 @@
 include Warden::Test::Helpers
 Warden.test_mode!
 
-  Feature: User edit
+# Feature: User edit
 #   As a user
 #   I want to edit my user profile
 #   So I can change my email address

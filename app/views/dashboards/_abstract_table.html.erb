@@ -6,11 +6,15 @@
   </tr>
   </thead>
   <tbody>
+
+  <% @abs = @services.in_state('assigned') %>
   <%= will_paginate @services %>
-  <% @services.each do |service| %>
+  <% @abs.each do |service| %>
       <tr>
         <td><%= link_to service.lease_number, service %></td>
-        <td>Abstractor</td>
+        <%  service.users.each do |user| %>
+        <td><%= link_to user.last_name, user %></td>
+       <% end %>
       </tr>
   <% end %>
   </tbody>

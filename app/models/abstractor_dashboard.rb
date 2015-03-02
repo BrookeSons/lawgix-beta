@@ -1,2 +1,2 @@
-class AbstractorDashboard
+class AbstractorDashboard < ActiveRecord::Base
 end

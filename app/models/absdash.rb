@@ -1,2 +1,2 @@
-class Absdash
+class Absdash < ActiveRecord::Base
 end

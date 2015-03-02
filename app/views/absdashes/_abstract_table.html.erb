@@ -7,7 +7,7 @@
   </thead>
   <tbody>
 
-  <% @abs = @services.in_state('assigned') %>
+  <% @abs = @services.in_state('accepted_by_abstractor') %>
   <%= will_paginate @services %>
   <% @abs.each do |service| %>
       <tr>
