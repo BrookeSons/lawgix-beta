@@ -11,4 +11,10 @@ test:
   <<: *default
   database: lawgix_test
 
+staging:
+  <<: *default
+  database: lawgix_staging
 
+production:
+  <<: *default
+  database: lawgix
