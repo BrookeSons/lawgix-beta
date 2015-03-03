@@ -55,6 +55,6 @@ class AbstractorsController < ApplicationController
   private
 
   def secure_params
-    params.require(:abstractors).permit(:first_name, :last_name, :password, :name, :city, :state, :zip, :phone, :email)
+    params.require(:abstractor).permit(:first_name, :last_name, :password, :name, :city, :state, :zip, :phone, :email)
   end
 end
