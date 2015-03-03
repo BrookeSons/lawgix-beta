@@ -1,3 +1,3 @@
 class Absdash < ActiveRecord::Base
-  #class for Abstractor Dashboard
+  # class for Abstractor Dashboard
 end
