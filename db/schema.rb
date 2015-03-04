@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304163231) do
+ActiveRecord::Schema.define(version: 20150304164644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,14 @@ ActiveRecord::Schema.define(version: 20150304163231) do
 
   add_index "deeds_abstracts", ["deeds_id"], name: "index_deeds_abstracts_on_deeds_id", using: :btree
   add_index "deeds_abstracts", ["title_abstracts_id"], name: "index_deeds_abstracts_on_title_abstracts_id", using: :btree
+
+  create_table "deeds_title_abstracts", id: false, force: :cascade do |t|
+    t.integer "deeds_id"
+    t.integer "title_abstracts_id"
+  end
+
+  add_index "deeds_title_abstracts", ["deeds_id"], name: "index_deeds_title_abstracts_on_deeds_id", using: :btree
+  add_index "deeds_title_abstracts", ["title_abstracts_id"], name: "index_deeds_title_abstracts_on_title_abstracts_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type"
@@ -144,6 +152,14 @@ ActiveRecord::Schema.define(version: 20150304163231) do
 
   add_index "parcels_abstracts", ["parcels_id"], name: "index_parcels_abstracts_on_parcels_id", using: :btree
   add_index "parcels_abstracts", ["title_abstracts_id"], name: "index_parcels_abstracts_on_title_abstracts_id", using: :btree
+
+  create_table "parcels_title_abstracts", id: false, force: :cascade do |t|
+    t.integer "parcels_id"
+    t.integer "title_abstracts_id"
+  end
+
+  add_index "parcels_title_abstracts", ["parcels_id"], name: "index_parcels_title_abstracts_on_parcels_id", using: :btree
+  add_index "parcels_title_abstracts", ["title_abstracts_id"], name: "index_parcels_title_abstracts_on_title_abstracts_id", using: :btree
 
   create_table "service_transitions", force: :cascade do |t|
     t.string   "to_state",   null: false
@@ -231,6 +247,14 @@ ActiveRecord::Schema.define(version: 20150304163231) do
 
   add_index "users_abstracts", ["title_abstracts_id"], name: "index_users_abstracts_on_title_abstracts_id", using: :btree
   add_index "users_abstracts", ["users_id"], name: "index_users_abstracts_on_users_id", using: :btree
+
+  create_table "users_title_abstracts", id: false, force: :cascade do |t|
+    t.integer "users_id"
+    t.integer "title_abstracts_id"
+  end
+
+  add_index "users_title_abstracts", ["title_abstracts_id"], name: "index_users_title_abstracts_on_title_abstracts_id", using: :btree
+  add_index "users_title_abstracts", ["users_id"], name: "index_users_title_abstracts_on_users_id", using: :btree
 
   create_table "versions", force: :cascade do |t|
     t.string   "item_type",  null: false

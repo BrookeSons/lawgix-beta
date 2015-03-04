@@ -20,7 +20,7 @@ class TitleAbstractsController < ApplicationController
 
   def new
     @title_abstract = TitleAbstract.new
-    @title_abstract.deeds.create(params[:deed])
+    @title_abstract.deeds.build
     respond_with(@title_abstract)
   end
 
