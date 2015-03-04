@@ -1,5 +1,6 @@
 class Deed < ActiveRecord::Base
 
-  has_and_belongs_to_many :title_abstracts, through: :deeds_abstracts
+  has_many :deed_title_abstracts
+  has_many :title_abstracts, through: :deed_title_abstracts
 
 end

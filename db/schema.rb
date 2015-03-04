@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304165017) do
+ActiveRecord::Schema.define(version: 20150304211649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 20150304165017) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "deed_title_abstracts", id: false, force: :cascade do |t|
+    t.integer "deed_id"
+    t.integer "title_abstract_id"
+  end
+
+  add_index "deed_title_abstracts", ["deed_id"], name: "index_deed_title_abstracts_on_deed_id", using: :btree
+  add_index "deed_title_abstracts", ["title_abstract_id"], name: "index_deed_title_abstracts_on_title_abstract_id", using: :btree
+
   create_table "deeds", force: :cascade do |t|
     t.string   "db"
     t.string   "db_page"
@@ -51,20 +59,9 @@ ActiveRecord::Schema.define(version: 20150304165017) do
     t.string   "d_type"
     t.text     "comments"
     t.string   "d_image"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "title_abstracts_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "deeds", ["title_abstracts_id"], name: "index_deeds_on_title_abstracts_id", using: :btree
-
-  create_table "deeds_title_abstracts", id: false, force: :cascade do |t|
-    t.integer "deeds_id"
-    t.integer "title_abstracts_id"
-  end
-
-  add_index "deeds_title_abstracts", ["deeds_id"], name: "index_deeds_title_abstracts_on_deeds_id", using: :btree
-  add_index "deeds_title_abstracts", ["title_abstracts_id"], name: "index_deeds_title_abstracts_on_title_abstracts_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type"

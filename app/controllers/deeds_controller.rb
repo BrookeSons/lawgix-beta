@@ -42,6 +42,6 @@ class DeedsController < ApplicationController
     end
 
     def deed_params
-      params.require(:deed).permit(:db, :db_page, :d_date, :grantor, :grantee, :d_type, :comments, :d_image)
+      params.require(:deed).permit(:db, :db_page, :d_date, :grantor,:created_at, :updated_at, :grantee, :d_type, :comments, :d_image)
     end
 end

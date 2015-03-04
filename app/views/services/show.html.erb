@@ -1,7 +1,6 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">Service Request</h2>
-    <!--<fieldset>-->
       <%= simple_form_for @service do |f| %>
           <ul class="accordion-tabs-minimal">
             <li class="tab-header-and-content">
@@ -24,11 +23,7 @@
               <a href="#" class="tab-link">Parcel</a>
 
               <div class="tab-content">
-                <div id="county-form">
-                  <%= f.label :county %>
-                  <%= f.text_field :county %>
-                </div>
-                <div>
+                <div class="nested-fields">
                   <%= f.simple_fields_for :parcels do |parcel| %>
                       <%= render 'parcel_fields', f: parcel %>
                       <%= link_to_add_association "Add Parcel", f, :parcels %>

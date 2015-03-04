@@ -19,7 +19,7 @@ class TitleAbstractsController < ApplicationController
   end
 
   def new
-    @title_abstract = TitleAbstract.new
+    @title_abstract = TitleAbstract.new(params[:title_abstract])
     @title_abstract.deeds.build
     respond_with(@title_abstract)
   end
@@ -52,8 +52,7 @@ class TitleAbstractsController < ApplicationController
 
     def title_abstract_params
       params.require(:title_abstract).permit!
-      # (:title_abstract).permit(:name, :due_date, :comments,
-            # deeds_attributes: [:db, :db_page, :d_date, :grantor, :grantee, :d_type,
-            # :comments, :d_image] )
+       # (:title_abstract).permit(:name, :due_date, :comments,
+       #      deeds_attributes: [:db, :db_page, :d_date, :grantor, :grantee, :d_type, :comments, :d_image] )
     end
 end
