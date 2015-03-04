@@ -1,10 +1,23 @@
 <div class="flex-boxes">
   <a href="javascript:void(0)" class="flex-box flex-box-full">
-    <h2 class="flex-title">New Requests</h2>
-    <%= render partial: 'new_table' %>
-  </a>
-  <a href="javascript:void(0)" class="flex-box flex-box-full">
-    <h1 class="flex-title">Abstracts in Progess</h1>
-    <%= render 'abstract_table' %>
+      <h2 class="flex-title">Abstractors</h2>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @abstractors.each do |abstractor| %>
+        <tr>
+          <td><%= link_to(abstractor.name, abstractor_path(abstractor))  %></td>
+          <td><%= abstractor.phone %></td>
+          <td><%= abstractor.email %><td>
+        </tr>
+       <% end %>
+     </tbody>
+   </table>
   </a>
 </div>
