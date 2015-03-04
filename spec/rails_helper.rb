@@ -52,6 +52,5 @@ RSpec.configure do |config|
  # add capybara
   config.include Capybara::DSL
 
-
   config.include Devise::TestHelpers, type: :controller
 end
