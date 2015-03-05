@@ -19,23 +19,23 @@ FactoryGirl.define do
     trait :lawyer do
       role 'lawyer'
     end
-
-    factory :employee, class: Employee, parent: :user do
-      last_name "Client"
-      email "tom.client@gmail.com"
-      password "brooke8518"
-    end
-
-    factory :abstractors, class: Abstractor, parent: :user do
-      last_name "Abser"
-      email "tom.client@gmail.com"
-      password "brooke8518"
-    end
-    factory :lawyer, class: Lawyer, parent: :user do
-      last_name "Lawyer"
-      email "tom.lawyer@gmail.com"
-      password "brooke8518"
-    end
+    #
+    # factory :employee, class: Employee, parent: :user do
+    #   last_name "Client"
+    #   email "tom.client@gmail.com"
+    #   password "brooke8518"
+    # end
+    #
+    # factory :abstractors, class: Abstractor, parent: :user do
+    #   last_name "Abser"
+    #   email "tom.client@gmail.com"
+    #   password "brooke8518"
+    # end
+    # factory :lawyer, class: Lawyer, parent: :user do
+    #   last_name "Lawyer"
+    #   email "tom.lawyer@gmail.com"
+    #   password "brooke8518"
+    # end
 
 
   end

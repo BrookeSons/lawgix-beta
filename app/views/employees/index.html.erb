@@ -5,8 +5,8 @@
   <table>
     <thead>
     <tr>
-      <td>Company</td>
       <td>Name</td>
+      <td>Company</td>
       <td>Phone</td>
       <td>Email<td>
     </tr>
@@ -15,8 +15,8 @@
     <% @employees.each do |employee| %>
         <tr>
           <% company = employee.company %>
-          <td><%= link_to(company.name, company_path(company))  %></td>
           <td><%= link_to(employee.last_name, employee_path(employee))  %></td>
+          <td><%= link_to(company.name, company_path(company))  %></td>
           <td><%= employee.phone %></td>
           <td><%= employee.email %><td>
         </tr>

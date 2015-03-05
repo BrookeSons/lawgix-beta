@@ -6,6 +6,7 @@ feature "Add new Company" do
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)
     visit new_company_path
+    save_and_open_page
     fill_in "Name", with: "Lawgix"
     click_on "Create Company"
     visit companies_path

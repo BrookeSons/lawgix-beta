@@ -1,5 +1,10 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Company, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Company do
+
+  context "associations" do
+    it { is_expected.to have_many(:employees)}
+  end
+
 end

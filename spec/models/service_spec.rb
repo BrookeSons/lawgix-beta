@@ -1,8 +1,14 @@
 require 'rails_helper'
-
+require 'shoulda/matchers'
 
 describe Service do
 
+  context "Associations" do
+
+    it { is_expected.to have_many(:parcels)}
+    it { is_expected.to have_many(:service_transitions)}
+    it { is_expected.to have_many(:flows)}
+  end
 
   let(:service) {Service.new(lease_number: '12345')  }
   let(:abstractors) {Abstractor.new(first_name: 'Tom', last_name: 'Brooke')}
