@@ -47,6 +47,8 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
+
+
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug'
@@ -55,6 +57,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.1'
   gem 'binding_of_caller'
+  gem 'spork'
 end
 
 group :test do
