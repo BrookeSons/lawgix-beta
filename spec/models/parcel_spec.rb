@@ -1,5 +1,11 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Parcel, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+describe Parcel do
+
+  context "Associations" do
+    it {should have_one (:title_abstract)}
+  end
 end
+

@@ -1,4 +1,4 @@
 class Parcel < ActiveRecord::Base
   belongs_to :service
-  has_and_belongs_to_many :title_abstracts, through: :parcels_abstracts
+  belongs_to :title_abstract
 end
