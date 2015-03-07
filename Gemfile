@@ -58,6 +58,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1'
   gem 'binding_of_caller'
   gem 'spork'
+  gem'spork-rails'
 end
 
 group :test do
