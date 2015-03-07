@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe TitleAbstract, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+require 'shoulda/matchers'
+
+describe TitleAbstract, :type => :model do
+
+  it {should have_many(:deeds)}
 end
