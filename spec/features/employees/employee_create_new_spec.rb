@@ -7,7 +7,6 @@ feature "Add new Employee" do
     company = FactoryGirl.create(:company)
     signin(user.email, user.password)
     visit new_employee_path
-    save_and_open_page
     select "Company", company.name
     fill_in "First name", with: "Anne"
     fill_in "Last name", with: "Corriher"
