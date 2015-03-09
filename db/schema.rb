@@ -59,9 +59,12 @@ ActiveRecord::Schema.define(version: 20150307201112) do
     t.string   "d_type"
     t.text     "comments"
     t.string   "d_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "title_abstract_id"
   end
+
+  add_index "deeds", ["title_abstract_id"], name: "index_deeds_on_title_abstract_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type"

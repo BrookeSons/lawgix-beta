@@ -1,4 +1,4 @@
 class Parcel < ActiveRecord::Base
   belongs_to :service
-  has_one :title_abstract, foreign_key: :parcel_id
+  has_many :title_abstracts
 end
