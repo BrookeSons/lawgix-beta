@@ -1,19 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Editing Title Abstract</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @title_abstract.name %>
-</p>
+<%= render 'form' %>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @title_abstract.due_date %>
-</p>
-
-<p>
-  <strong>Comments:</strong>
-  <%= @title_abstract.comments %>
-</p>
-
-<%= link_to 'Edit', edit_title_abstract_path(@title_abstract) %> |
+<%= link_to 'Show', @title_abstract %> |
 <%= link_to 'Back', title_abstracts_path %>

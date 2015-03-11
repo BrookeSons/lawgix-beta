@@ -32,6 +32,11 @@ class ServicesController < ApplicationController
 
   def accept
     service = Service.find(params[:id])
+    service.parcels.each do |parcel|
+      title_abstract = TitleAbstract.new
+      title_abstract.deeds << Deed.new
+      parcel.title_abstract = title_abstract
+    end
     service.transition_to!(:accepted_by_abstractor)
     redirect_to absdashes_path
   end

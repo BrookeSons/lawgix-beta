@@ -66,4 +66,6 @@ class RequestStateMachine
     transition from: :opinion,  to: :completed
     transition from: :curative, to: :completed
   end
+
+
 end

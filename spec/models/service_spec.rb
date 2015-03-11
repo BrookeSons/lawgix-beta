@@ -11,6 +11,9 @@ describe Service do
   end
 
   let(:service) {Service.new(lease_number: '12345')  }
+  let(:abs_service) {Service.new(lease_number: '12345',
+                 serial_flows:["Abstractor"], parcels)}
+  let(:op_service) {Service.new(lease_number: '12345', serial_flows:["Opinion"])}
   let(:abstractors) {Abstractor.new(first_name: 'Tom', last_name: 'Brooke')}
   let(:lawyer) {Lawyer.new(first_name: 'Carole', last_name: 'Brooke')}
   let(:dispatcher) {ServiceDispatcher.new(service: service, dispatcher: abstractor)}
@@ -25,12 +28,20 @@ describe Service do
     expect(service.current_state).to eq('fee_accepted')
   end
 
-  # it 'should have fee accepted before assign' do
-  #   service.transition_to!(:submitted)
-  #   service.transition_to!(:approve_fee)
-  #   service.transition_to!(:fee_accepted)
-  #   expect(service.current_state).to eq('fee_accepted')
-  # end
+
+  it 'should have fee accepted before assigned abstractor' do
+    service.transition_to!(:fee_accepted)
+    service.transition_to!(:assigned)
+    service.transition_to!(:accepted_by_abstractor)
+    expect(service.current_state).to eq('accepted_by_abstractor')
+  end
+
+  it 'should create an empty title_abstract for each parcel if accepted by abstractor' do
+     service.transition_to!(:fee_accepted)
+     service.transition_to!(:assigned)
+     service.transition_to!(:accepted_by_abstractor)
+     expect(service.parcels.each)
+  end
 
   # describe '#assign' do
   #
