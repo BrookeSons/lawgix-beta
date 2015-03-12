@@ -39,11 +39,6 @@ class Service < ActiveRecord::Base
  delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, :allowed_transitions,
           to: :state_machine
 
-
- def accepted
-
- end
-
  private
 
 
