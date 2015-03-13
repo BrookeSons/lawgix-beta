@@ -2,7 +2,7 @@
   <thead>
   <tr>
     <td>Lease</td>
-    <td>Abstract</td>
+    <td>Parcels / Abstract</td>
   </tr>
   </thead>
   <tbody>
@@ -12,13 +12,11 @@
   <% @abs.each do |service| %>
       <tr>
         <td><%= link_to service.lease_number, service %></td>
-            <tr>
             <% service.parcels.each do |parcel| %>
-            <td>  <%= link_to parcel.tax_map, parcel.title_abstract %> </td>
-              <% end %>
-            </tr>
-        <td><%= link_to service.lease_number, service %></td>
+            <% @id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
+                <td>  <%= link_to @id, parcel.title_abstract %> </td>
+            <% end %>
        <% end %>
-      </tr>
+     </tr>
   </tbody>
 </table>

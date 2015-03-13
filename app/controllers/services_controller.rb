@@ -14,7 +14,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @services = Service.all.paginate(page: params[:page], per_page: 8)
+    @services = Service.order(created_at: :desc).all.paginate(page: params[:page], per_page: 8)
   end
 
   def create

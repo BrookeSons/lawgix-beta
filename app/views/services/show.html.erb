@@ -24,7 +24,6 @@
                 <div class="nested-fields">
                   <%= f.simple_fields_for :parcels do |parcel| %>
                       <%= render 'parcel_fields', f: parcel %>
-                      <%= link_to_add_association "Add Parcel", f, :parcels %>
                   <% end %>
                 </div>
               </div>
@@ -32,12 +31,25 @@
             <li class="tab-header-and-content">
               <a href="#" class="tab-link">Status</a>
               <div class="tab-content">
-                 <h3>Current Status:</h3>
-                 <%= @service.current_state %>
-                 <%= @service.users.each do |abstractor| %>
-                 <%= abstractor.last_name %>
-                 <% end %>
-                </div>
+                <table>
+                  <thead>
+                  <tr>
+                    <th><h4>Current Status</h4></th>
+                    <th><h4>Abstractor</h4></th>
+                    <th><h4>Email</h4></th>
+                    <th><h4>Phone</h4></th>
+                  </tr>
+                  </thead>
+                    <% @service.users.each do |abstractor| %>
+                 <tr>
+                   <td><h6><%= @service.current_state %></h6></td>
+                   <td><h5><%= abstractor.name %></h5></td>
+                   <td><h5><%= abstractor.email %></h5></td>
+                   <td><h5><%= abstractor.phone %></h5></td>
+                <% end %>
+                </tr>
+              </table>
+              </div>
             </li>
           </ul>
        <%= f.submit 'Update Service Request' %>

@@ -1,5 +1,9 @@
 <div class="tab-content flex-box flex-box-full">
    <div>
+     <div id="servicer">
+       <%= f.label :servicer %>
+       <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
+     </div>
      <div id="state-select">
        <%= f.label :state %>
        <%= f.select :state, collection: ['Ohio','West Virginia'] %>
@@ -8,7 +12,6 @@
        <%= f.label :lease_number %>
        <%= f.text_field :lease_number %>
      </div>
-    </div>
     <div>
       <%= f.text_area :description, placeholder: "Comments" %>
     </div>

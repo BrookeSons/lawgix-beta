@@ -8,12 +8,12 @@ class AbsdashesController < ApplicationController
   # after_action :verify_authorized
 
   def show
-    @services = Service.all
+    @services = Service.order(created_at: :desc).all
     # authorize @user
   end
 
   def index
-    @services = Service.all.paginate(page: params[:page], per_page: 8)
+    @services = Service.order(created_at: :desc).all.paginate(page: params[:page], per_page: 8)
     @abstractors = Abstractor.all
   end
 

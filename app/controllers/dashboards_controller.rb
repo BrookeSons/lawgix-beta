@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
    end
 
   def index
-    @services = Service.all.paginate(page: params[:page], per_page: 8)
+    @services = Service.order(created_at: :desc).all.paginate(page: params[:page], per_page: 8)
     @abstractors = Abstractor.all
   end
 #
