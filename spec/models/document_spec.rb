@@ -1,5 +1,9 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Document, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Document do
+
+  context "Associations" do
+    it {should have_many(:users)}
+  end
 end

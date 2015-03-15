@@ -1,5 +1,10 @@
 describe User do
 
+
+  context "Associations" do
+    it{should have_many(:documents)}
+  end
+
   before(:each) { @user = User.new(email: 'user@example.com') }
 
   subject { @user }
