@@ -5,4 +5,5 @@ class Document < ActiveRecord::Base
   has_many :users, through: :user_documents
   belongs_to :lease
 
+  mount_uploader :document, DocumentUploader
 end
