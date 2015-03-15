@@ -12,7 +12,7 @@ describe Service do
 
   let(:service) {Service.new(lease_number: '12345')  }
   let(:abs_service) {Service.new(lease_number: '12345',
-                 serial_flows:["Abstractor"], parcels)}
+                 serial_flows:["Abstractor"])}
   let(:op_service) {Service.new(lease_number: '12345', serial_flows:["Opinion"])}
   let(:abstractors) {Abstractor.new(first_name: 'Tom', last_name: 'Brooke')}
   let(:lawyer) {Lawyer.new(first_name: 'Carole', last_name: 'Brooke')}

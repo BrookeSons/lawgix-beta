@@ -70,6 +70,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'timecop'
   gem 'webmock'
+  gem 'vcr'
 end
 
 group :staging, :production do

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :documents
+
   root 'visitors#index'
   resources :title_abstracts
   resources :deeds

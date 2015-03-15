@@ -30,6 +30,14 @@
                   <% end %>
                 </div>
             </li>
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link">Documents</a>
+
+              <div class="tab-content">
+                <%= render 'document', f: f %>
+              </div>
+              </div>
+            </li>
           </ul>
       <%= f.submit 'Create Service Request' %>
     <% end %>
