@@ -4,6 +4,8 @@ require 'shoulda/matchers'
 describe Document do
 
   context "Associations" do
-    it {should have_many(:users)}
+    it {should belong_to(:service)}
+    it {should belong_to(:lease)}
+    it {should have_many(:users).through(:user_documents)}
   end
 end

@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th><h4>Current Status</h4></th>
+    <th><h4>Provider</h4></th>
+    <th><h4>Email</h4></th>
+    <th><h4>Phone</h4></th>
+  </tr>
+  </thead>
+  <% @service.users.each do |abstractor| %>
+      <tr>
+        <td><h6><%= @service.current_state %></h6></td>
+        <td><h5><%= abstractor.name %></h5></td>
+        <td><h5><%= abstractor.email %></h5></td>
+        <td><h5><%= abstractor.phone %></h5></td>
+  <% end %>
+  </tr>
+</table>

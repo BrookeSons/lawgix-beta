@@ -7,10 +7,11 @@
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
       <h3>Service Request</h3>
-      <p>id: <%= service.id %> </p>
+      <div id="modal-assign">
       <p>Lease #: <%= service.lease_number %></p>
-      <p>Description: <%= service.description %></p>
       <p>County: <%= service.county %></p>
+      </div>
+      <p>Description: <%= service.description %></p>
       <hr />
       <h3>Abstractors</h3>
       <table>

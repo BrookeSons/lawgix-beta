@@ -5,9 +5,11 @@ describe Service do
 
   context "Associations" do
 
-    it { is_expected.to have_many(:parcels)}
-    it { is_expected.to have_many(:service_transitions)}
-    it { is_expected.to have_many(:flows)}
+    it {should have_many(:parcels)}
+    it {should have_many(:service_transitions)}
+    it {should have_many(:flows)}
+    it {should have_many(:documents)}
+
   end
 
   let(:service) {Service.new(lease_number: '12345')  }

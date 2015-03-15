@@ -27,6 +27,8 @@ gem 'active_type'
 #### Core Gems
 gem 'statesman'
 gem 'roar'
+gem 'carrierwave'
+gem 'carrierwave-viewer'
 
 ###
 gem 'recipient_interceptor'

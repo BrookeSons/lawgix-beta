@@ -8,7 +8,7 @@
                <%= render 'request', f: f %>
             </li>
             <li class="tab-header-and-content">
-              <a href="#" class="tab-link">Lessor</a>
+              <a href="#" class="tab-link">Lessors</a>
 
               <div class="tab-content">
                 <div class="nested-fields">
@@ -20,22 +20,25 @@
               </div>
             </li>
             <li class="tab-header-and-content">
-              <a href="#" class="tab-link">Parcel</a>
+              <a href="#" class="tab-link">Parcels</a>
               <div class="tab-content">
                 <div class="nested-fields">
                   <%= f.simple_fields_for :parcels do |parcel| %>
-                      <%= render 'parcel_fields', f: parcel %>
-                      <%= link_to_add_association "Add Parcel", f, :parcels %>
-                      </div>
+                    <%= render 'parcel_fields', f: parcel %>
+                    <%= link_to_add_association "Add Parcel", f, :parcels %>
                   <% end %>
                 </div>
+              </div>
             </li>
             <li class="tab-header-and-content">
-              <a href="#" class="tab-link">Documents</a>
-
+            <a href="#" class="tab-link">Documents</a>
               <div class="tab-content">
-                <%= render 'document', f: f %>
-              </div>
+                <div class="nested_fields">
+                  <%= f.simple_fields_for :documents do |document| %>
+                    <%= render 'document_fields', f: document %>
+                    <%= link_to_add_association "Add Document", f, :documents %>
+                  <% end %>
+                </div>
               </div>
             </li>
           </ul>
