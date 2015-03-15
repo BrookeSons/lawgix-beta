@@ -6,10 +6,10 @@
     <div class="field">
       <%= f.text_area :doc_comment, placeholder: "Comments" %>
     </div>
-    <div class="field">
+    <div id="doc-type" class="field">
        <%= f.select :doc_type, collection: ["Opinion", "Deed","Abstract","Map","Lease"] %>
     </div>
-    <div class="field">
+    <div id='file-box' class="field">
       <%= f.file_field :file_name %>
     </div>
     <div class="remove">

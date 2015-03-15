@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315175821) do
+ActiveRecord::Schema.define(version: 20150315223100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20150315175821) do
     t.string   "file_name"
     t.string   "doc_type"
     t.text     "doc_comment"
+    t.string   "document"
   end
 
   create_table "flows", force: :cascade do |t|

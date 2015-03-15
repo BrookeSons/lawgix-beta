@@ -6,7 +6,18 @@ $abstract-background: #FFD24A ;
 $opinion-background: #9B9BE8;
 $curative-background: #FFCC77;
 
+.nested-fields {
+  padding: 0;
+}
 
+#file-box{
+  float: right;
+  @include span-columns(6)
+}
+
+#doc-type{
+  @include span-columns(3);
+}
 
 
 
