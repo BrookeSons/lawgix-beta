@@ -8,9 +8,9 @@
     </div>
     <div id="doc-type" class="field">
        <%= f.select :doc_type, collection: ["Opinion", "Deed","Abstract","Map","Lease"] %>
-    </div>
+    </div>˚
     <div id='file-box' class="field">
-      <%= f.file_field :file_name %>
+      <%= f.file_field :doc %>
     </div>
     <div class="remove">
       <%= link_to_remove_association "Remove File", f %>
