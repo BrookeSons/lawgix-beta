@@ -28,7 +28,7 @@ gem 'active_type'
 gem 'statesman'
 gem 'roar'
 gem 'carrierwave'
-gem 'carrierwave-viewer'
+gem 'carrierwave-viewer', :github => "BrookeSons/carrierwave-viewer"
 
 ###
 gem 'recipient_interceptor'
