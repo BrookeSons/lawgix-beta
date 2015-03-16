@@ -28,6 +28,7 @@ gem 'active_type'
 gem 'statesman'
 gem 'roar'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'carrierwave-viewer', :github => "BrookeSons/carrierwave-viewer"
 
 ###
