@@ -1,9 +1,8 @@
 <div class="nested-fields flex-box flex-box-full">
       <h4>Document Name </h4>
       <%= @document.name %>
-      <%= @document.groupdocs_guid %>
-<p><img src='data:image/png;base64,#{@document.groupdocs_thumbnail}', width='40px', height='40px'> </p>
-      <h4>Comments</h4>
       <%= @document.doc_comment %>
-  <p>/document-viewer/embed?quality=50&guid=#{document.file.guid}&uid=#{user.guid}&download=True</p>
+      <hr />
+      <%=  @embed %>
+
 </div>

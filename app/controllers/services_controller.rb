@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.save
 
-       redirect_to services_path
+       redirect_to dashboards_path
   end
 
 
