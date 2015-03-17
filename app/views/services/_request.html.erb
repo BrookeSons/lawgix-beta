@@ -1,9 +1,5 @@
 <div class="tab-content flex-box flex-box-full">
    <div>
-     <div id="servicer">
-       <%= f.label :servicer %>
-       <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
-     </div>
      <div id="state-select">
        <%= f.label :state %>
        <%= f.select :state, collection: ['Ohio','West Virginia'] %>
@@ -17,16 +13,22 @@
     </div>
     <div id="flow-check">
       <div class="check">
-         <%= f.check_box(:serial_flows, {:multiple => true}, 'Opinion', nil) %>
+         <%= f.check_box(:serial_flows, {:multiple => true}, 'Abstract', nil) %>
          <%= f.label 'Abstract' %>
+          <%= f.label :servicer %>
+          <%= f.select :servicer, collection: ['Lawgix', 'Internal'] %>
       </div>
       <div class="check">
-         <%= f.check_box(:serial_flows, {:multiple => true}, 'Abstract', nil) %>
+         <%= f.check_box(:serial_flows, {:multiple => true}, 'Opinion', nil) %>
          <%= f.label 'Opinion' %>
+          <%= f.label :servicer %>
+          <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
       </div>
       <div class="check">
          <%= f.check_box(:serial_flows, {:multiple => true}, 'Curative', nil) %>
          <%= f.label 'Curative' %>
+          <%= f.label :servicer %>
+          <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
       </div>
     </div>
     <div id="deliv-date">

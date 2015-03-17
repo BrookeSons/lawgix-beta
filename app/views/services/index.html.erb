@@ -9,7 +9,6 @@
       <td>Description</td>
       <td>Delivery Date</td>
       <td>State</td>
-      <td>County</td>
       <td>Workflows</td>
     </tr>
     </thead>
@@ -21,7 +20,6 @@
           <td><%= service.description %></td>
           <td><%= service.requested_delivery %></td>
           <td><%= service.state %></td>
-          <td><%= service.county %></td>
           <td><%= service.serial_flows.join " " %></td>
         </tr>
     <% end %>

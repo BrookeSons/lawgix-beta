@@ -234,6 +234,7 @@ $curative-background: #FFCC77;
     margin-right: 0.375em;
     margin-left: 4em;
   }
+
 }
 
 #new_service_form {
@@ -259,6 +260,12 @@ $curative-background: #FFCC77;
     display: inline;
     margin-right: 0.375em;
     margin-left: 4em;
+  }
+  select {
+    margin-bottom: 1.5em;
+    margin-left: 3.5em;
+    max-width: 100%;
+    width: auto;
   }
 }
 #show_service_form {

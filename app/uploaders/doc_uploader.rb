@@ -20,7 +20,7 @@ class DocUploader < CarrierWave::Uploader::Base
 
   def cache_dir
     "#{Rails.root}/tmp/uploads"
-    endd
+   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
