@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-
+    @documents = @service.documents
     # authorize @user
   end
 
