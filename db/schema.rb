@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316144938) do
+ActiveRecord::Schema.define(version: 20150414151352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,10 @@ ActiveRecord::Schema.define(version: 20150316144938) do
     t.string   "doc"
     t.string   "groupdocs_guid"
     t.text     "groupdocs_thumbnail"
+    t.integer  "deed_id"
   end
+
+  add_index "documents", ["deed_id"], name: "index_documents_on_deed_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type"
@@ -203,6 +206,14 @@ ActiveRecord::Schema.define(version: 20150316144938) do
 
   add_index "title_abstracts", ["parcel_id"], name: "index_title_abstracts_on_parcel_id", using: :btree
 
+  create_table "title_abstracts_users", id: false, force: :cascade do |t|
+    t.integer "users_id"
+    t.integer "title_abstracts_id"
+  end
+
+  add_index "title_abstracts_users", ["title_abstracts_id"], name: "index_title_abstracts_users_on_title_abstracts_id", using: :btree
+  add_index "title_abstracts_users", ["users_id"], name: "index_title_abstracts_users_on_users_id", using: :btree
+
   create_table "user_documents", id: false, force: :cascade do |t|
     t.integer "document_id"
     t.integer "user_id"
@@ -245,14 +256,6 @@ ActiveRecord::Schema.define(version: 20150316144938) do
   add_index "users", ["lawfirm_id"], name: "index_users_on_lawfirm_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["title_abstract_id"], name: "index_users_on_title_abstract_id", using: :btree
-
-  create_table "users_title_abstracts", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "title_abstracts_id"
-  end
-
-  add_index "users_title_abstracts", ["title_abstracts_id"], name: "index_users_title_abstracts_on_title_abstracts_id", using: :btree
-  add_index "users_title_abstracts", ["users_id"], name: "index_users_title_abstracts_on_users_id", using: :btree
 
   create_table "versions", force: :cascade do |t|
     t.string   "item_type",  null: false

@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Due date</th>
       <th>Comments</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +17,6 @@
     <% @title_abstracts.each do |title_abstract| %>
       <tr>
         <td><%= title_abstract.name %></td>
-        <td><%= title_abstract.due_date %></td>
         <td><%= title_abstract.comments %></td>
         <td><%= link_to 'Show', title_abstract %></td>
         <td><%= link_to 'Edit', edit_title_abstract_path(title_abstract) %></td>

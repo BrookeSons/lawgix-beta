@@ -14,6 +14,7 @@ class DeedsController < ApplicationController
 
   def new
     @deed = Deed.new
+    @document = @deed.document
     respond_with(@deed)
   end
 

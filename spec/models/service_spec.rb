@@ -9,6 +9,7 @@ describe Service do
     it {should have_many(:service_transitions)}
     it {should have_many(:flows)}
     it {should have_many(:documents)}
+    it {should have_and_belong_to_many(:users)}
 
   end
 
