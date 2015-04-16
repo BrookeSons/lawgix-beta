@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   has_many :user_documents
-  has_many :documents, through: :user_documents
+  has_and_belongs_to_many :documents, through: :user_documents
   has_and_belongs_to_many :services, through: :services_users
 
 

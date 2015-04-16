@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414151352) do
+ActiveRecord::Schema.define(version: 20150414152030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,12 +207,12 @@ ActiveRecord::Schema.define(version: 20150414151352) do
   add_index "title_abstracts", ["parcel_id"], name: "index_title_abstracts_on_parcel_id", using: :btree
 
   create_table "title_abstracts_users", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "title_abstracts_id"
+    t.integer "abstractor_id"
+    t.integer "title_abstract_id"
   end
 
-  add_index "title_abstracts_users", ["title_abstracts_id"], name: "index_title_abstracts_users_on_title_abstracts_id", using: :btree
-  add_index "title_abstracts_users", ["users_id"], name: "index_title_abstracts_users_on_users_id", using: :btree
+  add_index "title_abstracts_users", ["abstractor_id"], name: "index_title_abstracts_users_on_abstractor_id", using: :btree
+  add_index "title_abstracts_users", ["title_abstract_id"], name: "index_title_abstracts_users_on_title_abstract_id", using: :btree
 
   create_table "user_documents", id: false, force: :cascade do |t|
     t.integer "document_id"

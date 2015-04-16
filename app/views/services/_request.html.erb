@@ -30,6 +30,12 @@
           <%= f.label :servicer %>
           <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
       </div>
+      <div class="check">
+        <%= f.check_box(:serial_flows, {:multiple => true}, 'Lease', nil) %>
+        <%= f.label 'Lease' %>
+        <%= f.label :servicer %>
+        <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
+      </div>
     </div>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>

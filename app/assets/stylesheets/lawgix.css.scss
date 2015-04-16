@@ -322,21 +322,28 @@ $curative-background: #FFCC77;
 }
 
 #flow-check {
-  margin-left: 85px;
+  margin-left: 2.5em;
   margin-right: auto;
 }
 
 #deliv-date {
-  @include span-columns(3)
+  margin-left: 3em;
+  @include span-columns(3);
 }
 
 .check {
-  width:230px;
   float:left;
   display:block;
-  margin:5px 0 0;
+  margin: 1em 3em 0;
   padding:0;
-  text-align:center;}
+  text-align:center;
+  select {
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+    max-width: 100%;
+    width: auto;
+  }
+}
 
 
 

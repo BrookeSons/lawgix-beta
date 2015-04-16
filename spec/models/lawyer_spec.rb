@@ -1,11 +1,10 @@
 require 'rails_helper'
 require 'shoulda/matchers'
 
-
-describe Abstractor do
+describe Lawyer do
 
   context "Associations" do
-    it {should have_and_belong_to_many(:title_abstracts)}
+    it {should belong_to(:lawfirm)}
   end
 
 end

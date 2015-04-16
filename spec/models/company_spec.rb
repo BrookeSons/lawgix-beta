@@ -4,7 +4,7 @@ require 'shoulda/matchers'
 describe Company do
 
   context "associations" do
-    it { is_expected.to have_many(:employees)}
+    it {should have_many(:employees)}
   end
 
 end

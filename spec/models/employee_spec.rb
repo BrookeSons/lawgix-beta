@@ -4,7 +4,7 @@ require 'shoulda/matchers'
 describe Employee do
 
   context "Associations" do
-    it { is_expected.to belong_to(:company)}
+    it {should belong_to(:company)}
   end
 
   before(:each) { @employee = Employee.new(email: 'user@example.com') }
