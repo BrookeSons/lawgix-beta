@@ -27,9 +27,7 @@ gem 'active_type'
 #### Core Gems
 gem 'statesman'
 gem 'roar'
-gem 'carrierwave'
-gem 'fog-aws'
-gem 'carrierwave-viewer', :github => "BrookeSons/carrierwave-viewer"
+gem 'reform'
 
 ###
 gem 'recipient_interceptor'
@@ -61,7 +59,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1'
   gem 'binding_of_caller'
   gem 'spork'
-  gem'spork-rails'
+  gem 'spork-rails'
 end
 
 group :test do

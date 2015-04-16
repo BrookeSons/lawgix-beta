@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/BrookeSons/carrierwave-viewer.git
-  revision: 58b86881f7c9f8df5c4217db7822e546569d6599
-  specs:
-    carrierwave-viewer (0.0.5)
-      carrierwave (>= 0.6.2)
-      groupdocs (~> 1.3.0)
-
-GIT
   remote: git://github.com/sudosu/rails_admin_pundit.git
   revision: 285e3e79a37242cf7a527053e9b438782801557a
   specs:
@@ -83,11 +75,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -117,6 +104,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    disposable (0.0.9)
+      representable (~> 2.0)
+      uber
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
@@ -128,7 +118,6 @@ GEM
       activemodel
     erubis (2.7.0)
     eventmachine (1.0.7)
-    excon (0.44.4)
     execjs (2.3.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -136,26 +125,8 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     flutie (2.0.0)
-    fog-aws (0.1.1)
-      fog-core (~> 1.27)
-      fog-json (~> 1.0)
-      fog-xml (~> 0.1)
-      ipaddress (~> 0.8)
-    fog-core (1.29.0)
-      builder
-      excon (~> 0.38)
-      formatador (~> 0.2)
-      mime-types
-      net-scp (~> 1.1)
-      net-ssh (>= 2.1.3)
-    fog-json (1.0.0)
-      multi_json (~> 1.0)
-    fog-xml (0.1.1)
-      fog-core
-      nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    formatador (0.2.5)
     formulaic (0.2.0)
       activesupport
       capybara
@@ -182,7 +153,6 @@ GEM
       slop (~> 3.5)
       term-ansicolor
       terminal-table
-    ipaddress (0.8.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -209,9 +179,6 @@ GEM
       bourbon (>= 3.1)
       sass (~> 3.2.19)
     nested_form (0.3.2)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-ssh (2.9.2)
     netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -286,6 +253,11 @@ GEM
     rake (10.4.2)
     recipient_interceptor (0.1.2)
       mail
+    reform (1.2.5)
+      activemodel
+      disposable (~> 0.0.5)
+      representable (~> 2.1.0)
+      uber (~> 0.0.11)
     remotipart (1.2.1)
     representable (2.1.5)
       multi_json
@@ -394,8 +366,6 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara
-  carrierwave
-  carrierwave-viewer!
   cocoon
   coffee-rails
   database_cleaner
@@ -405,7 +375,6 @@ DEPENDENCIES
   email_validator
   factory_girl_rails
   flutie
-  fog-aws
   formulaic
   groupdocs
   high_voltage
@@ -426,6 +395,7 @@ DEPENDENCIES
   rails_admin
   rails_admin_pundit!
   recipient_interceptor
+  reform
   roar
   rspec-rails (~> 3.1)
   sass-rails (~> 4.0.3)
