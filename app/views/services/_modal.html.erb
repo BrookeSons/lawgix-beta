@@ -1,0 +1,29 @@
+<div class="modal">
+  <label for="modal-1">
+    <div class="modal-trigger">Assign</div>
+  </label>
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-inner">
+      <label class="modal-close" for="modal-1"></label>
+      <h3>Service Request</h3>
+      <div id="modal-assign">
+      <p>Lease #: <%= service.lease_number %></p>
+      <p>County: <%= service.county %></p>
+      </div>
+      <p>Description: <%= service.description %></p>
+      <hr />
+      <h3>Abstractors</h3>
+      <table>
+        <% @abstractors.each do |abstractor| %>
+            <tr>
+              <td><%= button_to 'submit', assign_service_abstractor_url(service.id, abstractor.id), method: :put %></td>
+              <td><%= link_to(abstractor.last_name, abstractor_path(abstractor))  %></td>
+              <td><%= abstractor.phone %></td>
+              <td><%= abstractor.email %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

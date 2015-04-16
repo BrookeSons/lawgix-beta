@@ -52,7 +52,7 @@
 
         &:focus,
         &:hover {
-          background-color: transparentize($color-from-list, 0.9);
+          background-color: transparentize($flex-box-background, .9);
         }
       }
     }
