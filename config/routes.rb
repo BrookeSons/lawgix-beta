@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :employees
   resources :lessees
   resources :parcels
+  resources :leases
   resources :lawfirms
   resources :lawyers
   resources :services_users

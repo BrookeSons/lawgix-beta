@@ -4,68 +4,68 @@
       <%= image_tag('lawgix.png') %>
     </a>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+
     <div class="nav">
       <ul id="navigation-menu">
-        <li class="nav-link more"><a href="javascript:void(0)"><%= link_to "Services", services_path %></a>
+        <li class="nav-link more"><a href="javascript:void(0)">Requests</a>
           <ul class="submenu">
             <li><%= link_to "Service Requests", services_path %></li>
-            <li><%= link_to "New Service Request",new_service_path %></li>
+            <li><%= link_to "New Service Request", new_service_path %></li>
             <li><%= link_to "Request States", service_transitions_path %>
             <li><%= link_to "Documents", documents_path %>
             </li>
           </ul>
         </li>
+        <li class="nav-link more"><a href="javascript:void(0)">Leases</a>
+          <ul class="submenu">
+            <li><%= link_to "Leases", leases_path %></li>
+            <li><%= link_to "New Lease", new_lease_path %></li>
+        </li>
+      </ul>
+      </li>
       <li class="nav-link more"><a href="javascript:void(0)"> Abstractors</a>
-          <ul class="submenu">
-            <li><%= link_to "Abstractor Dashboard", absdashes_path%></li>
-            <li><%= link_to "Abstractors ", abstractors_path %></li>
-            <li><%= link_to "New Abstractor",new_abstractor_path %></li>
-            <li><%= link_to "New Title Abstract",new_title_abstract_path %></li>
-            <li><%= link_to "Title Abstracts",title_abstracts_path %></li>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
-          <ul class="submenu">
-            <li><%= link_to "Lawyer Dashboard", lawyers_path %></li>
-            <li><%= link_to "Lawyers", lawyers_path %></li>
-            <li><%= link_to "New Lawyer",new_lawyer_path %></li>
-            <li><%= link_to "Law Firm Dashboard", lawyers_path %></li>
-            <li><%= link_to "Law Firms",lawfirms_path %></li>
-            <li><%= link_to "New Law Firm",new_lawfirm_path %></li>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
-          <ul class="submenu">
-            <li><%= link_to "Company Dashboard", companies_path %></li>
-            <li><%= link_to "Companies", companies_path %></li>
-            <li><%= link_to "New Company", new_company_path %></li>
-            <li><%= link_to "Employee Dashboard", companies_path %></li>
-            <li><%= link_to "Employees", employees_path %></li>
-            <li><%= link_to "New Employee", new_employee_path %></li>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-link more"><a href="javascript:void(0)">Admin</a>
-          <ul class="submenu">
-            <li><%= link_to "Lawgix Dashbard", dashboards_path %></li>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Admin", '/admin' %></li>
-            <li><%= link_to "Settings",new_service_path %></li>
-            </li>
-          </ul>
-          </li>
+        <ul class="submenu">
+          <li><%= link_to "Abstractor Dashboard", absdashes_path %></li>
+          <li><%= link_to "Abstractors ", abstractors_path %></li>
+          <li><%= link_to "New Abstractor", new_abstractor_path %></li>
+          <li><%= link_to "New Title Abstract", new_title_abstract_path %></li>
+          <li><%= link_to "Title Abstracts", title_abstracts_path %></li>
+      </li>
+      </ul>
+      </li>
+      <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
+        <ul class="submenu">
+          <li><%= link_to "Lawyer Dashboard", lawyers_path %></li>
+          <li><%= link_to "Lawyers", lawyers_path %></li>
+          <li><%= link_to "New Lawyer", new_lawyer_path %></li>
+          <li><%= link_to "Law Firm Dashboard", lawyers_path %></li>
+          <li><%= link_to "Law Firms", lawfirms_path %></li>
+          <li><%= link_to "New Law Firm", new_lawfirm_path %></li>
+      </li>
+      </ul>
+      </li>
+      <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
+        <ul class="submenu">
+          <li><%= link_to "Company Dashboard", companies_path %></li>
+          <li><%= link_to "Companies", companies_path %></li>
+          <li><%= link_to "New Company", new_company_path %></li>
+          <li><%= link_to "Employee Dashboard", companies_path %></li>
+          <li><%= link_to "Employees", employees_path %></li>
+          <li><%= link_to "New Employee", new_employee_path %></li>
+      </li>
+      </ul>
+      </li>
+      <li class="nav-link more"><a href="javascript:void(0)">Admin</a>
+        <ul class="submenu">
+          <li><%= link_to "Lawgix Dashbard", dashboards_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Admin", '/admin' %></li>
+          <li><%= link_to "Settings", new_service_path %></li>
+      </li>
+      </ul>
+      </li>
     </div>
     <div class="navigation-tools">
-      <div class="search-bar">
-        <div class="search-and-submit">
-          <input type="search" placeholder="Enter Search" />
-          <button type="submit">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
-          </button>
-        </div>
-      </div>
       <%= link_to('Sign Out', destroy_user_session_path, :class => "sign-up", :method => :delete) %>
     </div>
   </div>
