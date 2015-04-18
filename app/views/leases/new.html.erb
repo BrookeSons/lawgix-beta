@@ -42,8 +42,6 @@
               <li class="tab-header-and-content">
                 <a href="#" class="tab-link">Parcel</a>
                 <div class="tab-content">
-                  <%= f.label :state %>
-                  <%= f.text_field :state %>
                   <%= f.fields_for :parcels do |pc| %>
                       <%= pc.label :tax_map %>
                       <%= pc.text_field :tax_map %>
@@ -69,7 +67,7 @@
               </li>
               </ul>
               <div id='request'>
-                <%= f.submit 'Create Service Request' %>
+                <%= f.submit 'Create Lease' %>
               </div>
           <% end %>
           </fieldset>
