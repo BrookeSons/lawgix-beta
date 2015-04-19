@@ -8,5 +8,5 @@
   <% end %>
 </td>
 <td>
-  <%= link_to("Delete Abstractor" abstractor_path(abstractor), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless abstractor == current_user %>
+  <%= link_to("Delete Abstractor", abstractor_path(abstractor), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless abstractor == current_user %>
 </td>

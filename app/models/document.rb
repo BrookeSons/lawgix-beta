@@ -5,4 +5,6 @@ class Document < ActiveRecord::Base
   has_and_belongs_to_many :users, through: :user_documents
   belongs_to :lease
   belongs_to :deed
+
+  mount_uploader :doc, DocUploader
 end

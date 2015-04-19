@@ -23,6 +23,9 @@ gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 gem 'paper_trail', '~> 3.0.6'
 gem 'will_paginate'
 gem 'groupdocs'
+gem 'carrierwave'
+gem 'carrierwave-viewer', :github => "Brookesons/carrierwave-viewer"
+gem 'fog-aws'
 gem 'active_type'
 #### Core Gems
 gem 'statesman'
