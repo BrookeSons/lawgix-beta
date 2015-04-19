@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418011034) do
+ActiveRecord::Schema.define(version: 20150419123835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -186,7 +186,10 @@ ActiveRecord::Schema.define(version: 20150418011034) do
     t.string   "state"
     t.string   "description"
     t.string   "serial_flows"
-    t.string   "servicer"
+    t.string   "a_servicer"
+    t.string   "o_servicer"
+    t.string   "c_servicer"
+    t.string   "l_servicer"
   end
 
   add_index "services", ["state"], name: "index_services_on_state", using: :btree
