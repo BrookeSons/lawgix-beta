@@ -5,5 +5,4 @@ class Deed < ActiveRecord::Base
   has_one  :document
   accepts_nested_attributes_for :document
 
-  serialize :exceptions, Array
 end
