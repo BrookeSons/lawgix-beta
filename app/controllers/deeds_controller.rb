@@ -8,13 +8,9 @@ class DeedsController < ApplicationController
     respond_with(@deeds)
   end
 
-  def show
-    respond_with(@deed)
-  end
-
   def new
     @deed = Deed.new
-    @deed.document = Document.new
+    @deed.documents.build
   end
 
   def edit
@@ -23,6 +19,11 @@ class DeedsController < ApplicationController
   def create
     @deed = Deed.new(deed_params)
     @deed.save
+  end
+
+  def show
+    @deed = Deed.new(deed_params)
+    @documents = @deed.documents
   end
 
   def update

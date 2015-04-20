@@ -1,6 +1,27 @@
 <h1>Editing Title Abstract</h1>
+<p id="notice"><%= notice %></p>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">Title Abstract</h2>
+    <%= simple_form_for @title_abstract do |f| %>
+        <h4>Tax Map/Parcel</h4>
+        <h4>
+          <%=  [@title_abstract.parcel.tax_map, @title_abstract.parcel.tax_parcel].compact.join("-") %>
+        </h4>
+        <div class="form-inputs">
+          <%= f.text_field :name, placeholder: 'Name'  %>
+          <%= f.input :comments %>
+        </div>
+        <div>
+          <%= f.simple_fields_for :deeds do |deed| %>
+              <%= render 'deed_fields', f: deed %>
+              <%= link_to_add_association "Add Deed", f, :deeds %>
+              </div>
+          <% end %>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+    <% end %>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @title_abstract %> |
-<%= link_to 'Back', title_abstracts_path %>

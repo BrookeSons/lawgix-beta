@@ -1,0 +1,21 @@
+<div class="nested-fields flex-box flex-box-full">
+  <fieldset>
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Document Name" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :doc_comment, placeholder: "Comments" %>
+    </div>
+    <div id="doc-type" class="field">
+       <%= f.select :doc_type, collection: ["Deed", "Lease","Encumbrance"] %>
+    </div>
+    <div id='file-box' class="field">
+      <%= f.file_field :doc %>
+    </div>
+    <div class="remove">
+      <%= link_to_remove_association "Remove File", f %>
+    </div>
+    <div class="abstract">
+    </div>
+  </fieldset>
+</div>
