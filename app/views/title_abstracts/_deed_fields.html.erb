@@ -11,6 +11,8 @@
     <div class="span3">
       <%= f.date_field :d_date %>
     </div>
+    <div class="span3">
+    <%= f.label "Conveyance Type" %>
     <%= f.select :d_type,  collection: ['Deed (with dower)',
                                         'Warranty Deed (with dower)',
                                         'Indenture (with dower)',
@@ -29,8 +31,29 @@
                                         'Power of Attorney',
                                         'Mechanics Lien',
                                         'Affidavit of Abandonment']  %>
+    <%= f.label "Exceptions" %>
+    <%= f.select :exceptions, collection: ['Vein/Seam of Coal',
+                                           'Oil and Gas',
+                                           'Minerals',
+                                           'Limestone',
+                                           'Coalbed Methane'] %>
+    </div>
     <%= f.text_field :grantor, placeholder: 'grantor' %>
+    <%= f.select :gtor_status, collection: ['Unmarried',
+                                                 'Widowed',
+                                                 'Separated',
+                                                 'Married - Tenants in Common',
+                                                 'Married - Entireties',
+                                                 'Married - Joint Tenants',
+                                                 'Married - Joint Tenants WROS'] %>
     <%= f.text_field :grantee, placeholder: 'grantee' %>
+    <%= f.select :gtee_status, collection: ['Unmarried',
+                                                'Widowed',
+                                                'Separated',
+                                                'Married - Tenants in Common',
+                                                'Married - Entireties',
+                                                'Married - Joint Tenants',
+                                                'Married - Joint Tenants WROS'] %>
     <%= f.text_field :comments, placeholder: 'Comments' %>
     <%= f.simple_fields_for :document do |document| %>
         <%= document.file_field %>

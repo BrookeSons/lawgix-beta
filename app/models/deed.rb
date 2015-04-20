@@ -4,4 +4,6 @@ class Deed < ActiveRecord::Base
   has_many :title_abstracts, through: :deed_title_abstracts
   has_one  :document
   accepts_nested_attributes_for :document
+
+  serialize :exceptions, Array
 end
