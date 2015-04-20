@@ -14,8 +14,7 @@ class DeedsController < ApplicationController
 
   def new
     @deed = Deed.new
-    @document = @deed.document
-    respond_with(@deed)
+    @deed.document = Document.new
   end
 
   def edit
@@ -23,12 +22,16 @@ class DeedsController < ApplicationController
 
   def create
     @deed = Deed.new(deed_params)
-    flash[:notice] = 'Deed was successfully created.' if @deed.save
-    respond_with(@deed)
+    @deed.save
   end
 
   def update
-    flash[:notice] = 'Deed was successfully updated.' if @deed.update(deed_params)
+    @deed = Deed.find(params[:id])
+    if @deed.update_attributes(service_params)
+      redirect_to deeds_path, :notice => "Deed updated."
+    else
+      redirect_to deeds_path, :alert => "Unable to update Deed."
+    end
     respond_with(@deed)
   end
 

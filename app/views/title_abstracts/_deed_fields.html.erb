@@ -11,10 +11,29 @@
     <div class="span3">
       <%= f.date_field :d_date %>
     </div>
-    <%= f.select :d_type,  collection: ['Deed','Easement']  %>
+    <%= f.select :d_type,  collection: ['Deed (with dower)',
+                                        'Warranty Deed (with dower)',
+                                        'Indenture (with dower)',
+                                        'Quit Claim Deed',
+                                        'Inter Parties Deed (with dower)',
+                                        'Agreement (with dower)',
+                                        'Patent (Land Grant)',
+                                        'Probate',
+                                        'Estate Admin',
+                                        'Will',
+                                        'Common Pleas Case',
+                                        'Partition Order',
+                                        'Certificate of Transfer',
+                                        'Sheriffs Deed',
+                                        'Hydrocarbon Deed',
+                                        'Power of Attorney',
+                                        'Mechanics Lien',
+                                        'Affidavit of Abandonment']  %>
     <%= f.text_field :grantor, placeholder: 'grantor' %>
     <%= f.text_field :grantee, placeholder: 'grantee' %>
     <%= f.text_field :comments, placeholder: 'Comments' %>
-    <%= f.file_field  :d_image %>
+    <%= f.simple_fields_for :document do |document| %>
+        <%= document.file_field %>
+    <% end %>
   </fieldset>
 </div>
