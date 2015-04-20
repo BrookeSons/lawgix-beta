@@ -54,7 +54,9 @@
                                                 'Married - Entireties',
                                                 'Married - Joint Tenants',
                                                 'Married - Joint Tenants WROS'] %>
-    <%= f.text_field :comments, placeholder: 'Comments' %>
+    <%= f.text_field :acreage, placeholder: 'Acreage of Parcel' %>
+    <%= f.text_area :description, placeholder: 'Property Description' %>
+    <%= f.text_area :comments, placeholder: 'Comments' %>
     <%= f.simple_fields_for :document do |document| %>
         <%= document.file_field %>
     <% end %>
