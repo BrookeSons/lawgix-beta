@@ -1,7 +1,6 @@
 <table>
   <thead>
     <tr>
-      <td>Company</td>
       <td>Lease</td>
       <td>Description</td>
       <td>Delivery Date</td>
@@ -14,12 +13,12 @@
   <%= will_paginate @pending %>
   <% @pending.each do |service| %>
       <tr>
-        <td>Company</td>
         <td><%= link_to service.lease_number, service %></td>
         <td><%= service.description %></td>
         <td><%= service.requested_delivery %></td>
         <td><%= service.state %></td>
         <td><%= service.county %></td>
+
         <td><%= render 'modal', service: service %>
       </tr>
   <% end %>

@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <td>Lease</td>
+    <td>Description</td>
+    <td>Delivery Date</td>
+    <td>State</td>
+    <td>County</td>
+  </tr>
+  </thead>
+  <% @leases = @services.in_state('assigned') %>
+  <%= will_paginate @leases %>
+  <% @leases.each do |service| %>
+      <tr>
+        <td><%= link_to service.lease_number, service %></td>
+        <td><%= service.description %></td>
+        <td><%= service.requested_delivery %></td>
+        <td><%= service.state %></td>
+        <td><%= service.county %></td>
+      </tr>
+  <% end %>
+</table>

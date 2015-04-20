@@ -16,25 +16,25 @@
          <%= f.check_box(:serial_flows, {:multiple => true}, 'Abstract', nil) %>
          <%= f.label 'Abstract' %>
           <%= f.label :servicer %>
-          <%= f.select :servicer, collection: ['Lawgix', 'Internal'] %>
+          <%= f.select :a_servicer, collection: ['Lawgix', 'Internal'] %>
       </div>
       <div class="check">
          <%= f.check_box(:serial_flows, {:multiple => true}, 'Opinion', nil) %>
          <%= f.label 'Opinion' %>
           <%= f.label :servicer %>
-          <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
+          <%= f.select :o_servicer, collection: ['Lawgix','Internal'] %>
       </div>
       <div class="check">
          <%= f.check_box(:serial_flows, {:multiple => true}, 'Curative', nil) %>
          <%= f.label 'Curative' %>
           <%= f.label :servicer %>
-          <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
+          <%= f.select :c_servicer, collection: ['Lawgix','Internal'] %>
       </div>
       <div class="check">
         <%= f.check_box(:serial_flows, {:multiple => true}, 'Lease', nil) %>
         <%= f.label 'Lease' %>
         <%= f.label :servicer %>
-        <%= f.select :servicer, collection: ['Lawgix','Internal'] %>
+        <%= f.select :l_servicer, collection: ['Lawgix','Internal'] %>
       </div>
     </div>
     <div id="deliv-date">

@@ -17,15 +17,20 @@ class RequestStateMachine
   state :priced
   state :confirmed
   state :assigned
+  state :internal
+  state :lawgix_assigned
+  state :lawgix_complete
   state :accepted_by_abstractor
+  state :completed_by_abstractor
   state :completed
   state :abstract
   state :opinion
   state :curative
+  state :lease
 
 
   event :start do
-     transition from: :pending, to: [:fee_accepted, :assigned]
+     transition from: :pending, to: [:fee_accepted, :assigned, :lawgix_assigned, :internal]
   end
 
   # event :price do

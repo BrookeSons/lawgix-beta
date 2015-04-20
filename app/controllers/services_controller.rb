@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
 
 
+
   def new
     @service = Service.new
     @service.lessees.build
@@ -9,7 +10,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.find(params[:id])
+    @service   = Service.find(params[:id])
     @documents = @service.documents
     # authorize @user
   end
@@ -21,13 +22,12 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.save
-
-       redirect_to dashboards_path
+    redirect_to dashboards_path
   end
 
 
   def receive
-    service =  Service.find(params[:id])
+    service = Service.find(params[:id])
     service.transition_to!(:fee_accepted)
     redirect_to new_service_dispatcher_path
   end
@@ -75,5 +75,6 @@ class ServicesController < ApplicationController
   def req_params
     params.require(:service_request).permit(:to_state)
   end
+
 end
 

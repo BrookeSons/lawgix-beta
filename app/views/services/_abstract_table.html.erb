@@ -1,0 +1,16 @@
+<table>
+  <thead>
+  <tr>
+    <td>Parcels / Abstract</td>
+    <td></td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% @service.parcels.each do |parcel| %>
+        <% @id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
+        <td><h4><%= link_to @id, parcel.title_abstract %> <%= parcel.title_abstract.name %> </h4></td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>

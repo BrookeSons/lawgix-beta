@@ -16,10 +16,8 @@
   <tbody>
     <% @title_abstracts.each do |title_abstract| %>
       <tr>
-        <td><%= title_abstract.name %></td>
-        <td><%= title_abstract.comments %></td>
-        <td><%= link_to 'Show', title_abstract %></td>
-        <td><%= link_to 'Edit', edit_title_abstract_path(title_abstract) %></td>
+        <td><%= link_to title_abstract.name, title_abstract %></td>
+        <td><%= link_to title_abstract.parcel.service.lease_number, title_abstract.parcel.service %></td>
         <td><%= link_to 'Destroy', title_abstract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

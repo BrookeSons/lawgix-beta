@@ -10,6 +10,7 @@
         <li class="nav-link more"><a href="javascript:void(0)">Lease Requests</a>
           <ul class="submenu">
             <li><%= link_to "Leases", services_path %></li>
+            <li><%= link_to "Lawgix Dashboard", dashboards_path %></li>
             <li><%= link_to "New Service Request", new_service_path %></li>
             <li><%= link_to "Request Status", service_transitions_path %>
             <li><%= link_to "Documents", documents_path %>
@@ -21,14 +22,12 @@
           <li><%= link_to "Abstractor Dashboard", absdashes_path %></li>
           <li><%= link_to "Abstractors ", abstractors_path %></li>
           <li><%= link_to "New Abstractor", new_abstractor_path %></li>
-          <li><%= link_to "New Title Abstract", new_title_abstract_path %></li>
           <li><%= link_to "Title Abstracts", title_abstracts_path %></li>
       </li>
       </ul>
       </li>
       <li class="nav-link more"><a href="javascript:void(0)"> Lawyers</a>
         <ul class="submenu">
-          <li><%= link_to "Lawyer Dashboard", lawyers_path %></li>
           <li><%= link_to "Lawyers", lawyers_path %></li>
           <li><%= link_to "New Lawyer", new_lawyer_path %></li>
           <li><%= link_to "Law Firm Dashboard", lawyers_path %></li>
@@ -37,22 +36,15 @@
       </li>
       </ul>
       </li>
-      <li class="nav-link more"><a href="javascript:void(0)">Clients</a>
+      <li class="nav-link more"><a href="javascript:void(0)">Company</a>
         <ul class="submenu">
-          <li><%= link_to "Company Dashboard", companies_path %></li>
           <li><%= link_to "Companies", companies_path %></li>
           <li><%= link_to "New Company", new_company_path %></li>
-          <li><%= link_to "Employee Dashboard", companies_path %></li>
           <li><%= link_to "Employees", employees_path %></li>
           <li><%= link_to "New Employee", new_employee_path %></li>
       </li>
       </ul>
       </li>
-      <li class="nav-link more"><a href="javascript:void(0)">Admin</a>
-        <ul class="submenu">
-          <li><%= link_to "Lawgix Dashbard", dashboards_path %></li>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "Admin", '/admin' %></li>
       </li>
       </ul>
       </li>
