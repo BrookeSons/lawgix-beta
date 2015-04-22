@@ -5,7 +5,7 @@ class Lease < ActiveRecord::Base
   has_many :lessees
   has_many :parcels
   has_many :documents
-  belongs_to :project
+  has_many :projects
 
 
 

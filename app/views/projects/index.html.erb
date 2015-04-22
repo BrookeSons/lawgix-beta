@@ -1,0 +1,23 @@
+  <div class="flex-boxes">
+    <a href="javascript:void(0)" class="flex-box flex-box-full">
+      <h2 class="flex-title">Lawgix OGX Services</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <td>Project Name</td>
+      <td>Description</td>
+    </tr>
+    </thead>
+    <tbody>
+    <%= will_paginate @projects %>
+    <% @projects.each do |project| %>
+        <tr>
+          <td><%= link_to project.name, project %></td>
+          <td><%= project.description %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </a>
+</div>

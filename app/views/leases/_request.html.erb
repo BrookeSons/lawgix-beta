@@ -1,5 +1,6 @@
 <div class="tab-content flex-box flex-box-full">
    <div>
+     <%= f.association :project %>
      <div id="state-select">
        <%= f.label :state %>
        <%= f.select :state, collection: ['Pennsylvania', 'Ohio','West Virginia'] %>

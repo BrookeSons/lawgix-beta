@@ -1,0 +1,13 @@
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+  <h1>New Project </h1>
+    <%= simple_form_for @project  do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.submit 'Create Project' %>
+    <% end %>
+  </div>
+</div>
+

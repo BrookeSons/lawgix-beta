@@ -1,0 +1,14 @@
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h1><%= @project.name %></h1>
+    <%= simple_form_for @project  do |f| %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.submit 'Update Project' %>
+    <% end %>
+  </div>
+  <div class="flex-box flex-box-full">
+    <h1> Leases </h1>
+    <%= render 'leases', project: @project %>
+  </div>
+</div>

@@ -5,8 +5,7 @@
        <%= f.select :state, collection: ['Pennsylvania', 'Ohio','West Virginia'] %>
      </div>
      <div id="lease_numb">
-       <%= f.label :lease_number %>
-       <%= f.text_field :lease_number %>
+       <%= f.association :lease %>
      </div>
     <div>
       <%= f.text_area :description, placeholder: "Comments" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422143747) do
+ActiveRecord::Schema.define(version: 20150422154751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,8 +213,10 @@ ActiveRecord::Schema.define(version: 20150422143747) do
     t.string   "c_servicer"
     t.string   "l_servicer"
     t.integer  "project_id"
+    t.integer  "lease_id"
   end
 
+  add_index "services", ["lease_id"], name: "index_services_on_lease_id", using: :btree
   add_index "services", ["project_id"], name: "index_services_on_project_id", using: :btree
   add_index "services", ["state"], name: "index_services_on_state", using: :btree
 

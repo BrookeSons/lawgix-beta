@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <td>Leases</td>
+    <td>Parcels / Abstract</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @leases = @project.leases %>
+  <% @leases.each do |lease| %>
+      <tr>
+        <td><%= link_to lease.lease_number, lease %></td>
+        <% end %>
+     </tr>
+  </tbody>
+</table>
