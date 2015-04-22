@@ -5,8 +5,8 @@ class Lease < ActiveRecord::Base
   has_many :lessees
   has_many :parcels
   has_many :documents
-  has_many :projects
 
+  belongs_to :project
 
 
   accepts_nested_attributes_for :lessees

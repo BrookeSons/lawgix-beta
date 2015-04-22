@@ -24,6 +24,14 @@ class LeasesController < ApplicationController
     redirect_to leases_path
   end
 
+  def update
+    @lease = Lease.find(params[:id])
+    if @lease.update_attributes(lease_params)
+      redirect_to leases_path, :notice => "Lease updated."
+    else
+      redirect_to leases_path, :alert => "Unable to update Lease."
+    end
+  end
   private
 
   def lease_params

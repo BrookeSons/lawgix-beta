@@ -1,24 +1,29 @@
-<div id="lease-index">
-  <h1>Leases</h1>
-  <table>
-    <thead>
-    <tr>
-      <td>Lease Number</td>
-      <td>Description</td>
-      <td>Lessors</td>
-      <td>State</td>
-      <td>County</td>
-    </tr>
-    </thead>
-    <tbody>
-    <% @leases.each do |lease| %>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <div id="lease-index">
+      <h1>Leases</h1>
+      <table>
+        <thead>
         <tr>
-          <td><%= lease.lease_number %></td>
-          <td><%= lease.description %></td>
-          <td><%= lease.lessees.count %><td>
-          <td><%= lease.county %></td>
+          <td>Lease Number</td>
+          <td>Description</td>
+          <td>Lessors</td>
+          <td>State</td>
+          <td>County</td>
         </tr>
-    <% end %>
-    </tbody>
-  </table>
+        </thead>
+        <tbody>
+        <% @leases.each do |lease| %>
+            <tr>
+              <td><%= link_to lease.lease_number, lease %></td>
+              <td><%= lease.description %></td>
+              <td><%= lease.lessees.count %>
+              <td>
+              <td><%= lease.county %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

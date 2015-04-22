@@ -12,25 +12,25 @@
     </div>
     <div id="flow-check">
       <div class="check">
-         <%= f.check_box(:serial_flows, {:multiple => true}, 'Abstract', nil) %>
+         <%= f.check_box(:serial_flows, 'Abstract', nil) %>
          <%= f.label 'Abstract' %>
           <%= f.label :servicer %>
           <%= f.select :a_servicer, collection: ['Lawgix', 'Internal'] %>
       </div>
       <div class="check">
-         <%= f.check_box(:serial_flows, {:multiple => true}, 'Opinion', nil) %>
+         <%= f.check_box(:serial_flows, 'Opinion', nil) %>
          <%= f.label 'Opinion' %>
           <%= f.label :servicer %>
           <%= f.select :o_servicer, collection: ['Lawgix','Internal'] %>
       </div>
       <div class="check">
-         <%= f.check_box(:serial_flows, {:multiple => true}, 'Curative', nil) %>
+         <%= f.check_box(:serial_flows, 'Curative', nil) %>
          <%= f.label 'Curative' %>
           <%= f.label :servicer %>
           <%= f.select :c_servicer, collection: ['Lawgix','Internal'] %>
       </div>
       <div class="check">
-        <%= f.check_box(:serial_flows, {:multiple => true}, 'Lease', nil) %>
+        <%= f.check_box(:serial_flows, 'Lease', nil) %>
         <%= f.label 'Lease' %>
         <%= f.label :servicer %>
         <%= f.select :l_servicer, collection: ['Lawgix','Internal'] %>

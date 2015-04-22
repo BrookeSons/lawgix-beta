@@ -1,0 +1,47 @@
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">Lease</h2>
+    <%= simple_form_for @lease do |f| %>
+        <ul class="accordion-tabs-minimal">
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link is-active">Request</a>
+            <%= render 'request', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Lessors</a>
+            <div class="tab-content">
+              <div class="nested-fields">
+                <%= f.simple_fields_for :lessees do |lessee| %>
+                    <%= render 'lessee_fields', f: lessee %>
+                    <%= link_to_add_association "Add Lessor", f, :lessees %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Parcels</a>
+            <div class="tab-content">
+              <div class="nested-fields">
+                <%= f.simple_fields_for :parcels do |parcel| %>
+                    <%= render 'parcel_fields', f: parcel %>
+                    <%= link_to_add_association "Add Parcel", f, :parcels %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Documents</a>
+            <div class="tab-content">
+              <div class="nested_fields">
+                <%= f.simple_fields_for :documents do |document| %>
+                    <%= render 'document_fields', f: document %>
+                    <%= link_to_add_association "Add Document", f, :documents %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <%= f.submit 'Update Lease' %>
+    <% end %>
+  </div>
+</div>

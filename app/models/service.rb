@@ -17,8 +17,7 @@ class Service < ActiveRecord::Base
  belongs_to :lease
 
 
- serialize :serial_flows, Array
-  
+
 
  accepts_nested_attributes_for :lessees
  accepts_nested_attributes_for :flows

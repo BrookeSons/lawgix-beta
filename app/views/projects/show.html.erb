@@ -1,14 +1,22 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h1><%= @project.name %></h1>
-    <%= simple_form_for @project  do |f| %>
-        <%= f.label :description %>
-        <%= f.text_field :description %>
-        <%= f.submit 'Update Project' %>
-    <% end %>
+    <h4><%= @project.description %></h4>
   </div>
   <div class="flex-box flex-box-full">
     <h1> Leases </h1>
+    <%= render 'leases', project: @project %>
+  </div>
+  <div class="flex-box flex-box">
+    <h1> Service Requests </h1>
+    <%= render 'services', project: @project %>
+  </div>
+  <div class="flex-box flex-box">
+    <h1> Abstracts </h1>
+    <%= render 'leases', project: @project %>
+  </div>
+  <div class="flex-box flex-box-full">
+    <h1> Documents </h1>
     <%= render 'leases', project: @project %>
   </div>
 </div>
