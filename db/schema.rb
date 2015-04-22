@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422142221) do
+ActiveRecord::Schema.define(version: 20150422143747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,8 +131,10 @@ ActiveRecord::Schema.define(version: 20150422142221) do
     t.string   "state"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.integer  "project_id"
   end
 
+  add_index "leases", ["project_id"], name: "index_leases_on_project_id", using: :btree
   add_index "leases", ["service_id"], name: "index_leases_on_service_id", using: :btree
 
   create_table "lessees", force: :cascade do |t|
@@ -210,8 +212,10 @@ ActiveRecord::Schema.define(version: 20150422142221) do
     t.string   "o_servicer"
     t.string   "c_servicer"
     t.string   "l_servicer"
+    t.integer  "project_id"
   end
 
+  add_index "services", ["project_id"], name: "index_services_on_project_id", using: :btree
   add_index "services", ["state"], name: "index_services_on_state", using: :btree
 
   create_table "services_users", id: false, force: :cascade do |t|
