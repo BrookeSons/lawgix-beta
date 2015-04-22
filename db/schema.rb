@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420014402) do
+ActiveRecord::Schema.define(version: 20150422021752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,9 +88,11 @@ ActiveRecord::Schema.define(version: 20150420014402) do
     t.string   "groupdocs_guid"
     t.text     "groupdocs_thumbnail"
     t.integer  "deed_id"
+    t.integer  "title_abstract_id"
   end
 
   add_index "documents", ["deed_id"], name: "index_documents_on_deed_id", using: :btree
+  add_index "documents", ["title_abstract_id"], name: "index_documents_on_title_abstract_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
     t.string   "flow_type"
@@ -147,7 +149,10 @@ ActiveRecord::Schema.define(version: 20150420014402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "service_id"
+    t.integer  "lease_id"
   end
+
+  add_index "lessees", ["lease_id"], name: "index_lessees_on_lease_id", using: :btree
 
   create_table "parcels", force: :cascade do |t|
     t.string   "tax_map"
@@ -157,7 +162,10 @@ ActiveRecord::Schema.define(version: 20150420014402) do
     t.datetime "updated_at"
     t.integer  "service_id"
     t.string   "county"
+    t.integer  "lease_id"
   end
+
+  add_index "parcels", ["lease_id"], name: "index_parcels_on_lease_id", using: :btree
 
   create_table "parcels_title_abstracts", id: false, force: :cascade do |t|
     t.integer "parcels_id"

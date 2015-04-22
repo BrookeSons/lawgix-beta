@@ -1,4 +1,5 @@
 class Parcel < ActiveRecord::Base
   belongs_to :service
-  has_one :title_abstract
+  belongs_to :lease
+  belongs_to :title_abstract
 end

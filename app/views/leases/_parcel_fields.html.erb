@@ -1,0 +1,18 @@
+<div class="nested-fields flex-box flex-box-full">
+  <fieldset>
+    <div id="pc1" class="field">
+        <%= f.text_field :tax_map, placeholder: "Tax Map" %>
+    </div>
+    <div id="pc2" class="field">
+         <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
+      </div>
+    <div id="pc3">
+         <%= f.text_field :county, placeholder: "County" %>
+    </div>
+    <div class="remove">
+     <%= link_to_remove_association "Remove Parcel", f %>
+    </div>
+    <div class="abstract">
+    </div>
+  </fieldset>
+</div>

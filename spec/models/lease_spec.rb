@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Lease, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Lease  do
+
+  context "Associations" do
+
+    it {should have_many(:parcels)}
+    it {should have_many(:lessees)}
+    it {should have_many(:documents)}
+    it {should have_and_belong_to_many(:users)}
+
+  end
+
 end

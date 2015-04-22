@@ -19,9 +19,9 @@ class TitleAbstractsController < ApplicationController
   end
 
   def new
-    @title_abstract = TitleAbstract.new(params[:title_abstract])
+    @title_abstract = TitleAbstract.new
     @title_abstract.deeds.build
-    respond_with(@title_abstract)
+    @title_abstract.documents.build
   end
 
   def edit
@@ -30,17 +30,14 @@ class TitleAbstractsController < ApplicationController
   def create
     @title_abstract = TitleAbstract.new(title_abstract_params)
     @title_abstract.save
-    respond_with(@title_abstract)
   end
 
   def update
     @title_abstract.update(title_abstract_params)
-    respond_with(@title_abstract)
   end
 
   def destroy
     @title_abstract.destroy
-    respond_with(@title_abstract)
   end
 
   private

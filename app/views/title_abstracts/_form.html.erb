@@ -15,8 +15,12 @@
     <%= f.simple_fields_for :deeds do |deed| %>
        <%= render 'deed_fields', f: deed %>
        <%= link_to_add_association "Add Deed", f, :deeds %>
-  </div>
     <% end %>
+    <%= f.simple_fields_for :documents do |document| %>
+        <%= render 'document_fields', f: document %>
+        <%= link_to_add_association "Add Document", f, :documents %>
+    <% end %>
+  </div>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

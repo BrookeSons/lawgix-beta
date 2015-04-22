@@ -7,11 +7,27 @@
 
     <div class="nav">
       <ul id="navigation-menu">
-        <li class="nav-link more"><a href="javascript:void(0)">Lease Requests</a>
+        <li class="nav-link more"><a href="javascript:void(0)">Projects</a>
           <ul class="submenu">
-            <li><%= link_to "Leases", services_path %></li>
             <li><%= link_to "Lawgix Dashboard", dashboards_path %></li>
             <li><%= link_to "New Service Request", new_service_path %></li>
+            <li><%= link_to "Request Status", service_transitions_path %>
+            <li><%= link_to "Documents", documents_path %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link more"><a href="javascript:void(0)">Leases</a>
+          <ul class="submenu">
+            <li><%= link_to "New Lease", new_lease_path %></li>
+            <li><%= link_to "Leases", leases_path %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link more"><a href="javascript:void(0)">Service Requests</a>
+          <ul class="submenu">
+            <li><%= link_to "Lawgix Dashboard", dashboards_path %></li>
+            <li><%= link_to "New Service Request", new_service_path %></li>
+            <li><%= link_to "Service Requests", services_path %></li>
             <li><%= link_to "Request Status", service_transitions_path %>
             <li><%= link_to "Documents", documents_path %>
             </li>

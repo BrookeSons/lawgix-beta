@@ -30,6 +30,7 @@ gem 'active_type'
 #### Core Gems
 gem 'statesman'
 gem 'roar'
+gem 'cells'
 gem 'reform'
 
 ###

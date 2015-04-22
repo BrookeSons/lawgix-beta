@@ -1,74 +1,47 @@
-<div id="new_service_form">
-  <h1>New Lease</h1>
-  <fieldset>
-    <ul class="accordion-tabs-minimal">
-      <li class="tab-header-and-content">
-        <a href="#" class="tab-link is-active">Request</a>
-        <div class="tab-content">
-          <%= form_for @lease do |f| %>
-              <%= f.label :lease_number %>
-              <%= f.text_field :lease_number %>
-              <%= f.label :description %>
-              <%= f.text_field :description %>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">New Lease</h2>
+    <%= simple_form_for @lease do |f| %>
+        <ul class="accordion-tabs-minimal">
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link is-active">Request</a>
+            <%= render 'request', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Lessors</a>
+            <div class="tab-content">
+              <div class="nested-fields">
+                <%= f.simple_fields_for :lessees do |lessee| %>
+                    <%= render 'lessee_fields', f: lessee %>
+                    <%= link_to_add_association "Add Lessor", f, :lessees %>
+                <% end %>
               </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Lessee</a>
-                <div class="tab-content">
-                  <%= f.fields_for :lessees do |l| %>
-                      <%= l.label :first_name %>
-                      <%= l.text_field :first_name %>
-                      <%= l.label :last_name %>
-                      <%= l.text_field :last_name %>
-                      <%= l.label :company %>
-                      <%= l.text_field :company %>
-                      <%= l.label :bus_phone %>
-                      <%= l.text_field :bus_phone %>
-                      <%= l.label :phone %>
-                      <%= l.text_field :phone %>
-                      <%= l.label :address %>
-                      <%= l.text_field :address %>
-                      <%= l.label :city %>
-                      <%= l.text_field :city %>
-                      <%= l.label :state %>
-                      <%= l.text_field :state %>
-                      <%= l.label :zip %>
-                      <%= l.text_field :zip %>
-                      <%= l.label :email %>
-                      <%= l.text_field :email %>
-                  <% end %>
-                </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Parcel</a>
-                <div class="tab-content">
-                  <%= f.fields_for :parcels do |pc| %>
-                      <%= pc.label :tax_map %>
-                      <%= pc.text_field :tax_map %>
-                      <%= pc.label :tax_parcel %>
-                      <%= pc.text_field :tax_parcel %>
-                  <% end %>
-                  <%= f.label :county %>
-                  <%= f.text_field :county %>
-                </div>
-              </li>
-              <li class="tab-header-and-content">
-                <a href="#" class="tab-link">Implementation</a>
-                <div class="tab-content">
-                  <%= f.check_box(:flows, {:multiple => true}, 'Opinion', nil) %>
-                  <%= f.label 'Abstract' %>
-                  <%= f.check_box(:flows, {:multiple => true}, 'Abstract', nil) %>
-                  <%= f.label 'Opinion' %>
-                  <%= f.check_box(:flows, {:multiple => true}, 'Curative', nil) %>
-                  <%= f.label 'Curative' %>
-                  <%= f.label 'Delivery Date' %>
-                  <%= f.date_field :requested_delivery %>
-                </div>
-              </li>
-              </ul>
-              <div id='request'>
-                <%= f.submit 'Create Lease' %>
+            </div>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Parcels</a>
+            <div class="tab-content">
+              <div class="nested-fields">
+                <%= f.simple_fields_for :parcels do |parcel| %>
+                    <%= render 'parcel_fields', f: parcel %>
+                    <%= link_to_add_association "Add Parcel", f, :parcels %>
+                <% end %>
               </div>
-          <% end %>
-          </fieldset>
+            </div>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Documents</a>
+            <div class="tab-content">
+              <div class="nested_fields">
+                <%= f.simple_fields_for :documents do |document| %>
+                    <%= render 'document_fields', f: document %>
+                    <%= link_to_add_association "Add Document", f, :documents %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <%= f.submit 'Create New Lease' %>
+    <% end %>
+  </div>
 </div>
