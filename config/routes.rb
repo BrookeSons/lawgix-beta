@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :projects
+
   resources :documents
 
   root 'visitors#index'
