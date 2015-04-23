@@ -10,32 +10,11 @@
     <div>
       <%= f.text_area :description, placeholder: "Comments" %>
     </div>
-    <div id="flow-check">
-      <div class="check">
-         <%= f.check_box(:serial_flows, 'Abstract', nil) %>
-         <%= f.label 'Abstract' %>
-          <%= f.label :servicer %>
-          <%= f.select :a_servicer, collection: ['Lawgix', 'Internal'] %>
-      </div>
-      <div class="check">
-         <%= f.check_box(:serial_flows, 'Opinion', nil) %>
-         <%= f.label 'Opinion' %>
-          <%= f.label :servicer %>
-          <%= f.select :o_servicer, collection: ['Lawgix','Internal'] %>
-      </div>
-      <div class="check">
-         <%= f.check_box(:serial_flows, 'Curative', nil) %>
-         <%= f.label 'Curative' %>
-          <%= f.label :servicer %>
-          <%= f.select :c_servicer, collection: ['Lawgix','Internal'] %>
-      </div>
-      <div class="check">
-        <%= f.check_box(:serial_flows, 'Lease', nil) %>
-        <%= f.label 'Lease' %>
-        <%= f.label :servicer %>
-        <%= f.select :l_servicer, collection: ['Lawgix','Internal'] %>
-      </div>
-    </div>
+
+     <%= f.label :request %>
+     <%= f.select :request, collection: ['Abstract','Opinion','Lease','Curative'] %>
+     <%= f.label :servicer %>
+     <%= f.select :servicer, collection: ['Internal','Lawgix'] %>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>
       <%= f.date_field :requested_delivery %>
