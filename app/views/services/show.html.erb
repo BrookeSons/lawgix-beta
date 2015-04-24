@@ -8,27 +8,6 @@
               <%= render 'request', f: f %>
             </li>
             <li class="tab-header-and-content">
-              <a href="#" class="tab-link">Lessors</a>
-              <div class="tab-content">
-                <div class="nested-fields">
-                  <%= f.simple_fields_for :lessees do |lessee| %>
-                      <%= render 'lessee_fields', f: lessee %>
-                      <%= link_to_add_association "Add Lessor", f, :lessees %>
-                  <% end %>
-                </div>
-              </div>
-            </li>
-            <li class="tab-header-and-content">
-              <a href="#" class="tab-link">Parcels</a>
-              <div class="tab-content">
-                <div class="nested-fields">
-                  <%= f.simple_fields_for :parcels do |parcel| %>
-                      <%= render 'parcel_fields', f: parcel %>
-                  <% end %>
-                </div>
-              </div>
-            </li>
-            <li class="tab-header-and-content">
               <a href="#" class="tab-link">Documents</a>
               <div class="tab-content">
                 <div class="nested_fields">
@@ -41,7 +20,6 @@
                           <th colspan="3"></th>
                         </tr>
                         </thead>
-
                         <tbody>
                         <% @documents.each do |document| %>
                             <tr>

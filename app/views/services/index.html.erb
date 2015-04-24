@@ -9,7 +9,7 @@
       <td>Description</td>
       <td>Delivery Date</td>
       <td>State</td>
-      <td>Workflows</td>
+      <td>Workflow</td>
     </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
           <td><%= service.description %></td>
           <td><%= service.requested_delivery %></td>
           <td><%= service.state %></td>
-          <td><%= service.serial_flows.join " " %></td>
+          <td><%= service.request %></td>
         </tr>
     <% end %>
     </tbody>

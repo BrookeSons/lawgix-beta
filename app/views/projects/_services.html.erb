@@ -10,7 +10,7 @@
   <% @services = @project.services %>
   <% @services.each do |service| %>
       <tr>
-        <td><%= link_to service.lease_number, service %></td>
+        <td><%= link_to service.request, service %></td>
         <% end %>
      </tr>
   </tbody>

@@ -6,8 +6,8 @@ class TitleAbstract < ActiveRecord::Base
   has_and_belongs_to_many :abstractors, through: :title_abstracts_users
   has_many :documents
   accepts_nested_attributes_for :documents
+  has_many :parcels
 
  belongs_to :deed
- belongs_to :parcel
 
 end
