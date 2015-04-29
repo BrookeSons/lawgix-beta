@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @projects = Project.new(secure_params)
     @projects.save
 
-    redirect_to contacts_path
+    redirect_to new_lease_path
   end
 
   def update

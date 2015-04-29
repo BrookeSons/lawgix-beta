@@ -1,0 +1,31 @@
+<table>
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @services = @project.services %>
+  <% @leases = @project.leases %>
+  <% @services.each do |service| %>
+      <tr>
+            <% @docs = service.documents %>
+            <% @docs.each do |doc| %>
+                <td><%= link_to doc.name, doc %></td>
+                <td><%= link_to doc.doc_type, doc %></td>
+      <% end %>
+  <% end %>
+  </tr>
+  <% @leases.each do |lease| %>
+      <tr>
+        <% @ldocs = lease.documents %>
+        <% @ldocs.each do |ldoc| %>
+            <td><%= link_to ldoc.name, ldoc %></td>
+            <td><%= link_to ldoc.doc_type, ldoc %></td>
+        <% end %>
+  <% end %>
+  </tr>
+  </tbody>
+</table>

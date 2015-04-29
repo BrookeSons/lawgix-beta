@@ -5,7 +5,6 @@
   <table>
     <thead>
     <tr>
-      <td>Lease Number</td>
       <td>Description</td>
       <td>Delivery Date</td>
       <td>State</td>
@@ -16,8 +15,7 @@
     <%= will_paginate @services %>
     <% @services.each do |service| %>
         <tr>
-          <td><%= link_to service.lease_number, service %></td>
-          <td><%= service.description %></td>
+          <td><%= link_to service.description, service %></td>
           <td><%= service.requested_delivery %></td>
           <td><%= service.state %></td>
           <td><%= service.request %></td>
