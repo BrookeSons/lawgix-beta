@@ -11,6 +11,6 @@ class Lease < ActiveRecord::Base
 
   accepts_nested_attributes_for :lessees
   accepts_nested_attributes_for :parcels
-  accepts_nested_attributes_for  :documents
+  accepts_nested_attributes_for :documents
 
 end
