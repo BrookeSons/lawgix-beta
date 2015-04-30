@@ -1,0 +1,23 @@
+<table>
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @services = @project.services %>
+  <% @services.each do |service| %>
+      <tr>
+        <% @parcels = service.parcels %>
+        <% @parcels.each do |parcel| %>
+            <% @id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
+            <% if parcel.title_abstract %>
+                <td><%= link_to parcel, parcel.title_abstract %></td>
+            <% end %>
+        <% end %>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
