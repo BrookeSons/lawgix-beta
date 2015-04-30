@@ -12,9 +12,9 @@
       <tr>
         <% @parcels = service.parcels %>
         <% @parcels.each do |parcel| %>
-            <% @id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
+            <% id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
             <% if parcel.title_abstract %>
-                <td><%= link_to parcel, parcel.title_abstract %></td>
+                <td><%= link_to service.request, parcel.title_abstract %></td>
             <% end %>
         <% end %>
   <% end %>

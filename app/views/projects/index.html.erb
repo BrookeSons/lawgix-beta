@@ -1,12 +1,13 @@
   <div class="flex-boxes">
     <a href="javascript:void(0)" class="flex-box flex-box-full">
-      <h2 class="flex-title">Lawgix OGX Services</h2>
+      <h2 class="flex-title">Lawgix OGX Projects</h2>
 
   <table>
     <thead>
     <tr>
       <td>Project Name</td>
       <td>Description</td>
+      <td>Services</td>
     </tr>
     </thead>
     <tbody>
@@ -15,6 +16,10 @@
         <tr>
           <td><%= link_to project.name, project %></td>
           <td><%= project.description %></td>
+          <% @requests = project.services %>
+          <% @requests.each do |request| %>
+          <td><%=  link_to request.request, request %> </td>
+               <% end %>
         </tr>
     <% end %>
     </tbody>

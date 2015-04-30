@@ -1,8 +1,8 @@
 <table>
   <thead>
   <tr>
-    <td>Leases</td>
-    <td>Parcels / Abstract</td>
+    <td>Requests</td>
+    <td>Status</td>
   </tr>
   </thead>
   <tbody>
@@ -11,6 +11,7 @@
   <% @services.each do |service| %>
       <tr>
         <td><%= link_to service.request, service %></td>
+        <td><%= service.current_state %></td>
         <% end %>
      </tr>
   </tbody>
