@@ -8,8 +8,8 @@ CarrierWave.configure do |config|
 
   config.fog_credentials = {
       :provider               => 'AWS',                        # required
-      :aws_access_key_id      => 'AKIAJATU2VYSWWBKPH4Q',                        # required
-      :aws_secret_access_key  => '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',                     # required
+      :aws_access_key_id      => '',                        # required
+      :aws_secret_access_key  => '',                     # required
 
   }
   config.fog_directory  = 'lawgix'                             # required
