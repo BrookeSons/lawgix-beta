@@ -14,10 +14,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @projects = Project.new(secure_params)
-    @projects.save
-
-    redirect_to new_lease_path
+    @project = Project.new(secure_params)
+    @project.save!
+    redirect_to project_path(@project)
   end
 
   def update

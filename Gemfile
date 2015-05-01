@@ -30,7 +30,7 @@ gem 'active_type'
 #### Core Gems
 gem 'statesman'
 gem 'roar'
-gem 'cells'
+gem 'cells', :git => 'https://github.com/apotonick/cells.git'
 gem 'reform'
 
 ###
@@ -62,8 +62,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.1'
   gem 'binding_of_caller'
-  gem 'spork'
-  gem 'spork-rails'
 end
 
 group :test do
