@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501183752) do
+ActiveRecord::Schema.define(version: 20150501184147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -237,9 +237,11 @@ ActiveRecord::Schema.define(version: 20150501183752) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "parcel_id"
+    t.integer  "project_id"
   end
 
   add_index "title_abstracts", ["parcel_id"], name: "index_title_abstracts_on_parcel_id", using: :btree
+  add_index "title_abstracts", ["project_id"], name: "index_title_abstracts_on_project_id", using: :btree
 
   create_table "title_abstracts_users", id: false, force: :cascade do |t|
     t.integer "abstractor_id"
