@@ -30,6 +30,17 @@
             </div>
           </li>
           <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Provisions</a>
+            <div class="tab-content">
+              <div class="nested-fields">
+                <%= f.simple_fields_for :parcels do |parcel| %>
+                    <%= render 'parcel_fields', f: parcel %>
+                    <%= link_to_add_association "Add Parcel", f, :parcels %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+          <li class="tab-header-and-content">
             <a href="#" class="tab-link">Documents</a>
             <div class="tab-content">
               <div class="nested_fields">

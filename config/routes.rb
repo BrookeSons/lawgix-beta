@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :projects
+  resources :projects do
+    member do
+      resources :services
+      resources :contacts
+      resources :title_abstracts
+      resources :parcels
+    end
+  end
 
   resources :documents
 

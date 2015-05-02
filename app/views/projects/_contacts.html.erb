@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <td>Contacts</td>
+    <td>Email</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @contacts = @project.contacts %>
+  <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact, contact %></td>
+        <td><%= contact.emails %></td>
+  <% end %>
+  </tr>
+  </tbody>
+</table>

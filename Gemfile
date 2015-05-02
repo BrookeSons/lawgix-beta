@@ -27,6 +27,7 @@ gem 'carrierwave'
 gem 'carrierwave-viewer', :github => "Brookesons/carrierwave-viewer"
 gem 'fog-aws'
 gem 'active_type'
+gem 'font-awesome-sass'
 #### Core Gems
 gem 'statesman'
 gem 'roar'

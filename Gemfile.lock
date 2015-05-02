@@ -169,6 +169,8 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     formatador (0.2.5)
     formulaic (0.2.0)
       activesupport
@@ -422,6 +424,7 @@ DEPENDENCIES
   factory_girl_rails
   flutie
   fog-aws
+  font-awesome-sass
   formulaic
   groupdocs
   high_voltage

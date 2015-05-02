@@ -7,6 +7,7 @@ class TitleAbstract < ActiveRecord::Base
   has_many :documents
   accepts_nested_attributes_for :documents
   belongs_to :parcel
+  belongs_to :project
 
  belongs_to :deed
 

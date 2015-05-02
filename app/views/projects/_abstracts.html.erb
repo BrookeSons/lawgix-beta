@@ -7,16 +7,10 @@
   </thead>
   <tbody>
 
-  <% @services = @project.services %>
-  <% @services.each do |service| %>
+  <% @abstracts = @project.title_abstracts %>
+  <% @abstracts.each do |abstract| %>
       <tr>
-        <% @parcels = service.parcels %>
-        <% @parcels.each do |parcel| %>
-            <% id = [parcel.tax_map, parcel.tax_parcel].compact.join("-") %>
-            <% if parcel.title_abstract %>
-                <td><%= link_to service.request, parcel.title_abstract %></td>
-            <% end %>
-        <% end %>
+        <td><%= link_to abstract, abstract %></td>
   <% end %>
   </tr>
   </tbody>

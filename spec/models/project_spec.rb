@@ -1,5 +1,11 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Project, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Project do
+
+  context "Associations" do
+    it { should have_many(:services) }
+    it { should have_many(:title_abstracts) }
+    it { should have_many(:contacts) }
+  end
 end
