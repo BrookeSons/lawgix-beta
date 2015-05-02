@@ -9,7 +9,6 @@ class Lease < ActiveRecord::Base
 
   belongs_to :project
 
-
   accepts_nested_attributes_for :lessors
   accepts_nested_attributes_for :parcels
   accepts_nested_attributes_for :documents

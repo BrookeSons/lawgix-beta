@@ -11,9 +11,9 @@
             <a href="#" class="tab-link">Lessors</a>
             <div class="tab-content">
               <div class="nested-fields">
-                <%= f.simple_fields_for :lessees do |lessee| %>
-                    <%= render 'lessee_fields', f: lessee %>
-                    <%= link_to_add_association "Add Lessor", f, :lessees %>
+                <%= f.simple_fields_for :lessors do |lessor| %>
+                    <%= render 'lessor_fields', f: lessor %>
+                    <%= link_to_add_association "Add Lessor", f, :lessors %>
                 <% end %>
               </div>
             </div>

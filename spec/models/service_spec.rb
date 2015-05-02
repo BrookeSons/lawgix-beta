@@ -6,9 +6,9 @@ describe Service do
   context "Associations" do
 
     it {should have_many(:parcels)}
-    it {should have_many(:lessees)}
+    it {should have_many(:lessors)}
+    it {should have_many(:contacts)}
     it {should have_many(:service_transitions)}
-    it {should have_many(:flows)}
     it {should have_many(:documents)}
     it {should have_and_belong_to_many(:users)}
 

@@ -3,7 +3,7 @@ class LeasesController < ApplicationController
 
   def new
     @lease = Lease.new
-    @lease.lessees.build
+    @lease.lessors.build
     @lease.parcels.build
     @lease.documents.build
   end
