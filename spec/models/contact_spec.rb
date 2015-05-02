@@ -1,5 +1,12 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Contact, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Contact do
+
+  context "Associations" do
+    it {should belong_to(:project)}
+    it {should belong_to(:lease)}
+    it {should belong_to(:service)}
+  end
+
 end

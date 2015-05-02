@@ -5,8 +5,9 @@ class Service < ActiveRecord::Base
  has_many :service_transitions
 
  has_many :flows
- has_many :lessees
  has_many :parcels
+ has_many :contacts
+ has_many :lessors
  has_many :documents
  has_and_belongs_to_many :users, through: :services_users
  has_and_belongs_to_many :employees, through: :services_users
@@ -19,7 +20,7 @@ class Service < ActiveRecord::Base
 
 
 
- accepts_nested_attributes_for :lessees
+ accepts_nested_attributes_for :lessors
  accepts_nested_attributes_for :flows
  accepts_nested_attributes_for :parcels
  accepts_nested_attributes_for  :documents
