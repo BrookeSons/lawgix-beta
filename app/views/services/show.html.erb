@@ -1,7 +1,7 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">Service Request</h2>
-      <%= simple_form_for @service do |f| %>
+      <%= simple_form_for[@project, @service] do |f| %>
           <ul class="accordion-tabs-minimal">
             <li class="tab-header-and-content">
               <a href="#" class="tab-link is-active">Request</a>

@@ -1,11 +1,15 @@
 <div id="new_contact_form">
-  <h1>New Contact</h1>
+  <h1>Contact</h1>
   <fieldset>
     <%= simple_form_for @contact do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
         <%= f.label :phone %>
         <%= f.text_field :phone %>
+        <%= f.label :bus_phone %>
+        <%= f.text_field :bus_phone %>
         <%= f.label :email %>
         <%= f.text_field :email %>
         <%= f.label :city %>
@@ -14,10 +18,9 @@
         <%= f.text_field :state %>
         <%= f.label :zip %>
         <%= f.text_field :zip %>
-        <%= f.submit 'Create Contact' %>
+        <%= f.submit 'Update Contact' %>
         </div>
         </li>
     <% end %>
     </fieldset>
     </div>
-

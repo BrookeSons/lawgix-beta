@@ -3,9 +3,9 @@ class ServicesController < ApplicationController
 
 
   def new
-    @service = Service.new
-    @service.lessees.build
-    @service.parcels.build
+    @service = Project.find(params[:project_id])
+    @service.lessors.build
+    # @service.parcels.build
     @service.documents.build
   end
 

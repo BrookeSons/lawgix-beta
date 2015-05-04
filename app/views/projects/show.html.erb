@@ -5,30 +5,25 @@
   </div>
     <div class="flex-box flex-box-full">
       <h3> <%= link_to "Service Requests", services_path %></h3>
-      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_service_path(@project) %>
+      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_project_service_path(@project) %>
       <%= render 'services', project: @project %>
     </div>
   <section class="flex-boxes">
     <div class="flex-box flex-box">
       <h3> <%= link_to "Contacts", contacts_path %> </h3>
-       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_contact_path(@project) %>
+       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_project_contact_path(@project) %>
       <%= render 'contacts', project: @project %>
     </div>
     <div class="flex-box flex-box">
       <h3> <%= link_to "Leases", leases_path %> </h3>
-      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_lease_path(@project) %>
+      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_project_lease_path(@project) %>
       <%= render 'leases', project: @project %>
     </div>
   </section>
   <section class="flex-boxes">
-  <div class="flex-box flex-box">
+  <div class="flex-box flex-box"-full>
     <h3> <%= link_to "Documents", documents_path %> </h3>
-    <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_document_path(@project) %>
-    <%= render 'documents', project: @project %>
-  </div>
-  <div class="flex-box flex-box">
-    <h3> <%= link_to "Work Product", documents_path %> </h3>
-    <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_document_path(@project) %>
+    <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_project_document_path(@project) %>
     <%= render 'documents', project: @project %>
   </div>
   </section>

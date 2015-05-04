@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
   resources :projects do
-    member do
       resources :services
       resources :contacts
       resources :title_abstracts
       resources :parcels
-    end
+      resources :leases
+      resources :documents
   end
 
   resources :documents
+  resources :contacts
 
   root 'visitors#index'
   resources :title_abstracts
