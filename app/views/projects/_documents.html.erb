@@ -6,6 +6,12 @@
   </tr>
   </thead>
   <tbody>
+  <% @documents = @project.documents %>
+  <% @documents.each do |pdoc| %>
+    <td><%= link_to pdoc.name, pdoc %></td>
+      <td><%= link_to pdoc.doc_type, pdoc %></td>
+      <% end %>
+
 
   <% @services = @project.services %>
   <% @leases = @project.leases %>
