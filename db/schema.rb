@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502190140) do
+ActiveRecord::Schema.define(version: 20150505155956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,9 +101,11 @@ ActiveRecord::Schema.define(version: 20150502190140) do
     t.text     "groupdocs_thumbnail"
     t.integer  "deed_id"
     t.integer  "title_abstract_id"
+    t.integer  "project_id"
   end
 
   add_index "documents", ["deed_id"], name: "index_documents_on_deed_id", using: :btree
+  add_index "documents", ["project_id"], name: "index_documents_on_project_id", using: :btree
   add_index "documents", ["title_abstract_id"], name: "index_documents_on_title_abstract_id", using: :btree
 
   create_table "flows", force: :cascade do |t|
