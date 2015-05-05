@@ -3,6 +3,7 @@ class LeasesController < ApplicationController
 
   def new
     @lease = Lease.new
+    @project = Project.find(params[:project])
     @lease.lessors.build
     @lease.parcels.build
     @lease.documents.build

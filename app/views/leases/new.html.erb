@@ -1,6 +1,14 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">New Lease</h2>
+
+    <div id="service-project">
+      <h5>Project:
+        <% if @project %>
+            <%= @project.name %>
+        <% end %>
+      </h5>
+    </div>
     <%= simple_form_for @lease do |f| %>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">
@@ -9,6 +17,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Lessors</a>
+
             <div class="tab-content">
               <div class="nested-fields">
                 <%= f.simple_fields_for :lessors do |lessor| %>
@@ -20,6 +29,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Parcels</a>
+
             <div class="tab-content">
               <div class="nested-fields">
                 <%= f.simple_fields_for :parcels do |parcel| %>
@@ -31,6 +41,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Provisions</a>
+
             <div class="tab-content">
               <div class="nested-fields">
                 <%= f.simple_fields_for :parcels do |parcel| %>
@@ -42,6 +53,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Documents</a>
+
             <div class="tab-content">
               <div class="nested_fields">
                 <%= f.simple_fields_for :documents do |document| %>

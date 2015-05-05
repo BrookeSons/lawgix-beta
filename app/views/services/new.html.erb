@@ -1,25 +1,33 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">New Service Request</h2>
-      <%= simple_form_for @service do |f| %>
-          <ul class="accordion-tabs-minimal">
-            <li class="tab-header-and-content">
-              <a href="#" class="tab-link is-active">Request</a>
-               <%= render 'request', f: f %>
-            </li>
-            <li class="tab-header-and-content">
+       <div id="service-project">
+    <h5>Project:
+      <% if @project %>
+          <%= @project.name %>
+      <% end %>
+    </h5>
+    </div>
+    <%= simple_form_for @service do |f| %>
+        <ul class="accordion-tabs-minimal">
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link is-active">Request</a>
+            <%= render 'request', f: f %>
+          </li>
+          <li class="tab-header-and-content">
             <a href="#" class="tab-link">Documents</a>
-              <div class="tab-content">
-                <div class="nested_fields">
-                  <%= f.simple_fields_for :documents do |document| %>
+
+            <div class="tab-content">
+              <div class="nested_fields">
+                <%= f.simple_fields_for :documents do |document| %>
                     <%= render 'document_fields', f: document %>
                     <%= link_to_add_association "Add Document", f, :documents %>
-                  <% end %>
-                </div>
+                <% end %>
               </div>
-            </li>
-          </ul>
-      <%= f.submit 'Create Service Request' %>
+            </div>
+          </li>
+        </ul>
+        <%= f.submit 'Create Service Request' %>
     <% end %>
   </div>
 </div>

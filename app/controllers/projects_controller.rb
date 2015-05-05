@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
-  
+
   def new
-    @project = Project.new
+    @form = ProjectForm.new(Project.new)
   end
 
   def show
@@ -14,9 +14,13 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(secure_params)
-    @project.save!
-    redirect_to project_path(@project)
+    @form = ProjectForm.new(Project.new)
+    if @form.validate(params[:project])
+      @form.save
+      redirect_to projects_path(@form)
+    else
+      render :new
+    end
   end
 
   def update
@@ -27,6 +31,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_path, :alert => "Unable to update Project."
     end
   end
+
   private
 
   def secure_params

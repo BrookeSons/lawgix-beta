@@ -3,9 +3,10 @@ class ServicesController < ApplicationController
 
 
   def new
-    @service = Project.find(params[:project_id])
+    @service = Service.new
+    @project = Project.find(params[:project])
     @service.lessors.build
-    # @service.parcels.build
+    @service.parcels.build
     @service.documents.build
   end
 
@@ -22,7 +23,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.save
-    redirect_to dashboards_path
+    redirect_to projects_path
   end
 
 

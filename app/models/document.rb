@@ -6,6 +6,7 @@ class Document < ActiveRecord::Base
   belongs_to :lease
   belongs_to :deed
   belongs_to :title_abstract
+  belongs_to :project
 
   mount_uploader :doc, DocUploader
 end

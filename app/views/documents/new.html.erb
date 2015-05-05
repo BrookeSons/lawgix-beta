@@ -1,0 +1,29 @@
+<div class="nested-fields flex-box flex-box-full">
+  <h4>Document Name </h4>
+  <%= simple_form_for @document do |f| %>
+      <% if @project %>
+          <%= f.association :project, selected: @project.id %>
+      <% else %>
+          <%= f.association :project %>
+      <% end %>
+      <fieldset>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "Document Name" %>
+        </div>
+        <div class="field">
+          <%= f.text_area :doc_comment, placeholder: "Comments" %>
+        </div>
+        <div id="doc-type" class="field">
+          <%= f.select :doc_type, collection: ["Opinion", "Deed", "Abstract", "Map", "Lease", "Notes"] %>
+        </div>
+        <div id='file-box' class="field">
+          <%= f.file_field :doc %>
+        </div>
+        <div class="remove">
+          <%= link_to_remove_association "Remove File", f %>
+        </div>
+        <div class="abstract">
+        </div>
+      </fieldset>
+  <% end %>
+</div>

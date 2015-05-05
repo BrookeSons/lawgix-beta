@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
+    @project = Project.find(params[:project])
   end
 
   def show

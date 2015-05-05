@@ -1,29 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :projects do
-      resources :services
-      resources :contacts
-      resources :title_abstracts
-      resources :parcels
-      resources :leases
-      resources :documents
-  end
-
-  resources :documents
-  resources :contacts
-
   root 'visitors#index'
-  resources :title_abstracts
-  resources :deeds
-  resources :lawfirms
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  resources :projects
+  resources :documents
+  resources :contacts
+  resources :lessors
+  resources :deeds
+  resources :lawfirms
   resources :companies
   resources :employees
-  resources :lessees
   resources :parcels
   resources :leases
-  resources :lawfirms
   resources :lawyers
   resources :services_users
   resources :abstractors
@@ -45,9 +35,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts
   devise_for :users
-  resources :flows
   resources :users
 
 end

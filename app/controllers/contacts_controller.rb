@@ -2,8 +2,8 @@ class ContactsController < ApplicationController
 
 
   def new
-    @project = Project.find(params[:project_id])
-    @contact = @project.contacts.build
+    @contact = Contact.new
+    @project = Project.find(params[:project])
   end
 
   def show
@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
   end
 
   def update
-    @contact = Contact.find(params[:project_id])
+    @contact = Contact.find(params[:contact_id])
 
     if @contact.update_attributes(secure_params)
       redirect_to projects_path, :notice => "Contact updated."

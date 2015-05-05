@@ -1,7 +1,22 @@
 <div id="new_contact_form">
   <h1>New Contact</h1>
+  <div id="service-project">
+    <h5>Project:
+      <% if @project %>
+          <%= @project.name %>
+      <% end %>
+    </h5>
+  </div>
          <fieldset>
-          <%= simple_form_for [@project,@contact] do |f| %>
+          <%= simple_form_for @contact do |f| %>
+               <div id="lease_numb">
+                 <% if @project %>
+                     <%= f.association :project, selected: @project.id %>
+                 <% else %>
+                     <%= f.association :project %>
+                 <% end %>
+                 <%= f.association :lease, label_method: :lease_number %>
+               </div>
               <%= f.label :first_name %>
               <%= f.text_field :first_name %>
                <%= f.label :last_name %>

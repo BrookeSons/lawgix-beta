@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_many :contacts
   has_many :lessors
   has_many :title_abstracts
+  has_many :documents
 
   has_paper_trail
 

@@ -10,8 +10,8 @@
   <% @contacts = @project.contacts %>
   <% @contacts.each do |contact| %>
       <tr>
-        <td><%= link_to contact, contact %></td>
-        <td><%= contact.emails %></td>
+        <td><%= link_to contact.last_name, contact %></td>
+        <td><%= contact.email %></td>
   <% end %>
   </tr>
   </tbody>
