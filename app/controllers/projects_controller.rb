@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @form = ProjectForm.new(Project.new)
     if @form.validate(params[:project])
       @form.save
-      redirect_to projects_path(@form)
+      redirect_to project_path(@form)
     else
       render :new
     end

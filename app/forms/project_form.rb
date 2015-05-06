@@ -3,6 +3,6 @@
     model :project
 
     properties :name, :description
-    validates :name, presence: true
-    validates :description, presence: true
+    validates  :name, presence: true
+    validates  :description, presence: true
   end
