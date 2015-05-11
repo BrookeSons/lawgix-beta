@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
 
 
   def new
-    @contact = Contact.new
+    @contact  = ContactForm.new(Contact.new)
     @project = Project.find(params[:project])
   end
 
@@ -26,10 +26,13 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(secure_params)
-    @contact.save
-
-    redirect_to projects_path
+    @form = ContactForm.new(Contact.new)
+    if @form.validate(params[:contact])
+      @form.save
+      redirect_to projects_path
+    else
+      render :new
+    end
   end
 
   private

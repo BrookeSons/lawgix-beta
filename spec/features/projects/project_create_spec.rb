@@ -21,7 +21,7 @@ feature "Add new Project" do
     fill_in "Name", with: "Lawgix"
     fill_in "Description", with: "Lawgix Lease"
     click_on "Create Project"
-    visit project_path(@project)
+    visit project_path()
     expect(page).to have_content("Lawgix")
   end
 

@@ -8,7 +8,7 @@
     </h5>
   </div>
          <fieldset>
-          <%= simple_form_for @contact do |f| %>
+          <%= simple_form_for @form do |f| %>
                <div id="lease_numb">
                  <% if @project %>
                      <%= f.association :project, selected: @project.id %>
