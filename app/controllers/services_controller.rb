@@ -2,8 +2,9 @@ class ServicesController < ApplicationController
 
 
   def new
-    @form = ServiceForm.new(Service.new)
+    @service = Service.new
     @project = Project.find(params[:project])
+    @service.documents.build
   end
 
   def show
@@ -17,13 +18,9 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @form = ServiceForm.new(Service.new)
-    if @form.validate(params[:service])
-      @form.save
-      redirect_to projects_path
-    else
-      render :new
-    end
+    @service = Service.new(service_params)
+    @service.save!
+    redirect_to projects_path
   end
 
 
