@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505155956) do
+ActiveRecord::Schema.define(version: 20150511153353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20150505155956) do
   add_index "contacts", ["lease_id"], name: "index_contacts_on_lease_id", using: :btree
   add_index "contacts", ["project_id"], name: "index_contacts_on_project_id", using: :btree
   add_index "contacts", ["service_id"], name: "index_contacts_on_service_id", using: :btree
+
+  create_table "custom_auto_increments", force: :cascade do |t|
+    t.string   "counter_model_name"
+    t.integer  "counter",            default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "custom_auto_increments", ["counter_model_name"], name: "index_custom_auto_increments_on_counter_model_name", using: :btree
 
   create_table "deed_title_abstracts", id: false, force: :cascade do |t|
     t.integer "deed_id"

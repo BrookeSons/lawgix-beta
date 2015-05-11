@@ -33,6 +33,7 @@ gem 'statesman'
 gem 'roar'
 gem 'cells', :git => 'https://github.com/apotonick/cells.git'
 gem 'reform'
+gem 'protokoll'
 
 ###
 gem 'recipient_interceptor'

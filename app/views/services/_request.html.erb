@@ -6,7 +6,7 @@
     </div>
     <div id="lease_numb">
       <% if @project %>
-          <%  @project.id %>
+          <%= f.association :project, selected: @project.id %>
       <% else %>
           <%= f.association :project %>
       <% end %>
