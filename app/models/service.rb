@@ -1,5 +1,7 @@
 class Service < ActiveRecord::Base
 
+  protokoll :sr_name, :pattern => "SR-%y-%m-####"
+
  include Statesman::Adapters::ActiveRecordQueries
 
  has_many :service_transitions

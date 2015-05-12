@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(secure_params)
     if @contact.validate(params[:contact])
       @contact.save
-      redirect_to projects_path
+      redirect_to project_path(@contact.project)
     else
       render :new
     end
