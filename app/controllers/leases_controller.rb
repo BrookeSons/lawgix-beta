@@ -22,7 +22,7 @@ class LeasesController < ApplicationController
   def create
     @lease = Lease.new(lease_params)
     @lease.save
-    redirect_to projects_path
+    redirect_to project_path(@lease.project)
   end
 
   def update

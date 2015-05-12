@@ -5,9 +5,7 @@
       <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
     </div>
     <div id="lease_numb">
-      <% if @project %>
-          <%= f.association :project, selected: @project.id %>
-      <% else %>
+      <% if not @project %>
           <%= f.association :project %>
       <% end %>
 
