@@ -3,11 +3,11 @@
     <h2 class="flex-title">Lease</h2>
 
     <div>
-      <h5>Project:
-        <% if @lease.project %>
+      <% if @lease.project %>
+          <h5>Project:
             <%= link_to @lease.project.name, @lease.project %>
-        <% end %>
-      </h5>
+          </h5>
+      <% end %>
     </div>
     <%= simple_form_for @lease do |f| %>
         <ul class="accordion-tabs-minimal">
@@ -41,6 +41,7 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Provisions</a>
+
             <div class="tab-content">
               <div class="nested-fields">
                 <% if @lease_provisons %>
