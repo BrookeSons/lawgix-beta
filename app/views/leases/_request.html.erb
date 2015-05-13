@@ -37,6 +37,10 @@
         </div>
       </section>
       <div>
+        <%= f.label :lease_type %>
+        <%= f.select :lease_type, collection: ["Oil & Gas", "Surface", "Pipeline"] %>
+      </div>
+      <div>
         <%= f.text_area :description, placeholder: "Comments" %>
       </div>
     </fieldset>

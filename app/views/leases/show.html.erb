@@ -1,6 +1,14 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">Lease</h2>
+
+    <div>
+      <h5>Project:
+        <% if @lease.project %>
+            <%= link_to @lease.project.name, @lease.project %>
+        <% end %>
+      </h5>
+    </div>
     <%= simple_form_for @lease do |f| %>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">
@@ -33,12 +41,18 @@
           </li>
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Provisions</a>
-
             <div class="tab-content">
               <div class="nested-fields">
-                <%= f.simple_fields_for :lease_provisons do |provision| %>
-                    <%= render 'lease_provison_fields', f: provision %>
-                    <%= link_to_add_association "Add Provision", f, :parcels %>
+                <% if @lease_provisons %>
+                    <% @lease_provisons.each do |provison| %>
+                        <%= provison.provision %>
+                    <% end %>
+                    <%= link_to_add_association "Add Provision", f, :lease_provisons %>
+                <% else %>
+                    <%= f.simple_fields_for :lease_provisons do |provison| %>
+                        <%= render 'lease_provison_fields', f: provison %>
+                        <%= link_to_add_association "Add Provision", f, :lease_provisons %>
+                    <% end %>
                 <% end %>
               </div>
             </div>
@@ -77,7 +91,13 @@
             </div>
           </li>
         </ul>
-        <%= f.submit 'Update Lease' %>
+        <%= f.submit 'Create New Lease' %>
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
