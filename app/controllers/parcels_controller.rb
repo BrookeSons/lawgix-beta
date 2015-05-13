@@ -2,6 +2,7 @@ class ParcelsController < ApplicationController
 
   def new
     @parcel = Parcel.new
+    @project = Project.find(params[:project])
   end
 
   def show
@@ -16,14 +17,13 @@ class ParcelsController < ApplicationController
   def create
     @parcel = Parcel.new(secure_params)
     @parcel.save
-
-    redirect_to parcels_path
+    redirect_to project_path(@parcel.project)
   end
 
   private
 
   def secure_params
-    params.require(:parcel).permit(:tax_map, :tax_parcel)
+    params.require(:parcel).permit!
   end
 
 

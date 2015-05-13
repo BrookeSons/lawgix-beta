@@ -1,33 +1,27 @@
-# New Parcel
 
-
-<div id="edit-lease-form">
-  <h1>Lease Information</h1>
-  <h2>Lease Number: #{lease_number}</h2>
-  <h2>Description: #{description}</h2>
-
+<div class="nested-fields flex-box flex-box-full">
   <fieldset>
 
-    <%= form_for @lease do |f| %>
-        <%= f.label :lease_number %>
-        <%= f.text_field :lease_number  %>
-        <%= f.label :state %>
-        <%= f.text_field :state  %>
-        <%= f.label :county %>
-        <%= f.text_field :county %>
-        <%= f.label :description %>
-        <%= f.text_field :description %>
-        <%= f.label 'Delivery Date'  %>
-        <%= f.date_field :requested_delivery  %>
-        <%= f.check_box(:flows, {:multiple => true },'Opinion',nil) %>
-        <%= f.label 'Abstract' %>
-        <%= f.check_box(:flows, {:multiple => true },'Abstract',nil) %>
-        <%= f.label 'Opinion' %>
-        <%= f.check_box(:flows, {:multiple => true },'Curative',nil) %>
-        <%= f.label 'Curative' %>
-        <div id='request'>
-          <%= f.submit 'Create Service Request' %>
-        </div>
+    <%= simple_form_for @parcel do |f| %>
+    <% if @project %>
+        <%= f.association :project, selected: @project.id  %>
+    <% else %>
+        <%= f.association :project %>
     <% end %>
+    <div id="pc1" class="field">
+      <%= f.text_field :tax_map, placeholder: "Tax Map" %>
+    </div>
+    <div id="pc2" class="field">
+      <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
+    </div>
+    <div id="pc3">
+      <%= f.text_field :county, placeholder: "County" %>
+    </div>
+    <div class="remove">
+      <%= f.submit 'Create Parcel' %>
+      <% end %>
+    </div>
+    <div class="abstract">
+    </div>
   </fieldset>
 </div>
