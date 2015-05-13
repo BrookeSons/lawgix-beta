@@ -1,41 +1,51 @@
-<div id="new_contact_form">
+<div id="new_contact_form" class="flex-boxes">
   <h1>New Contact</h1>
-  <div id="service-project">
-    <h5>Project:
-      <% if @project %>
-          <%= @project.name %>
-      <% end %>
-    </h5>
-  </div>
-         <fieldset>
-          <%= simple_form_for @contact do |f| %>
-               <div id="lease_numb">
-                 <% if @project %>
-                     <%= f.association :project, selected: @project.id %>
-                 <% else %>
-                     <%= f.association :project %>
-                 <% end %>
-                 <%= f.association :lease, label_method: :lease_number %>
-               </div>
-              <%= f.label :first_name %>
-              <%= f.text_field :first_name %>
-               <%= f.label :last_name %>
-               <%= f.text_field :last_name %>
-              <%= f.label :phone %>
-              <%= f.text_field :phone %>
-               <%= f.label :bus_phone %>
-               <%= f.text_field :bus_phone %>
-              <%= f.label :email %>
-              <%= f.text_field :email %>
-              <%= f.label :city %>
-              <%= f.text_field :city %>
-              <%= f.label :state %>
-              <%= f.text_field :state %>
-              <%= f.label :zip %>
-              <%= f.text_field :zip %>
-              <%= f.submit 'Create Contact' %>
-              </div>
-              </li>
+
+  <div class="flex-box flex-box-full">
+    <div id="service-project">
+    </div>
+
+    <%= simple_form_for @contact do |f| %>
+        <fieldset>
+          <% if @project %>
+              <%= f.association :project, selected: @project.id  %>
+          <% else %>
+              <%= f.association :project %>
           <% end %>
-          </fieldset>
+          <div class="l1">
+            <%= f.text_field :first_name, placeholder: 'First Name' %>
+          </div>
+          <div class="l1">
+            <%= f.text_field :last_name, placeholder: 'Last Name' %>
+          </div>
+          <div class="span11margin20">
+            <%= f.text_field :company, placeholder: 'Company' %>
+          </div>
+          <div id="l4">
+            <%= f.text_field :bus_phone, placeholder: 'Business Phone' %>
+          </div>
+          <div class="span3">
+            <%= f.text_field :phone, placeholder: 'Home Phone' %>
+          </div>
+          <div id="l6">
+            <%= f.text_field :email, placeholder: 'Email' %>
+          </div>
+          <div class="span11margin20">
+            <%= f.text_field :address, placeholder: 'Address' %>
+          </div>
+          <div id="l8">
+            <%= f.text_field :city, placeholder: 'City' %>
+          </div>
+          <div class="span3">
+            <%= f.text_field :state, placeholder: 'State' %>
+          </div>
+          <div class="span3">
+            <%= f.text_field :zip, placeholder: 'Zip' %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+    <% end %>
+    </fieldset>
+  </div>
 </div>

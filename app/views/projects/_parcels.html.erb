@@ -1,0 +1,20 @@
+<div id="parcel-index">
+  <h1>Parcels</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Tax Map</td>
+      <td>Tax Parcel</td>
+      <td>Service<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @project.parcels.each do |parcel| %>
+        <tr>
+          <td><%= parcel.tax_map %></td>
+          <td><%= parcel.tax_parcel %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

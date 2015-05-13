@@ -5,11 +5,11 @@
       <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
     </div>
     <div id="lease_numb">
-      <% if not @project %>
+      <% if @project %>
+          <%= f.association :project, selected: @project.id  %>
+      <% else %>
           <%= f.association :project %>
       <% end %>
-
-      <%= f.association :lease, label_method: :lease_number %>
     </div>
     <div>
       <%= f.text_area :description, placeholder: "Comments" %>

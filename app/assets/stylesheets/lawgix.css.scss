@@ -15,8 +15,8 @@ $curative-background: #FFCC77;
   @include span-columns(6)
 }
 #service-project {
-  margin-top: -2.5em;
-  padding-right: 3em;
+  margin-top: -5em;
+  padding-right: 17em;
   float: right;
 }
 
@@ -311,7 +311,7 @@ $curative-background: #FFCC77;
 
 
 #state-select {
-  margin-left: 10px;
+  margin-left: 1px;
   height: 1.5em;
   @include span-columns(2);
 }
@@ -323,7 +323,16 @@ $curative-background: #FFCC77;
   padding-right: 0px;
   padding-left: 0px;
   width: 0px;
-  @include span-columns(5);
+  @include span-columns(4);
+}
+
+#start-date {
+  margin-right: 40px;
+  @include span-columns(4);
+}
+#end-date {
+  float: right;
+  @include span-columns(4);
 }
 
 #flow-check {
