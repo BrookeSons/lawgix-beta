@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513020034) do
+ActiveRecord::Schema.define(version: 20150513022428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -189,6 +189,11 @@ ActiveRecord::Schema.define(version: 20150513020034) do
     t.string   "county"
     t.integer  "lease_id"
     t.integer  "project_id"
+    t.string   "surface_owner"
+    t.string   "og_fee_owner"
+    t.decimal  "acres"
+    t.decimal  "og_fee_acres"
+    t.decimal  "og_leased_acres"
   end
 
   add_index "parcels", ["lease_id"], name: "index_parcels_on_lease_id", using: :btree

@@ -17,6 +17,10 @@
     <div id="pc3">
       <%= f.text_field :county, placeholder: "County" %>
     </div>
+      <%= f.text_field :surface_owner, placeholder: "Surface Owner" %>
+      <%=  f.input :acres %>
+      <%=  f.input :og_fee_acres %>
+      <%=  f.input :og_leased_acres %>
     <div class="remove">
       <%= f.submit 'Create Parcel' %>
       <% end %>
