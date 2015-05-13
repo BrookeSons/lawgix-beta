@@ -7,6 +7,7 @@ class LeasesController < ApplicationController
     @lease.lessors.build
     @lease.parcels.build
     @lease.documents.build
+    @lease.lease_provisions.build
   end
 
   def show

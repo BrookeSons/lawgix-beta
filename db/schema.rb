@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513025409) do
+ActiveRecord::Schema.define(version: 20150513033313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,7 +145,10 @@ ActiveRecord::Schema.define(version: 20150513025409) do
     t.string   "provision"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lease_id"
   end
+
+  add_index "lease_provisons", ["lease_id"], name: "index_lease_provisons_on_lease_id", using: :btree
 
   create_table "leases", force: :cascade do |t|
     t.string   "lease_number"
@@ -161,12 +164,10 @@ ActiveRecord::Schema.define(version: 20150513025409) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "project_id"
-    t.integer  "lease_provison_id"
     t.string   "begin_station"
     t.string   "end_station"
   end
 
-  add_index "leases", ["lease_provison_id"], name: "index_leases_on_lease_provison_id", using: :btree
   add_index "leases", ["project_id"], name: "index_leases_on_project_id", using: :btree
   add_index "leases", ["service_id"], name: "index_leases_on_service_id", using: :btree
 

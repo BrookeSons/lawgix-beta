@@ -20,6 +20,15 @@ $curative-background: #FFCC77;
   float: right;
 }
 
+
+.station {
+  @include span-columns(2);
+}
+
+#start-date {
+  margin-left: 13px;
+}
+
 #doc-type{
   @include span-columns(3);
 }

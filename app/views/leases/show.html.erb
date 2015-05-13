@@ -36,9 +36,9 @@
 
             <div class="tab-content">
               <div class="nested-fields">
-                <%= f.simple_fields_for :parcels do |parcel| %>
-                    <%= render 'parcel_fields', f: parcel %>
-                    <%= link_to_add_association "Add Parcel", f, :parcels %>
+                <%= f.simple_fields_for :lease_provisons do |provision| %>
+                    <%= render 'provison_fields', f: provision %>
+                    <%= link_to_add_association "Add Provision", f, :parcels %>
                 <% end %>
               </div>
             </div>
