@@ -1,5 +1,8 @@
 class TitleAbstract < ActiveRecord::Base
 
+
+  protokoll :name, :pattern => "ABS-%y-%m-####"
+
   has_many :deed_title_abstracts
   has_many :deeds, through: :deed_title_abstracts
   accepts_nested_attributes_for :deeds

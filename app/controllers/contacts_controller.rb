@@ -4,6 +4,9 @@ class ContactsController < ApplicationController
   def new
     @contact  = Contact.new
     @project = Project.find(params[:project])
+    if @project
+      @contact.project = @project
+    end
   end
 
   def show

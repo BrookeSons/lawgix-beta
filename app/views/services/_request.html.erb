@@ -1,26 +1,24 @@
 <div class="tab-content flex-box flex-box-full">
   <div>
-    <div id="state-select">
-      <%= f.label :state %>
-      <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
-    </div>
     <div id="lease_numb">
       <% if @project %>
-          <%= f.association :project, selected: @project.id  %>
-      <% else %>
-          <%= f.association :project %>
+          <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
       <% end %>
     </div>
-    <div>
-      <%= f.text_area :description, placeholder: "Comments" %>
-    </div>
 
-    <%= f.label :request %>
-    <%= f.select :request, collection: ['Abstract', 'Opinion', 'Lease', 'Curative'] %>
-    <%= f.label :servicer %>
-    <%= f.select :servicer, collection: ['Internal', 'Lawgix'] %>
+    <div id="request">
+      <%= f.label :state %>
+      <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
+      <%= f.label :request %>
+      <%= f.select :request, collection: ['Abstract', 'Opinion', 'Lease', 'Curative'] %>
+      <%= f.label :servicer %>
+      <%= f.select :servicer, collection: ['Internal', 'Lawgix'] %>
+    </div>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>
       <%= f.date_field :requested_delivery %>
+    </div>
+    <div>
+      <%= f.text_area :description, placeholder: "Comments" %>
     </div>
   </div>

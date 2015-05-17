@@ -21,6 +21,7 @@ $curative-background: #FFCC77;
 }
 
 
+
 .station {
   @include span-columns(2);
 }
@@ -68,7 +69,7 @@ $curative-background: #FFCC77;
   background-color: $new-background;
 }
 
-#state_select {
+#state-select {
    input   {
             height: 1.5em;
            }
@@ -89,6 +90,13 @@ $curative-background: #FFCC77;
 
 }
 
+#request {
+  text-align: left;
+  @include span-columns(6);
+  label {
+    display: inline-block;
+  }
+}
 #pre-dispatch {
    h2 {
     text-align:center;
@@ -162,11 +170,7 @@ $curative-background: #FFCC77;
   margin-left: 20px;
   }
 }
-#request {
-  text-align: center;
-  margin-top: 15px;
 
-}
 #company_form {
   width: 750px;
   label {

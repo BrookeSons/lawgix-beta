@@ -20,6 +20,7 @@ class TitleAbstractsController < ApplicationController
 
   def new
     @title_abstract = TitleAbstract.new
+    @project = Project.find(params[:project])
     @title_abstract.deeds.build
     @title_abstract.documents.build
   end

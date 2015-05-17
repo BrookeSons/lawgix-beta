@@ -1,6 +1,10 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">New Service Request</h2>
+    <h2 class="flex-title">New Service Request
+      <% if @project %>
+         -  Project:
+          <%= @project.name %>
+      <% end %></h2>
     <%= simple_form_for @service do |f| %>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">

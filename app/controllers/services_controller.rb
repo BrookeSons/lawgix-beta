@@ -4,6 +4,9 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     @project = Project.find(params[:project])
+    if @project
+      @service.project = @project
+    end
     @service.documents.build
   end
 
