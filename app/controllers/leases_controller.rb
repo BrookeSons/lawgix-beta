@@ -4,6 +4,9 @@ class LeasesController < ApplicationController
   def new
     @lease = Lease.new
     @project = Project.find(params[:project])
+    if @project
+      @lease.project = @project
+    end
     @lease.lessors.build
     @lease.parcels.build
     @lease.documents.build

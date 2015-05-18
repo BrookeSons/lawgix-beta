@@ -1,14 +1,11 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">New Lease</h2>
-
-    <div id="service-project">
-      <h5>Project:
+    <h2 class="flex-title">New Lease
         <% if @project %>
+            - Project:
             <%= @project.name %>
         <% end %>
-      </h5>
-    </div>
+      </h2>
     <%= simple_form_for @lease do |f| %>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">

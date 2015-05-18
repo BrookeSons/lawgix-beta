@@ -3,6 +3,9 @@ class ParcelsController < ApplicationController
   def new
     @parcel = Parcel.new
     @project = Project.find(params[:project])
+    if @project
+      @parcel.project = @project
+    end
   end
 
   def show

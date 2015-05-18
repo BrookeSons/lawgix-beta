@@ -10,9 +10,19 @@ $curative-background: #FFCC77;
   padding: 0;
 }
 
+#create-parcel {
+  margin-left: 420px;
+  @include span-columns(10);
+}
+
+#surface {
+  @include span-columns(10);
+  margin-left: 90px;
+}
+
 #file-box{
   float: right;
-  @include span-columns(6)
+  @include span-columns(6);
 }
 #service-project {
   margin-top: -5em;
@@ -20,10 +30,15 @@ $curative-background: #FFCC77;
   float: right;
 }
 
+.lease-dates {
+  float: right;
+}
+
 
 
 .station {
   @include span-columns(2);
+  float: right;
 }
 
 #start-date {
@@ -339,18 +354,30 @@ $curative-background: #FFCC77;
   @include span-columns(4);
 }
 
-#start-date {
-  margin-right: 40px;
+.lease-start-date {
+  margin-left: 190px;
   @include span-columns(4);
 }
-#end-date {
-  float: right;
+
+.lease-end-date {
   @include span-columns(4);
 }
 
 #flow-check {
   margin-left: 2.5em;
   margin-right: auto;
+}
+#ac1 {
+  margin-left: 212px;
+  @include span-columns(2);
+}
+#ac2 {
+  margin-left: 40px;
+  @include span-columns(2);
+}
+#ac3 {
+  margin-left: 40px;
+  @include span-columns(2);
 }
 
 #deliv-date {
@@ -395,17 +422,17 @@ $curative-background: #FFCC77;
 }
 
 #pc1 {
-  margin-left: 40px;
+  margin-left: 90px;
   @include span-columns(3);
 }
 
 #pc2 {
+  margin-left: 40px;
   @include span-columns(3);
-  margin-left: 20px;
 }
 #pc3 {
+  margin-left: 40px;
   @include span-columns(3);
-  margin-left: 20px;
   margin-right: 10px;
 }
 
