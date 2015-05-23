@@ -1,14 +1,22 @@
 <div class="nested-fields flex-box flex-box-full">
   <fieldset>
-    <div id="pc1" class="field">
-        <%= f.text_field :tax_map, placeholder: "Tax Map" %>
-    </div>
     <div id="pc2" class="field">
          <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
       </div>
     <div id="pc3">
          <%= f.text_field :county, placeholder: "County" %>
     </div>
+    <section class="partial">
+      <div id="pc1">
+        <%= f.input :acres %>
+      </div>
+      <div id="pc2">
+        <%= f.input :og_fee_acres %>
+      </div>
+      <div id="pc3">
+        <%= f.input :og_leased_acres %>
+      </div>
+    </section>
     <div class="remove">
      <%= link_to_remove_association "Remove Parcel", f %>
     </div>

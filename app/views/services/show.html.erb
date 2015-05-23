@@ -2,6 +2,10 @@
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">Service Request</h2>
       <%= simple_form_for @service do |f| %>
+    <% if @service.project %>
+        Project:
+        <%= link_to @service.project.name, @service.project %>
+      <% end %>
           <ul class="accordion-tabs-minimal">
             <li class="tab-header-and-content">
               <a href="#" class="tab-link is-active">Request</a>

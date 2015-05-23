@@ -3,6 +3,9 @@ class DocumentsController < ApplicationController
   def new
     @document = Document.new
     @project = Project.find(params[:project])
+    if @project
+      @document.project = @project
+    end
   end
 
   def show
@@ -18,8 +21,7 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(secure_params)
     @document.save
-
-    redirect_to document_path(@project.document)
+    redirect_to project_path(@document.project)
   end
 
   private

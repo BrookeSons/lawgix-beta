@@ -7,14 +7,10 @@
       <% end %>
     </h2>
     <fieldset>
-
       <%= simple_form_for @parcel do |f| %>
           <% if @project %>
               <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
           <% end %>
-          <div id="pc1" class="field">
-            <%= f.text_field :tax_map, placeholder: "Tax Map" %>
-          </div>
           <div id="pc2" class="field">
             <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
           </div>
@@ -24,7 +20,7 @@
           <div id="surface">
             <%= f.text_field :surface_owner, placeholder: "Surface Owner" %>
           </div>
-          <section>
+          <section class="partials">
             <div id="ac1">
               <%= f.input :acres %>
             </div>

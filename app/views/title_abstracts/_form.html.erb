@@ -1,20 +1,25 @@
 <p id="notice"><%= notice %></p>
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">Title Abstract</h2>
+    <h2 class="flex-title">Title Abstract
+      <% if @project %>
+          - Project:
+          <%= @project.name %>
+      <% end %>
+    </h2>
     <%= simple_form_for @title_abstract do |f| %>
+
+
         <% if @title_abstract.parcel %>
-            <h4>Tax Map/Parcel
-              <%= [@title_abstract.parcel.tax_map, @title_abstract.parcel.tax_parcel].compact.join("-") %>
+            <h4>Tax Map/Parcel:
+              <%=  @title_abstract.parcel.tax_parcel %>
             </h4>
             <% else %>
              <%  @parcels = @project.parcels %>
-            <%= f.select :parcel, collection: @parcels %>
+            <%= f.association :parcel, label_method: :tax_parcel, collection: @project.parcels %>
         <% end %>
         <% if @project %>
-            <%= f.association :project, selected: @project.id %>
-        <% else %>
-            <%= f.association :project %>
+            <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
         <% end %>
 
         <div class="form-inputs">

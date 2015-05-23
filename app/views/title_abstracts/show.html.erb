@@ -2,15 +2,18 @@
 <p id="notice"><%= notice %></p>
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">Title Abstract</h2>
+    <h2 class="flex-title">Title Abstract- <%= @title_abstract.name %></h2>
     <%= simple_form_for @title_abstract do |f| %>
-        <h4>Tax Map/Parcel</h4>
-        <h4>
-          <%= [@title_abstract.parcel.tax_map, @title_abstract.parcel.tax_parcel].compact.join("-") %>
-        </h4>
+        <h5>
+          Project:
+          <%= @title_abstract.project.name %>
+        </h5>
 
+        <h5>Tax ID:
+          <%= @title_abstract.parcel.tax_parcel %>
+        </h5>
+        <hr />
         <div class="form-inputs">
-          <%= f.text_field :name, placeholder: 'Name' %>
           <%= f.input :comments %>
         </div>
         <div>

@@ -6,7 +6,7 @@ class AbstractorsController < ApplicationController
   # after_action :verify_authorized
 
 
-  def u
+  def new
     @abstractor = Abstractor.new
     # authorize Abstractor
   end

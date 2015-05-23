@@ -1,0 +1,42 @@
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">Parcel
+      <% if @project %>
+          - Project:
+          <%= @project.name %>
+      <% end %>
+    </h2>
+    <fieldset>
+      <%= simple_form_for @parcel do |f| %>
+          <% if @project %>
+              <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
+          <% end %>
+          <div id="pc2" class="field">
+            <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
+          </div>
+          <div id="pc3">
+            <%= f.text_field :county, placeholder: "County" %>
+          </div>
+          <div id="surface">
+            <%= f.text_field :surface_owner, placeholder: "Surface Owner" %>
+          </div>
+          <section>
+            <div id="ac1">
+              <%= f.input :acres %>
+            </div>
+            <div id="ac2">
+              <%= f.input :og_fee_acres %>
+            </div>
+            <div id="ac3">
+              <%= f.input :og_leased_acres %>
+            </div>
+          </section>
+          <div id="create-parcel">
+            <%= f.submit 'Update Parcel' %>
+      <% end %>
+      </div>
+      <div class="abstract">
+      </div>
+    </fieldset>
+  </div>
+</div>

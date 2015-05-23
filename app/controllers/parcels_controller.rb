@@ -23,6 +23,15 @@ class ParcelsController < ApplicationController
     redirect_to project_path(@parcel.project)
   end
 
+  def update
+    @parcel = Parcel.find(params[:id])
+    if @parcel.update_attributes(secure_params)
+      redirect_to project_path(@parcel.project), :notice => "Parcel updated."
+    else
+      redirect_to project_path(@parcel.project), :alert => "Unable to update Parcel."
+    end
+  end
+
   private
 
   def secure_params

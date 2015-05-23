@@ -10,7 +10,8 @@
   <% @abstracts = @project.title_abstracts %>
   <% @abstracts.each do |abstract| %>
       <tr>
-        <td><%= link_to abstract, abstract %></td>
+        <td><%= link_to abstract.name, abstract %></td>
+        <td><%= abstract.description %></td>
   <% end %>
   </tr>
   </tbody>

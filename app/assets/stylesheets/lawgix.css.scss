@@ -10,14 +10,18 @@ $curative-background: #FFCC77;
   padding: 0;
 }
 
+#lhead {
+  float: left;
+}
+
 #create-parcel {
-  margin-left: 420px;
+  margin-left: 408px;
   @include span-columns(10);
 }
 
 #surface {
   @include span-columns(10);
-  margin-left: 90px;
+  margin-left: 85px;
 }
 
 #file-box{
@@ -226,6 +230,7 @@ $curative-background: #FFCC77;
     margin-left: 4em;
   }
 }
+
 #new_client_form {
   width: 750px;
   label {
@@ -246,6 +251,7 @@ $curative-background: #FFCC77;
     margin-left: 4em;
   }
 }
+
 #new_contact_form {
   height: 100%;
   width: 750px;
@@ -300,6 +306,7 @@ $curative-background: #FFCC77;
     width: auto;
   }
 }
+
 #show_service_form {
   width: 730px;
   label {
@@ -323,6 +330,7 @@ $curative-background: #FFCC77;
     margin-left: 4em;
   }
 }
+
 #deliv-date {
   text-align: center;
   line-height: 1.4em;
@@ -330,7 +338,6 @@ $curative-background: #FFCC77;
   margin-top: 20px;
   margin-right: auto;
 }
-
 
 #servicer {
   margin-right: 0;
@@ -368,16 +375,33 @@ $curative-background: #FFCC77;
   margin-right: auto;
 }
 #ac1 {
-  margin-left: 212px;
-  @include span-columns(2);
+  margin-left: 202px;
+  @include span-columns(1);
+}
+
+.partial {
+  @include span-columns(12);
 }
 #ac2 {
   margin-left: 40px;
-  @include span-columns(2);
+  @include span-columns(1);
 }
 #ac3 {
   margin-left: 40px;
-  @include span-columns(2);
+  @include span-columns(1);
+}
+
+#pc1 {
+  margin-left: 40px;
+  @include span-columns(1);
+}
+#pc2 {
+  margin-left: 40px;
+  @include span-columns(1);
+}
+#pc3 {
+  margin-left: 40px;
+  @include span-columns(1);
 }
 
 #deliv-date {

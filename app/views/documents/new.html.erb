@@ -2,9 +2,7 @@
   <h4>Document Name </h4>
   <%= simple_form_for @document do |f| %>
       <% if @project %>
-          <%= f.association :project, selected: @project.id %>
-      <% else %>
-          <%= f.association :project %>
+          <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
       <% end %>
       <fieldset>
         <div class="field">

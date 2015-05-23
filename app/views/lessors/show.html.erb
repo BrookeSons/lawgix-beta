@@ -1,15 +1,26 @@
-<div id="new_contact_form" class="flex-boxes">
-  <h1>Contact
-    <% if @project %>
-        - Project:
-        <%= @project.name %>
-    <% end %></h1>
 
+<div id="new_contact_form" class="flex-boxes">
+  <div id="lhead">
+  <h1>Lessor</h1>
+  </div>
   <div class="flex-box flex-box-full">
     <div id="service-project">
+  </div>
+    <%= simple_form_for @lessor do |f| %>
+  <h5>
+    <div>
+    <% if @lessor.project %>
+        Project:
+        <%= link_to @lessor.project.name, @lessor.project %>
+      <% end %>
     </div>
-
-    <%= simple_form_for @contact do |f| %>
+    <div>
+    <% if @lessor.lease %>
+        Lease:
+        <%= link_to @lessor.lease.lease_number %>
+      <% end %>
+    </div>
+    </h5>
         <fieldset>
           <% if @project %>
               <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>

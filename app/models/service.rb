@@ -11,6 +11,7 @@ class Service < ActiveRecord::Base
  has_many :contacts
  has_many :lessors
  has_many :documents
+ has_many :title_abstracts
  has_and_belongs_to_many :users, through: :services_users
  has_and_belongs_to_many :employees, through: :services_users
  has_and_belongs_to_many :lawyers, through: :services_users

@@ -2,16 +2,15 @@
   <table>
     <thead>
     <tr>
-      <td>Tax Map</td>
-      <td>Tax Parcel</td>
-      <td>Service<td>
+      <td>Parcel ID</td>
+      <td>County</td>
     </tr>
     </thead>
     <tbody>
     <% @project.parcels.each do |parcel| %>
         <tr>
-          <td><%= parcel.tax_map %></td>
-          <td><%= parcel.tax_parcel %></td>
+          <td><%= link_to parcel.tax_parcel, parcel %></td>
+          <td><%= parcel.county %></td>
         </tr>
     <% end %>
     </tbody>
