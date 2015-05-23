@@ -21,6 +21,16 @@ class LessorsController < ApplicationController
     redirect_to lessors_path
   end
 
+  def update
+    @lessor = Lessor.find(params[:lessor_id])
+
+    if @lessor.update_attributes(secure_params)
+      redirect_to projects_path, :notice => "Lessor updated."
+    else
+      redirect_to projects_path, :alert => "Unable to update Lessor."
+    end
+  end
+
   private
 
   def secure_params
