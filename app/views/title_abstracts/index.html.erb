@@ -7,7 +7,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Comments</th>
+      <th>Project</th>
+      <th>Tax ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +17,12 @@
     <% @title_abstracts.each do |title_abstract| %>
       <tr>
         <td><%= link_to title_abstract.name, title_abstract %></td>
-        <td><%= link_to title_abstract.parcel.service.lease_number, title_abstract.parcel.service %></td>
+        <% if title_abstract.project %>
+          <td><%= link_to title_abstract.project.name, title_abstract.project %> </td>
+        <% end %>
+        <% if title_abstract.parcel %>
+          <td><%= link_to title_abstract.parcel.tax_parcel, title_abstract.parcel%></td>
+          <% end %>
         <td><%= link_to 'Destroy', title_abstract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

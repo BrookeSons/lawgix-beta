@@ -1,0 +1,36 @@
+
+<h1>Editing Title Abstract</h1>
+<p id="notice"><%= notice %></p>
+<div class="flex-boxes">
+  <div class="flex-box flex-box-full">
+    <h2 class="flex-title">Title Abstract- <%= @title_abstract.name %></h2>
+    <%= simple_form_for @title_abstract do |f| %>
+        <h5>
+          Project:
+          <%= @title_abstract.project.name %>
+        </h5>
+
+        <h5>Tax ID:
+          <%= @title_abstract.parcel.tax_parcel %>
+        </h5>
+        <hr />
+        <div class="form-inputs">
+          <%= f.input :comments %>
+        </div>
+        <div>
+          <%= f.simple_fields_for :documents do |document| %>
+              <%= render 'document_fields', f: document %>
+              <%= link_to_add_association "Add Document", f, :documents %>
+          <% end %>
+          <%= f.simple_fields_for :deeds do |deed| %>
+              <%= render 'deed_fields', f: deed %>
+              <%= link_to_add_association "Add Deed", f, :deeds %>
+          <% end %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
