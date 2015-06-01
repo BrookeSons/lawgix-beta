@@ -58,7 +58,7 @@ class ServicesController < ApplicationController
     service.transition_to!(:accepted_by_abstractor)
     redirect_to absdashes_path
   end
-
+    
   def assign
     @service = Service.find(params[:service_id])
     @service.abstractors << Abstractor.find(params[:abstractor_id])
