@@ -16,18 +16,9 @@ class Service < ActiveRecord::Base
  has_and_belongs_to_many :employees, through: :services_users
  has_and_belongs_to_many :lawyers, through: :services_users
  has_and_belongs_to_many :abstractors, through: :services_users
- belongs_to :company
+ has_and_belongs_to_many :companies, through: :services_companies
  belongs_to :project
  belongs_to :lease
-
-
-
-
- accepts_nested_attributes_for :lessors
- accepts_nested_attributes_for :flows
- accepts_nested_attributes_for :parcels
- accepts_nested_attributes_for  :documents
-
 
 
  has_paper_trail
@@ -36,7 +27,6 @@ class Service < ActiveRecord::Base
 
  def state_machine
   @state_machine ||= RequestStateMachine.new(self, transition_class: ServiceTransition)
- end
 
  # Optionally delegate some methods
  delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, :allowed_transitions,

@@ -9,10 +9,9 @@
     </h2>
     <%= simple_form_for @title_abstract do |f| %>
 
-
         <% if @title_abstract.parcel %>
             <h4>Tax Map/Parcel:
-              <%=  @title_abstract.parcel.tax_parcel %>
+              <%= @title_abstract.parcel.tax_parcel %>
             </h4>
             <% else %>
              <%  @parcels = @project.parcels %>

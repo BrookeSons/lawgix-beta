@@ -34,10 +34,12 @@ class TitleAbstractsController < ApplicationController
   def create
     @title_abstract = TitleAbstract.new(title_abstract_params)
     @title_abstract.save
+    redirect_to project_path(@title_abstract.project)
   end
 
   def update
     @title_abstract.update(title_abstract_params)
+    redirect_to project_path(@title_abstract.project)
   end
 
   def destroy

@@ -1,0 +1,23 @@
+<div class="flex-boxes">
+   <div class="flex-box flex-box-full">
+      <h1>New Client</h1>
+      <%= simple_form_for @client do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+              <%= f.label :billing_contact %>
+              <%= f.text_field :billing_contact %>
+              <%= f.label :phone %>
+              <%= f.text_field :phone %>
+              <%= f.label :email %>
+              <%= f.text_field :email %>
+              <%= f.label :city %>
+              <%= f.text_field :city %>
+              <%= f.label :state %>
+              <%= f.text_field :state %>
+              <%= f.label :zip %>
+              <%= f.text_field :zip %>
+              <%= f.submit 'Create Client' %> 
+          <% end %>
+        </div>
+      </div>
+</div>

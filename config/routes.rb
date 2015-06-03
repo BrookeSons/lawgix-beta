@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :deeds
   resources :lawfirms
   resources :companies
+  resources :servicers
+  resources :clients
   resources :employees
   resources :parcels
   resources :leases

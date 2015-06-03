@@ -12,7 +12,7 @@
       <%= f.label :request %>
       <%= f.select :request, collection: ['Abstract', 'Opinion', 'Lease', 'Curative'] %>
       <%= f.label :servicer %>
-      <%= f.select :servicer, collection: ['Internal', 'Lawgix'] %>
+      <%= f.association :servicers %>
     </div>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>
