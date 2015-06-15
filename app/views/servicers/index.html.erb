@@ -1,0 +1,29 @@
+
+<div class="flex-boxes">
+   <div class="flex-box flex-box-full">
+<div id="company-index">
+  <%# <%= render partial: 'dashboard' %>
+  <h1>Servicers</h1>
+  <table>
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Billing Contact</td>
+      <td>Phone</td>
+      <td>Email<td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @servicer.each do |servicer| %>
+        <tr>
+          <td><%= link_to(servicer.name, servicer_path(servicer))  %></td>
+          <td><%= servicer.billing_contact %></td>
+          <td><%= servicer.phone %></td>
+          <td><%= servicer.email %><td>
+        </tr>
+       <% end %>
+     </tbody>
+   </table>
+  </div>
+ </div>
+</div>

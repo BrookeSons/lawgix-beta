@@ -6,13 +6,16 @@
       <% end %>
     </div>
 
+    
     <div id="request">
       <%= f.label :state %>
       <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
       <%= f.label :request %>
       <%= f.select :request, collection: ['Abstract', 'Opinion', 'Lease', 'Curative'] %>
-      <%= f.label :servicer %>
-      <%= f.association :servicers %>
+        <% if @servicers %>
+        <%= f.label :servicer %>
+            <%= f.select :request, collection: @servicers, input_html: {hidden: true}, label_html: {hidden: true}  %>
+       <% end  %>
     </div>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>

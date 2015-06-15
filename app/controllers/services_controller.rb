@@ -4,10 +4,12 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     @project = Project.find(params[:project])
+    @servicers = Servicer.all
     if @project
       @service.project = @project
     end
-    @service.documents.build
+    # @service.documents.build
+    @service.servicers.build
   end
 
   def show
@@ -22,7 +24,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    if @service.validate(params[:contact])
+    if @service.validate(params[:service])
       if @service.request == "Abstract" && @service.servicer == "Internal"
         @service.save
         redirect_to dashboards_path

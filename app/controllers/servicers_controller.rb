@@ -16,13 +16,13 @@ class ServicersController < ApplicationController
   def create
     @servicer = Servicer.new(secure_params)
     @servicer.save
-
+    
     redirect_to servicers_path
   end
 
   private
 
   def secure_params
-    params.require(:employee).permit!
+    params.require(:servicer).permit!
   end
 end

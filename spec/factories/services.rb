@@ -6,6 +6,8 @@ end_date "2014-12-03"
 requested_delivery "2014-12-03"
 lease_file "MyString"
 
+association :project, factory: :project, name: "Deep Run" 
+
     trait :received do
       after(:pending) do |service|
         FactoryGirl.create(:service_transition, :received, service: service )

@@ -17,6 +17,7 @@ class Service < ActiveRecord::Base
  has_and_belongs_to_many :lawyers, through: :services_users
  has_and_belongs_to_many :abstractors, through: :services_users
  has_and_belongs_to_many :companies, through: :services_companies
+ has_and_belongs_to_many :servicers, through: :companies_services
  belongs_to :project
  belongs_to :lease
 
@@ -27,6 +28,7 @@ class Service < ActiveRecord::Base
 
  def state_machine
   @state_machine ||= RequestStateMachine.new(self, transition_class: ServiceTransition)
+ end
 
  # Optionally delegate some methods
  delegate :can_transition_to?, :transition_to!, :transition_to, :current_state, :allowed_transitions,

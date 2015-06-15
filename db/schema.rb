@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603170601) do
+ActiveRecord::Schema.define(version: 20150603180336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20150603170601) do
     t.datetime "updated_at",      null: false
     t.string   "type"
   end
+
+  create_table "companies_services", force: :cascade do |t|
+    t.string "service_id"
+    t.string "company_id"
+  end
+
+  add_index "companies_services", ["company_id"], name: "index_companies_services_on_company_id", using: :btree
+  add_index "companies_services", ["service_id"], name: "index_companies_services_on_service_id", using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.string   "first_name"
@@ -261,14 +269,6 @@ ActiveRecord::Schema.define(version: 20150603170601) do
   add_index "services", ["lease_id"], name: "index_services_on_lease_id", using: :btree
   add_index "services", ["project_id"], name: "index_services_on_project_id", using: :btree
   add_index "services", ["state"], name: "index_services_on_state", using: :btree
-
-  create_table "services_companies", force: :cascade do |t|
-    t.string "service_id"
-    t.string "company_id"
-  end
-
-  add_index "services_companies", ["company_id"], name: "index_services_companies_on_company_id", using: :btree
-  add_index "services_companies", ["service_id"], name: "index_services_companies_on_service_id", using: :btree
 
   create_table "services_users", id: false, force: :cascade do |t|
     t.integer "service_id"

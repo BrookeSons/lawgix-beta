@@ -3,8 +3,6 @@ class AbstractorDashboardsController < ActionController::Base
 
   before_filter :authenticate_user!
 
-
-
   # after_action :verify_authorized
 
   def show
