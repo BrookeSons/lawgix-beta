@@ -4,11 +4,11 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     @project = Project.find(params[:project])
-    @servicers = Servicer.all
+    # @servicers = Servicer.all
     if @project
       @service.project = @project
     end
-    # @service.documents.build
+    @service.documents.build
     @service.servicers.build
   end
 
@@ -25,18 +25,9 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     if @service.validate(params[:service])
-      if @service.request == "Abstract" && @service.servicer == "Internal"
         @service.save
-        redirect_to dashboards_path
-      elsif @service.request == "Abstract" && @service.servicer == "Lawgix"
-        @service.title_abstracts.build
-        @service.save
-        @service.transition_to!(:lawgix_assigned)
+        @service.transition_to(:assigned)
         redirect_to project_path(@service.project)
-      else
-        @sevice.save
-        redirect_to project_path(@service.project)
-      end
     else
       render :new
     end

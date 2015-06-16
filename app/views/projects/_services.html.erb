@@ -2,7 +2,7 @@
   <thead>
   <tr>
     <td>Request</td>
-    <td>Type</td>
+    <td>Description</td>
     <td>Status</td>
   </tr>
   </thead>
@@ -10,7 +10,7 @@
 
   <% @services = @project.services %>
   <% @services.each do |service| %>
-      <tr>
+  <tr>
         <td><%= link_to service.sr_name, service %></td>
         <td><%= link_to service.request, service %></td>
         <td><%= service.current_state %></td>

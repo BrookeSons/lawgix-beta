@@ -17,6 +17,7 @@ class RequestStateMachine
   state :priced
   state :confirmed
   state :assigned
+  state :unassigned
   state :internal
   state :lawgix_assigned
   state :lawgix_complete
@@ -30,7 +31,7 @@ class RequestStateMachine
 
 
   event :start do
-     transition from: :pending, to: [:fee_accepted, :assigned, :lawgix_assigned, :internal]
+     transition from: :pending, to: [:fee_accepted, :assigned, :unassigned, :internal]
   end
 
   # event :price do

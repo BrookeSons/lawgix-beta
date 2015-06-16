@@ -12,10 +12,8 @@
       <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
       <%= f.label :request %>
       <%= f.select :request, collection: ['Abstract', 'Opinion', 'Lease', 'Curative'] %>
-        <% if @servicers %>
         <%= f.label :servicer %>
-            <%= f.select :request, collection: @servicers, input_html: {hidden: true}, label_html: {hidden: true}  %>
-       <% end  %>
+            <%= f.association :users %>
     </div>
     <div id="deliv-date">
       <%= f.label 'Delivery Date' %>

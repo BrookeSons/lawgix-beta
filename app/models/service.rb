@@ -21,6 +21,8 @@ class Service < ActiveRecord::Base
  belongs_to :project
  belongs_to :lease
 
+ accepts_nested_attributes_for :documents
+
 
  has_paper_trail
 

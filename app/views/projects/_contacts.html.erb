@@ -1,26 +1,21 @@
 <table>
   <thead>
   <tr>
-    <td>Contacts</td>
-    <td>Email</td>
+    <td>Name</td>
     <td>Type</td>
+    <td>Lease</td> 
   </tr>
   </thead>
   <tbody>
-  <%#
-  <%# <% @lessors = @project.lessors %>
-  <%# <% @lessors.each do |lessor| %>
-  <%#     <tr>
-  <%#       <td><%= link_to lessor.last_name, lessor %></td>
-  <%#       <td><%= lessor.email %></td>
-  <%# <% end %>
 
   <% @contacts = @project.contacts %>
   <% @contacts.each do |contact| %>
       <tr>
         <td><%= link_to contact.last_name, contact %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.type %></td>
+        <td><%= contact.type %></td> 
+        <% if contact.type == "Lessor" %> 
+          <td><%= link_to contact.lease.lease_number, contact.lease  %><td>
+        <% end %>
   <% end %>
   </tr>
   </tbody>
