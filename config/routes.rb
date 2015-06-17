@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :documents
   resources :contacts
-  resources :lessors
-  resources :generals
+  resources :lessors 
   resources :deeds
   resources :lawfirms
   resources :companies

@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:contact_id])
+    @contact = Contact.find(params[:id])
     # authorize @company
   end
 
@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
   end
 
   def update
-    @contact = Contact.find(params[:contact_id])
+    @contact = Contact.find(params[:id])
 
     if @contact.update_attributes(secure_params)
       redirect_to projects_path, :notice => "Contact updated."

@@ -63,9 +63,9 @@ class LeasesController < ApplicationController
       end
     end
     if @lease.update_attributes(lease_params)
-      redirect_to leases_path, :notice => "Lease updated."
+      redirect_to project_path(@lease.project), :notice => "Lease updated."
     else
-      redirect_to leases_path, :alert => "Unable to update Lease."
+      redirect_to project_path(@lease.project),  :alert => "Unable to update Lease."
     end
   end
 
