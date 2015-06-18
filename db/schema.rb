@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618142518) do
+ActiveRecord::Schema.define(version: 20150618153028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -183,6 +183,8 @@ ActiveRecord::Schema.define(version: 20150618142518) do
     t.decimal  "ogl_bonus",      precision: 8, scale: 2
     t.integer  "pipeline_acres"
     t.decimal  "pipeline_bonus", precision: 8, scale: 2
+    t.integer  "surface_acres"
+    t.decimal  "surface_bonus",  precision: 8, scale: 2
   end
 
   add_index "leases", ["project_id"], name: "index_leases_on_project_id", using: :btree

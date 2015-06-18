@@ -9,8 +9,6 @@
       <div id="state-select">
         <%= f.label :state %>
         <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
-        <%= f.label :lease_type %>
-        <%= f.select :lease_type, collection: ["Oil & Gas", "Surface", "Pipeline"] %>
       </div>
       <div id="lease_numb">
         <%= f.label :lease_number %>
@@ -26,6 +24,29 @@
           <%= f.date_field :end_date %>
         </div>
       </section>
+      <table>
+        <thead>
+          <tr>
+            <td>Instrument</td>
+            <td>Acres</td>
+            <td>Bonus</td>
+            <td>Royalty</td>
+            <td>Stations</td>
+          </tr>
+        </thead>
+          <tr>
+            <td><%= f.input :ogl, as: :boolean, label: "Oil & Gas Lease" %></td>
+            <td><%= f.input :ogl_acres, label: false %></td>
+            <td><%= f.input :ogl_bonus, label: false %></td>
+          </tr>
+          <tr>
+            <td><%= f.input :surface, as: :boolean, label: "Surface Rights" %></td>
+            <td><%= f.input :surface_acres, label: false %></td>
+            <td><%= f.input :surface_bonus, label: false %></td>
+          </tr>
+
+
+      </table>
       <!-- <section> -->
       <!--   <div> -->
       <!--     <%= f.label :begin_station %> -->
