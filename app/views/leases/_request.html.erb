@@ -38,14 +38,23 @@
             <td><%= f.input :ogl, as: :boolean, label: "Oil & Gas Lease" %></td>
             <td><%= f.input :ogl_acres, label: false %></td>
             <td><%= f.input :ogl_bonus, label: false %></td>
+            <td><%= f.input :ogl_rate, label: false %></td>
+            <td></td>
           </tr>
           <tr>
             <td><%= f.input :surface, as: :boolean, label: "Surface Rights" %></td>
             <td><%= f.input :surface_acres, label: false %></td>
             <td><%= f.input :surface_bonus, label: false %></td>
+            <td></td>
+            <td></td>
           </tr>
-
-
+          <tr>
+            <td><%= f.input :pipeline, as: :boolean, label: "Pipeline ROW" %></td>
+            <td><%= f.input :pipeline_acres, label: false %></td>
+            <td><%= f.input :pipeline_bonus, label: false %></td>
+            <td></td>
+            <td><%=  f.input :begin_station %><%= f.input :end_station %></td>
+          </tr>
       </table>
       <!-- <section> -->
       <!--   <div> -->

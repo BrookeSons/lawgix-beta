@@ -4,6 +4,7 @@
     <tr>
       <td>Parcel ID</td>
       <td>County</td>
+      <td>Lease</td>
     </tr>
     </thead>
     <tbody>
@@ -11,6 +12,9 @@
         <tr>
           <td><%= link_to parcel.tax_parcel, parcel %></td>
           <td><%= parcel.county %></td>
+          <% if parcel.lease %>
+          <td><%= link_to parcel.lease.lease_number, parcel.lease  %></td>
+          <% end %>
         </tr>
     <% end %>
     </tbody>
