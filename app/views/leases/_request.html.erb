@@ -16,16 +16,6 @@
         <%= f.label :lease_number %>
         <%= f.text_field :lease_number %>
       </div>
-      <section>
-        <div class="station">
-          <%= f.label :begin_station %>
-          <%= f.text_field :begin_station, placeholder: "##+##"%>
-        </div>
-        <div class="station">
-          <%= f.label :end_station %>
-          <%= f.text_field :end_station, placeholder: "##+##" %>
-        </div>
-      </section>
       <section class="lease-dates">
         <div class="lease-start-date">
           <%= f.label :start_date %>
@@ -36,7 +26,17 @@
           <%= f.date_field :end_date %>
         </div>
       </section>
-      <div>
+      <!-- <section> -->
+      <!--   <div> -->
+      <!--     <%= f.label :begin_station %> -->
+      <!--     <%= f.text_field :begin_station, placeholder: "##+##"%> -->
+      <!--   </div> -->
+      <!--   <div> -->
+      <!--     <%= f.label :end_station %> -->
+      <!--     <%= f.text_field :end_station, placeholder: "##+##" %> -->
+      <!--   </div> -->
+      <!-- </section> -->
+      <!-- <div> -->
         <%= f.text_area :description, placeholder: "Comments" %>
       </div>
     </fieldset>

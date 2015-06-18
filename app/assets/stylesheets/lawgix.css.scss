@@ -35,18 +35,19 @@ $curative-background: #FFCC77;
 }
 
 .lease-dates {
-  float: right;
+    @include span-columns(5);  
+    float: right;
 }
 
 
 
 .station {
   @include span-columns(2);
-  float: right;
 }
 
 #start-date {
   margin-left: 13px;
+  float: right;
 }
 
 #doc-type{
@@ -362,12 +363,12 @@ $curative-background: #FFCC77;
 }
 
 .lease-start-date {
-  margin-left: 190px;
-  @include span-columns(4);
+  margin-left: 0px;
+  @include span-columns(6);
 }
 
 .lease-end-date {
-  @include span-columns(4);
+  @include span-columns(6);
 }
 
 #flow-check {

@@ -29,8 +29,12 @@
 
             <div class="tab-content">
               <div class="nested-fields">
+                <% if @project.parcels %>
+                <% @pro_par = @project.parcels %>
+                <%= f.association :parcels, :label_method => :tax_parcel, :collection => Parcel.where(@project.id == :parcecl_id)%>
+                <% end %>
                 <%= f.simple_fields_for :parcels do |parcel| %>
-                    <%= render 'parcel_fields', f: parcel %>
+                    <!-- <%= render 'parcel_fields', f: parcel %> -->
                     <%= link_to_add_association "Add Parcel", f, :parcels %>
                 <% end %>
               </div>
