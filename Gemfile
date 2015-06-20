@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'neat', '~> 1.5.1'
 gem 'normalize-rails', '~> 3.0.0'
 gem 'pg'
+gem 'ransack'
+gem "squeel", :git => "git://github.com/activerecord-hackery/squeel.git"
 gem 'rack-timeout'
 gem 'rails', '4.2.0'
 gem 'rails_admin'
