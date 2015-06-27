@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620175929) do
+ActiveRecord::Schema.define(version: 20150624124921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -294,7 +294,10 @@ ActiveRecord::Schema.define(version: 20150620175929) do
     t.integer  "acreage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parcel_id"
   end
+
+  add_index "sub_parcels", ["parcel_id"], name: "index_sub_parcels_on_parcel_id", using: :btree
 
   create_table "title_abstracts", force: :cascade do |t|
     t.string   "name"

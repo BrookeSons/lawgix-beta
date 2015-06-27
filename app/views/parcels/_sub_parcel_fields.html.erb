@@ -1,0 +1,22 @@
+<div class="nested-fields">
+  <fieldset>
+     <div class="nested_fields">
+        <%= f.simple_fields_for :owners do |owner| %>
+           <%= render 'owner_fields', f: owner %>
+        <% end %>
+    <div id="pc1" class="field">
+        <%= f.select :parcel_type, collection: ["Surface", "OG Fee", "OG Leased"] %>
+    </div>
+    <div id="pc2" class="field">
+         <%= f.text_field :parcel_ref, placeholder: "Parcel #" %>
+      </div>
+    <div id="pc3">
+         <%= f.input  :acreage, placeholder: "Acerage" %>
+    </div>
+    <div class="remove">
+     <%##= link_to_remove_association "Remove Parcel", f %>
+    </div>
+    <div class="abstract">
+    </div>
+  </fieldset>
+</div>

@@ -6,6 +6,7 @@ class ParcelsController < ApplicationController
     if @project
       @parcel.project = @project
     end
+    @parcel.sub_parcels.build 
   end
 
   def show

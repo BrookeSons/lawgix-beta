@@ -391,6 +391,9 @@ $curative-background: #FFCC77;
   margin-left: 40px;
   @include span-columns(1);
 }
+#parcel-list {
+    @include span-columns(2);
+}
 
 #pc1 {
   margin-left: 40px;
