@@ -1,0 +1,21 @@
+<div class="tab-content flex-box flex-box-full">
+    <div id="pc2" class="field">
+            <%= f.label "Map & Parcel"  %>
+            <%= f.text_field :tax_parcel, label: "Map & Parcel" %>
+        </div>
+        <div id="pc3">
+          <%= f.label "County" %>
+          <%= f.text_field :county, label: "County" %>
+        </div>
+        <div id="ac1">
+            <%= f.input :acres, label: "Total Acreage" %>
+        </div>
+        <section class="partials">
+        <div id="ac2">
+            <%= f.input :og_fee_acres %>
+        </div>
+        <div id="ac3">
+            <%= f.input :og_leased_acres %>
+        </div>
+    </section>
+</div>

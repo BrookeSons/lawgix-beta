@@ -377,7 +377,7 @@ $curative-background: #FFCC77;
 }
 #ac1 {
   margin-left: 202px;
-  @include span-columns(1);
+  @include span-columns(2);
 }
 
 .partial {

@@ -3,38 +3,38 @@
     <h1><%= @project.name %></h1>
     <h4><%= @project.description %></h4>
   </div>
-  <div class="flex-box flex-box-full">
-    <h3> <%= link_to "Service Requests", services_path %></h3>
-    <% @id = @project.id %>
-    <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_service_path(project: "#{@id}") %>
-    <%= render 'services', project: @project %>
-  </div>
+    <div class="flex-box flex-box-full">
+      <% @id = @project.id %>
+      <h3> <%= link_to "Parcels", parcels_path %> </h3>
+      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_parcel_path(project: "#{@id}") %>
+      <%= render 'parcels', project: @project %>
+    </div>
   <section class="flex-boxes">
-    <div class="flex-box flex-box">
+  <div class="flex-box flex-box">
       <h3> <%= link_to "Contacts", contacts_path %> </h3>
       <% @id = @project.id %>
       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_contact_path(project: "#{@id}") %>
       <%= render 'contacts', project: @project %>
+  </div>
+    <div class="flex-box flex-box">
+    <h3> <%= link_to "Service Requests", services_path %></h3>
+    <% @id = @project.id %>
+    <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_service_path(project: "#{@id}") %>
+    <%= render 'services', project: @project %>
     </div>
+  </section>
+  <section class="flex-boxes">
     <div class="flex-box flex-box">
       <% @id = @project.id %>
       <h3> <%= link_to "Leases", leases_path %> </h3>
       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_lease_path(project: "#{@id}") %>
       <%= render 'leases', project: @project %>
     </div>
-  </section>
-  <section class="flex-boxes">
     <div class="flex-box flex-box">
       <h3> <%= link_to "Abstracts", title_abstracts_path %> </h3>
       <% @id = @project.id %>
       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_title_abstract_path(project: "#{@id}") %>
       <%= render 'abstracts', project: @project %>
-    </div>
-    <div class="flex-box flex-box">
-      <% @id = @project.id %>
-      <h3> <%= link_to "Parcels", parcels_path %> </h3>
-      <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_parcel_path(project: "#{@id}") %>
-      <%= render 'parcels', project: @project %>
     </div>
   </section>
   <section class="flex-boxes">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624124921) do
+ActiveRecord::Schema.define(version: 20150627201055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,9 +56,11 @@ ActiveRecord::Schema.define(version: 20150624124921) do
     t.string   "last_name"
     t.string   "company"
     t.string   "bus_phone"
+    t.integer  "parcel_id"
   end
 
   add_index "contacts", ["lease_id"], name: "index_contacts_on_lease_id", using: :btree
+  add_index "contacts", ["parcel_id"], name: "index_contacts_on_parcel_id", using: :btree
   add_index "contacts", ["project_id"], name: "index_contacts_on_project_id", using: :btree
   add_index "contacts", ["service_id"], name: "index_contacts_on_service_id", using: :btree
 
@@ -224,6 +226,12 @@ ActiveRecord::Schema.define(version: 20150624124921) do
     t.decimal  "acres"
     t.decimal  "og_fee_acres"
     t.decimal  "og_leased_acres"
+    t.string   "tshp"
+    t.boolean  "walked"
+    t.boolean  "staked"
+    t.string   "row_status"
+    t.integer  "row_ft"
+    t.date     "row_date"
   end
 
   add_index "parcels", ["lease_id"], name: "index_parcels_on_lease_id", using: :btree

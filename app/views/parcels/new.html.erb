@@ -1,47 +1,35 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">New Parcel
-      <% if @project %>
-          - Project:
-          <%= @project.name %>
-      <% end %>
-    </h2>
-    <fieldset>
-      <%= simple_form_for @parcel do |f| %>
+      <h2 class="flex-title">New Parcel
           <% if @project %>
-              <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
+         -  Project:
+          <%= @project.name %>
           <% end %>
-          <div id="pc2" class="field">
-            <%= f.text_field :tax_parcel, placeholder: "Parcel #" %>
-          </div>
-          <div id="pc3">
-            <%= f.text_field :county, placeholder: "County" %>
-          </div>
-              <div class="nested_fields">
-                <%= f.simple_fields_for :sub_parcels do |sub| %>
-                    <%= render 'sub_parcel_fields', f: sub %>
-                    <%= link_to_add_association "Add Sub Parcel", f, :sub_parcels %>
+       wc</h2>
+    <%= simple_form_for @parcel do |f| %>
+        <ul class="accordion-tabs-minimal">
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link is-active">Parcel</a>
+            <%= render 'base', f: f %>
+          </li>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link">Ownership</a>
+             <div class="tab-content">
+               <div class="nested_fields">
+                <%= f.simple_fields_for :owners do |owner| %>
+                    <%= render 'owner_fields', f: owner %>
+                    <%= link_to_add_association "Add Owner", f, :owners %>
                 <% end %>
-          <div id="surface"> 
-            <%= f.text_field :surface_owner, placeholder: "Surface Owner" %>
-          </div>
-          <section class="partials">
-            <div id="ac1">
-              <%= f.input :acres %>
+              </div>
             </div>
-            <div id="ac2">
-              <%= f.input :og_fee_acres %>
-            </div>
-            <div id="ac3">
-              <%= f.input :og_leased_acres %>
-            </div>
-          </section>
-          <div id="create-parcel">
-            <%= f.submit 'Create Parcel' %>
-      <% end %>
-      </div>
-      <div class="abstract">
-      </div>
-    </fieldset>
+          </li>
+        </ul>
+        <%= f.submit 'Create Parcel' %>
+    <% end %>
   </div>
 </div>
+
+
+
+
+
