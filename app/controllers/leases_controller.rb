@@ -7,7 +7,7 @@ class LeasesController < ApplicationController
     if @project
       @lease.project = @project
     end
-    @lease.lessors.build
+    @lease.owners.build
     @lease.parcels.build
     @lease.documents.build
     @lease.lease_provisons.build

@@ -15,6 +15,11 @@
           <li class="tab-header-and-content">
             <a href="#" class="tab-link">Lessors</a>
             <div class="tab-content">
+                <% if @project.owners %>
+                    <%= f.association :owners,  :label_method => :name,
+                                                :collection => @project.owners,
+                                                :include_blank => false %>
+                <% end  %>
               <div class="nested-fields">
                 <%= f.simple_fields_for :lessors do |lessor| %>
                     <%= render 'lessor_fields', f: lessor %>

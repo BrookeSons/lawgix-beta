@@ -1,22 +1,23 @@
 <table>
   <thead>
   <tr>
-    <td>Name</td>
+      <td>Name</td>
+      <td>Phone</td>
     <td>Type</td>
-    <td>Lease</td> 
+    <td>Parcel-ID</td>
   </tr>
   </thead>
   <tbody>
-
   <% @contacts = @project.contacts %>
   <% @contacts.each do |contact| %>
       <tr>
-        <td><%= link_to contact.last_name, contact %></td>
+          <td><%= link_to contact.last_name, contact %></td>
+          <td><%= contact.bus_phone  %>
         <td><%= contact.type %></td> 
-        <% if contact.type == "Lessor" %> 
-          <td><%= link_to contact.lease.lease_number, contact.lease  %><td>
+        <% if contact.type == "Owner" %> 
+          <td><%= link_to contact.parcel.tax_parcel, contact.parcel  %><td>
         <% end %>
   <% end %>
-  </tr>
+    </tr>
   </tbody>
 </table>
