@@ -17,7 +17,7 @@
           <td><%= parcel.tshp %></td>
           <% if parcel.owners   %>
               <% parcel.owners.each do |owner| %>
-                <td>  <%= owner.last_name  %> </td>
+                <td>  <%= link_to owner.name, owner  %> </td>
               <%  end %>
               <% end  %>
           <% if parcel.lease %>

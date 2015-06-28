@@ -466,10 +466,18 @@ $curative-background: #FFCC77;
 }
 
 .l1 {
-  margin-left: 20px;
-  @include span-columns(5.30);
+  margin-left: 0px;
+  @include span-columns(5);
 }
 
+#owner-intro {
+}
+
+#pi {
+    float: right;
+    margin: -70px; 
+    margin-right: 40px;
+}
 #pc1 {
   margin-left: 90px;
   @include span-columns(3);

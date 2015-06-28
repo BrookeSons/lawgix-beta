@@ -1,6 +1,6 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-    <h2 class="flex-title">Lease</h2>
+    <h2 class="flex-title">Lease Information</h2>
 
     <div>
       <% if @lease.project %>
@@ -19,11 +19,32 @@
             <a href="#" class="tab-link">Lessors</a>
 
             <div class="tab-content">
-              <div class="nested-fields">
-                <%= f.simple_fields_for :lessors do |lessor| %>
-                    <%= render 'lessor_fields', f: lessor %>
-                    <%= link_to_add_association "Add Lessor", f, :lessors %>
-                <% end %>
+                <div class="nested-fields">
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Lessors</th>
+                            <th>Parcel</th>
+                            <th>Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @lease.owners.each do |owner| %>
+                                <tr>
+                        <td> <%= link_to owner.name, owner   %> </td>
+                        <td> <%= link_to owner.parcel.tax_parcel, owner.parcel  %> </td>
+                        <td> <%= owner.interest  %> </td>
+                                </tr>
+                                </tbody>
+                     <%= link_to_add_association "Add Lessor", f, :lessors %>
+                    <% end %>
+                    </table>
+
+                    <%= f.association :owners,  :label_method => :name,
+                                                :collection => @lease.project.owners,
+                                                :include_blank => false %>
+
+
               </div>
             </div>
           </li>
@@ -32,10 +53,26 @@
 
             <div class="tab-content">
               <div class="nested-fields">
-                <%= f.simple_fields_for :parcels do |parcel| %>
-                    <%= render 'parcel_fields', f: parcel %>
-                    <%= link_to_add_association "Add Parcel", f, :parcels %>
-                <% end %>
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Parcel</th>
+                              <th>Owner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @lease.parcels.each do |parcel| %>
+                            <tr>
+                                <td> <%= link_to parcel.tax_parcel, parcel  %> </td>
+                                <% parcel.owners.each do |po| %>
+                                   <td> <%= link_to po.name, po  %> </td>
+                              <% end  %>
+                            </tr>
+                        </tbody>
+                            <% end %>
+                    </table>
+                    <% @id = @lease.project.id %>
+                    <%= link_to "Add Parcel", new_parcel_path(project: "#{@id}") %>
               </div>
             </div>
           </li>

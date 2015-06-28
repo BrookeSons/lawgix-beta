@@ -1,9 +1,10 @@
 <table>
   <thead>
   <tr>
-      <td>Name</td>
-      <td>Phone</td>
+    <td>Name</td>
+    <td>Phone</td>
     <td>Type</td>
+    <td>Interest</td>
     <td>Parcel-ID</td>
   </tr>
   </thead>
@@ -11,11 +12,12 @@
   <% @contacts = @project.contacts %>
   <% @contacts.each do |contact| %>
       <tr>
-          <td><%= link_to contact.last_name, contact %></td>
+          <td><%= link_to contact.name, contact %></td>
           <td><%= contact.bus_phone  %>
-        <td><%= contact.type %></td> 
+          <td><%= contact.type %></td> 
         <% if contact.type == "Owner" %> 
-          <td><%= link_to contact.parcel.tax_parcel, contact.parcel  %><td>
+            <td><%= contact.interest  %></td>
+            <td><%= link_to contact.parcel.tax_parcel, contact.parcel  %><td>
         <% end %>
   <% end %>
     </tr>

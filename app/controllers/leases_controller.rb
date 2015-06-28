@@ -33,6 +33,13 @@ class LeasesController < ApplicationController
         @project.lessors << lessor
       end
     end
+    
+    if @lease.owners
+      @project = @lease.project
+      @lease.owners.each do |owner|
+        @project.owners << owner
+      end
+    end
 
     if @lease.parcels
       @project = @lease.project
@@ -53,6 +60,13 @@ class LeasesController < ApplicationController
       @project = @lease.project
       @lease.lessors.each do |lessor|
         @project.lessors << lessor
+      end
+    end
+
+    if @lease.owners
+      @project = @lease.project
+      @lease.owners.each do |owner|
+        @project.owners << owner
       end
     end
 
