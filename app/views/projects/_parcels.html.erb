@@ -4,6 +4,8 @@
     <tr>
       <td>Parcel ID</td>
       <td>County</td>
+      <td>Township</td>
+      <td>Surface Owner</td>
       <td>Lease</td>
     </tr>
     </thead>
@@ -12,6 +14,12 @@
         <tr>
           <td><%= link_to parcel.tax_parcel, parcel %></td>
           <td><%= parcel.county %></td>
+          <td><%= parcel.tshp %></td>
+          <% if parcel.owners   %>
+              <% parcel.owners.each do |owner| %>
+                <td>  <%= owner.last_name  %> </td>
+              <%  end %>
+              <% end  %>
           <% if parcel.lease %>
           <td><%= link_to parcel.lease.lease_number, parcel.lease  %></td>
           <% end %>

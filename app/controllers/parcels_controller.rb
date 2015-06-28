@@ -5,8 +5,8 @@ class ParcelsController < ApplicationController
     @project = Project.find(params[:project])
     if @project
       @parcel.project = @project
-    end
-    @parcel.sub_parcels.build 
+    end 
+    @parcel.owners.build 
   end
 
   def show
@@ -20,6 +20,14 @@ class ParcelsController < ApplicationController
 
   def create
     @parcel = Parcel.new(secure_params)
+    @parcel.save
+    if @parcel.owners
+      @project = @parcel.project
+      @parcel.owners.each do |owner|
+        @project.owners << owner
+      end
+    end
+    
     @parcel.save
     redirect_to project_path(@parcel.project)
   end

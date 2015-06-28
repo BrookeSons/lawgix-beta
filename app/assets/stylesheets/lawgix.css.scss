@@ -383,13 +383,34 @@ $curative-background: #FFCC77;
 .partial {
   @include span-columns(12);
 }
+
+#acreage {
+    border: solid;
+    border-width: thin;
+    margin: auto;
+    padding: 10px;
+   @include span-columns(12);
+}
+
+#parcel-status {
+    margin-top: 20px;
+  @include span-columns(12);
+}
+#rws {
+  @include span-columns(3);
+}
+
+#rwd {
+  @include span-columns(3);
+}
+
 #ac2 {
   margin-left: 40px;
-  @include span-columns(1);
+  @include span-columns(2);
 }
 #ac3 {
   margin-left: 40px;
-  @include span-columns(1);
+  @include span-columns(2);
 }
 #parcel-list {
     @include span-columns(2);

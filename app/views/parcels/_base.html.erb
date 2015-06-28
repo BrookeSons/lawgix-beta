@@ -1,4 +1,7 @@
 <div class="tab-content flex-box flex-box-full">
+        <% if @project %>
+            <%= f.association :project, input_html: {hidden: true}, label_html: {hidden: true} %>
+        <% end %>
     <div id="pc2" class="field">
             <%= f.label "Map & Parcel"  %>
             <%= f.text_field :tax_parcel, label: "Map & Parcel" %>
@@ -7,15 +10,32 @@
           <%= f.label "County" %>
           <%= f.text_field :county, label: "County" %>
         </div>
-        <div id="ac1">
-            <%= f.input :acres, label: "Total Acreage" %>
+        <div id="pc3">
+          <%= f.label "Township" %>
+          <%= f.text_field :tshp %>
         </div>
-        <section class="partials">
-        <div id="ac2">
-            <%= f.input :og_fee_acres %>
+        <div id="acreage">
+          <h4>Acreage</h4>
+          <div id="ac1">
+            <%= f.input :acres, label: "Total" %>
+          </div>
+          <div id="ac2">
+            <%= f.input :og_fee_acres, label: "O & G Fee" %>
+          </div>
+          <div id="ac3">
+            <%= f.input :og_leased_acres, label: "O & G Leased" %>
+          </div>
         </div>
-        <div id="ac3">
-            <%= f.input :og_leased_acres %>
-        </div>
-    </section>
+        <div id="parcel-status">
+            <%= f.input :walked, as: :boolean  %>
+            <%= f.input :staked, as: :boolean  %>
+            <div id="rws">
+              <%= f.label "Right of Way Status"  %>
+              <%= f.select :row_status, collection: ["A", "E"]   %>
+            </div>
+            <div id="rwd">
+              <%= f.label "Right of Way Acquired"  %>
+              <%= f.date_field  :row_date  %>
+            </div>
+      </div>
 </div>

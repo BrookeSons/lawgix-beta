@@ -4,8 +4,8 @@
     <h4><%= @project.description %></h4>
   </div>
     <div class="flex-box flex-box-full">
-      <% @id = @project.id %>
       <h3> <%= link_to "Parcels", parcels_path %> </h3>
+      <% @id = @project.id %>
       <%= link_to '<i class="fa fa-plus-square-o fa-2x"></i>'.html_safe, new_parcel_path(project: "#{@id}") %>
       <%= render 'parcels', project: @project %>
     </div>
