@@ -1,21 +1,26 @@
-<div id="contact-index">
-  <h1>Contacts</h1>
-  <table>
-    <thead>
-    <tr>
-      <td>Name</td>
-      <td>Phone</td>
-      <td>Email<td>
-    </tr>
-    </thead>
-    <tbody>
-    <% @contacts.each do |contact| %>
+<div class="flex-boxes">
+<div class="flex-box flex-box-full">
+    <h2>Contacts</h2>
+  <table class="tables">
+     <thead>
+     <tr>
+       <th>Name</th>
+       <th>Phone</th>
+       <th>Email</th>
+       <th>Project</th>    
+     </tr>
+     </thead>
+     <tbody>
+     <% @contacts.each do |contact| %>
         <tr>
-          <td><%= link_to(contact.last_name, contact_path(contact))  %></td>
+          <td><%= link_to(contact.alt_name, contact_path(contact))  %></td>
           <td><%= contact.phone %></td>
-          <td><%= contact.email %><td>
+          <td><%= contact.email %></td>
+              <% if contact.project %>
+                  <td><%= link_to(contact.project.name, contact.project ) %></td>
+              <% end %>
         </tr>
-    <% end %>
-    </tbody>
-  </table>
+     <% end %>
+     </tbody>
+   </div>
 </div>

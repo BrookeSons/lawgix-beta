@@ -38,6 +38,9 @@ class LeasesController < ApplicationController
       @project = @lease.project
       @lease.owners.each do |owner|
         @project.owners << owner
+        if owner.parcel
+           @lease.parcels << owner.parcel
+        end
       end
     end
 

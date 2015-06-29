@@ -81,10 +81,25 @@
 
             <div class="tab-content">
               <div class="nested-fields">
-                <% if @lease_provisons %>
-                    <% @lease_provisons.each do |provison| %>
-                        <%= provison.provision %>
-                    <% end %>
+                <% if @lease.lease_provisons %>
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Lease Provisions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <% @lease.lease_provisons.each do |provison| %>
+                            <tr>
+                                <td> <%= provison.provision  %> </td>
+                                <td></td>
+     <td> <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, (provison) %> </td>
+     <td> <%= link_to '<i class="fa fa-trash"></i>'.html_safe, lease_provison_path(provison),
+                            :data => { :confirm => "Are you sure?" }, :method => :delete %> </td>
+                              <% end  %>
+                            </tr>
+                        </tbody>
+                    </table>
                     <%= link_to_add_association "Add Provision", f, :lease_provisons %>
                 <% else %>
                     <%= f.simple_fields_for :lease_provisons do |provison| %>
@@ -106,11 +121,11 @@
                       <tr>
                         <th>Name</th>
                         <th>Doc Type</th>
-                        <th colspan="3"></th>
+                        <th> </th>
                       </tr>
                       </thead>
                       <tbody>
-                      <% @documents.each do |document| %>
+                      <% @lease.documents.each do |document| %>
                           <tr>
                             <td><%= link_to document.name, document %></td>
                             <td><%= document.doc_type %></td>
@@ -120,10 +135,7 @@
                     </table>
                     <%= link_to_add_association "Add Document", f, :documents %>
                 <% else %>
-                    <%= f.simple_fields_for :documents do |document| %>
-                        <%= render 'document_fields', f: document %>
                         <%= link_to_add_association "Add Document", f, :documents %>
-                    <% end %>
                 <% end %>
               </div>
             </div>

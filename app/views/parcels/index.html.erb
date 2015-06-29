@@ -1,20 +1,27 @@
+<div class="flex-boxes">
+<a class="flex-box flex-box-full">
+    <h2 class="flex-title">Lawgix OGX Projects</h2>
 <div id="parcel-index">
-  <h1>Parcels</h1>
-  <table>
+<h1>Parcels</h1>
+<table class="tables">
     <thead>
-    <tr>
-      <td>Tax Map</td>
-      <td>Tax Parcel</td>
-      <td>Service<td>
-    </tr>
-    </thead>
-    <tbody>
-    <% @parcels.each do |parcel| %>
-        <tr>
-          <td><%= parcel.tax_map %></td>
-          <td><%= parcel.tax_parcel %></td>
+       <tr>
+         <th>Tax Parcel</th>
+         <th>Project</th>
+         <th>County</th>
+       </tr>
+     </thead>
+     <tbody>
+         <% @parcels.each do |parcel| %>
+         <tr>
+            <td><%= parcel.tax_parcel %></td>
+                <% if parcel.project %> 
+            <td><%= parcel.project.name  %></td>
+            <td><%= parcel.county  %></td>
+                <% end  %>
         </tr>
-    <% end %>
-    </tbody>
-  </table>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

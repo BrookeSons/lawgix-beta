@@ -1,29 +1,28 @@
 
-<div id="new_contact_form" class="flex-boxes">
-  <div id="lhead">
-      <h2 class='flex-title'>Property Owner</h2>
-  </div>
+<div class="flex-boxes">
   <div class="flex-box flex-box-full">
+    <h1 class='flex-title'>Property Owner</h1>
     <%= simple_form_for @owner do |f| %>
-  <h5>
+  <h6>
     <% if @owner.project %>
         Project:
         <%= link_to @owner.project.name, @owner.project %>
       <% end %>
-   </h5>
+   </h6>
         <% if @owner.parcel %>
   <h6>
         Tax Parcel:
       <%= link_to @owner.parcel.tax_parcel, @owner.parcel  %>
    </h6>
     <% end %>
+    <div class="intro">
     <% if @owner.lease %>
         <h6>
         Lease:
             <%= link_to @owner.lease.lease_number, @owner.lease %>
         </h6>
         <% end  %>
- 
+     </div>
      <div id="pi">
         Property Interest:
         <%= f.select:interest, collection: ["Surface", "Gas"]  %>
@@ -64,10 +63,10 @@
     <div class="span3">
       <%= f.text_field :zip, placeholder: 'Zip' %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-    <% end %>
     </fieldset>
+    <div class="form-actions">
+     <%= f.button :submit %>
+    <% end %>
+    </div>
   </div>
 </div>

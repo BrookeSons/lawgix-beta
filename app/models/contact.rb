@@ -9,5 +9,9 @@ class Contact < ActiveRecord::Base
      [first_name, last_name].compact.join(' ')
    end
 
+   def alt_name
+     [last_name, first_name].compact.join(', ')
+   end
+
 end
  
