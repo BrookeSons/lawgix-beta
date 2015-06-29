@@ -34,6 +34,12 @@ class ParcelsController < ApplicationController
 
   def update
     @parcel = Parcel.find(params[:id])
+    if @parcel.owners
+      @project = @parcel.project
+      @parcel.owners.each do |owner|
+        @project.owners << owner
+      end
+    end
     if @parcel.update_attributes(secure_params)
       redirect_to project_path(@parcel.project), :notice => "Parcel updated."
     else

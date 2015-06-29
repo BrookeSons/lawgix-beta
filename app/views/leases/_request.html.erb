@@ -8,7 +8,9 @@
       </div>
       <div id="state-select">
         <%= f.label :state %>
-        <%= f.select :state, collection: ['Pennsylvania', 'Ohio', 'West Virginia'] %>
+          <%= f.select :state,
+          collection: ['Pennsylvania', 'Ohio', 'West Virginia']
+          %>
       </div>
       <div id="lease_numb">
         <%= f.label :lease_number %>
@@ -27,11 +29,11 @@
       <table>
         <thead>
           <tr>
-            <td>Instrument</td>
-            <td>Acres</td>
-            <td>Bonus</td>
-            <td>Royalty</td>
-            <td>Stations</td>
+            <th>Instrument</th>
+            <th>Acres</th>
+            <th>Bonus</th>
+            <th>Royalty</th>
+            <th>Stations</th>
           </tr>
         </thead>
           <tr>

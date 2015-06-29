@@ -36,14 +36,13 @@
                         <td> <%= owner.interest  %> </td>
                                 </tr>
                                 </tbody>
-                     <%= link_to_add_association "Add Lessor", f, :lessors %>
                     <% end %>
                     </table>
 
-                    <%= f.association :owners,  :label_method => :name,
-                                                :collection => @lease.project.owners,
-                                                :include_blank => false %>
-
+                    <%= f.association :owners,  label_method: :name,
+                                                collection: @lease.project.owners,
+                                                include_blank: false,
+                                                input_html:  {class: 'chosen-select'} %>
               </div>
             </div>
           </li>
@@ -70,6 +69,12 @@
                         </tbody>
                             <% end %>
                     </table>
+                <% if @lease.project.parcels %>
+                    <%= f.association :parcels, label_method: :tax_parcel,
+                                                collection: @lease.project.parcels,
+                                                include_blank: false,
+                                                input_html: {class: 'chosen-select'}%>
+                <% end %>
                     <% @id = @lease.project.id %>
                     <%= link_to "Add Parcel", new_parcel_path(project: "#{@id}") %>
               </div>

@@ -5,10 +5,4 @@ class Owner < Contact
   belongs_to :parcel 
   belongs_to :service
 
-
-
-
-  def name_parcel
-
-  end
 end

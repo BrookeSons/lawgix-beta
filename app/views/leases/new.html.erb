@@ -16,16 +16,11 @@
             <a href="#" class="tab-link">Lessors</a>
             <div class="tab-content">
                 <% if @project.owners %>
-                    <%= f.association :owners,  :label_method => :name,
-                                                :collection => @project.owners,
-                                                :include_blank => false %>
+                    <%= f.association :owners,  label_method: :name,
+                                                collection: @project.owners,
+                                                include_blank: false,
+                                                input_html:  {class: 'chosen-select'} %>
                 <% end  %>
-              <div class="nested-fields">
-                <%= f.simple_fields_for :lessors do |lessor| %>
-                    <%= render 'lessor_fields', f: lessor %>
-                    <%= link_to_add_association "Add Lessor", f, :lessors %>
-                <% end %>
-              </div>
             </div>
           </li>
           <li class="tab-header-and-content">
@@ -36,9 +31,10 @@
                   <div id="parcel-list">
                 <% if @project.parcels %>
                 <% @pro_par = @project.parcels %>
-                    <%= f.association :parcels, :label_method => :tax_parcel,
-                                                :collection => @project.parcels,
-                                                :include_blank => false %>
+                    <%= f.association :parcels, label_method: :tax_parcel,
+                                                collection: @project.parcels,
+                                                include_blank: false,
+                                                input_html: {class: 'chosen-select'}%>
                 <% end %>
                 </div> 
                 <%= f.simple_fields_for :parcels do |parcel| %>
