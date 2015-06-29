@@ -33,7 +33,7 @@ class LeasesController < ApplicationController
         @project.lessors << lessor
       end
     end
-    
+
     if @lease.owners
       @project = @lease.project
       @lease.owners.each do |owner|
@@ -51,12 +51,11 @@ class LeasesController < ApplicationController
       end
     end
 
-
        @project.save
 
     redirect_to project_path(@lease.project)
   end
- 
+
   def update
     @lease = Lease.find(params[:id])
     if @lease.lessors

@@ -2,7 +2,7 @@
   <div class="flex-box flex-box-full">
     <h2 class="flex-title">Lease Information</h2>
 
-    <div>
+    <div class="intro">
       <% if @lease.project %>
           <h5>Project:
             <%= link_to @lease.project.name, @lease.project %>
@@ -43,7 +43,6 @@
                     <%= f.association :owners,  :label_method => :name,
                                                 :collection => @lease.project.owners,
                                                 :include_blank => false %>
-
 
               </div>
             </div>

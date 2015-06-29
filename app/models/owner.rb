@@ -8,11 +8,7 @@ class Owner < Contact
 
 
 
-  def name
-    [first_name, last_name].compact.join(' ')
-  end
- 
   def name_parcel
-    
+
   end
 end

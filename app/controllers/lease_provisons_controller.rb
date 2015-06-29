@@ -30,7 +30,7 @@ class LeaseProvisonsController < ApplicationController
     end
   end
 
-
+  
   def destroy
     @provison = LeaseProvison.find(params[:id])
     # authorize User

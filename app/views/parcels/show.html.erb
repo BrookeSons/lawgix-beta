@@ -1,11 +1,20 @@
 <div class="flex-boxes">
   <div class="flex-box flex-box-full">
-      <h2 class="flex-title">New Parcel
-          <% if @project %>
-         -  Project:
-          <%= @project.name %>
-          <% end %>
-       </h2>
+     <h2 class="flex-title">Parcel</h2>
+  <h6>
+    <% if @parcel.project %>
+        Project:
+        <%= link_to @parcel.project.name, @parcel.project %>
+      <% end %>
+   </h6>
+    <div class="intro">
+    <% if @parcel.lease %>
+        <h6>
+        Lease:
+            <%= link_to @parcel.lease.lease_number, @parcel.lease %>
+        </h6>
+        <% end  %>
+     </div>
     <%= simple_form_for @parcel do |f| %>
         <ul class="accordion-tabs-minimal">
           <li class="tab-header-and-content">
