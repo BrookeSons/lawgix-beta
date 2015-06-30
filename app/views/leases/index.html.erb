@@ -7,6 +7,7 @@
         <tr>
           <th>Lease Number</th>
           <th>Description</th>
+          <th>Project</th>
           <th>Lessors</th>
           <th>State</th>
           <th>County</th>
@@ -17,6 +18,9 @@
             <tr>
               <td><%= link_to lease.lease_number, lease %></td>
               <td><%= lease.description %></td>
+              <% if lease.project %>
+                  <td><%= link_to lease.project.name, lease.project  %></td>
+                  <% end %>
               <td><%= lease.lessors.count %></td>
               <td><%= lease.state %></td>
               <td><%= lease.county %></td>

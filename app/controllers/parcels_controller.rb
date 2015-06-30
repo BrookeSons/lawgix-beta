@@ -15,7 +15,7 @@ class ParcelsController < ApplicationController
   end
 
   def index
-    @parcels = Parcel.all
+    @parcels = Parcel.order('county').page_k(params[:page])
   end
 
   def create

@@ -1,12 +1,13 @@
 <table>
   <thead>
   <tr>
-    <td>Name</td>
-    <td>Phone</td>
-    <td>Type</td>
-    <td>Interest</td>
-    <td>Parcel-ID</td>
-  </tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Type</th>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul></tr>
   </thead>
   <tbody>
   <% @contacts = @project.contacts %>
@@ -15,11 +16,7 @@
           <td><%= link_to contact.name, contact %></td>
           <td><%= contact.bus_phone  %>
           <td><%= contact.type %></td> 
-        <% if contact.type == "Owner" %> 
-            <td><%= contact.interest  %></td>
-            <td><%= link_to contact.parcel.tax_parcel, contact.parcel  %><td>
         <% end %>
-  <% end %>
     </tr>
   </tbody>
 </table>

@@ -1,11 +1,9 @@
 <table>
   <thead>
   <tr>
-    <td>Leases</td>
-    <td>Description</td>
-    <td>Lessees</td>
-    <td>State</td>
-    <td>County</td>
+    <th>Leases</th>
+    <th>State</thB>
+    <th>County</th>
   </tr>
   </thead>
   <tbody>
@@ -14,8 +12,6 @@
   <% @leases.each do |lease| %>
       <tr>
         <td><%= link_to lease.lease_number, lease %></td>
-        <td><%= lease.description %></td>
-        <td><%= lease.lessors.count %></td>
         <td><%= lease.state %></td>
         <td><%= lease.county %></td>
         <% end %>

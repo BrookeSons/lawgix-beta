@@ -8,17 +8,28 @@
        <tr>
          <th>Tax Parcel</th>
          <th>Project</th>
+         <th>Acreage</th>
+         <th>Lease</th>
+         <th>Owner</th>
          <th>County</th>
+         <th>Township</th>
        </tr>
      </thead>
      <tbody>
+         <%= paginate @parcels  %>
          <% @parcels.each do |parcel| %>
          <tr>
-            <td><%= parcel.tax_parcel %></td>
-                <% if parcel.project %> 
-            <td><%= parcel.project.name  %></td>
+            <td><%= link_to parcel.tax_parcel, parcel %></td>
+            <% if parcel.project %>
+            <td><%= link_to parcel.project.name, parcel.project  %></td>
+            <% end  %>
+            <td><%= parcel.acres  %></td>
+            <% if parcel.lease %>
+                <td><%= link_to parcel.lease.lease_number, parcel.lease  %></td>
+            <% end %>
+            <td></td>
             <td><%= parcel.county  %></td>
-                <% end  %>
+            <td><%= parcel.tshp   %></td>
         </tr>
         <% end %>
       </tbody>

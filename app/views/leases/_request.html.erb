@@ -7,10 +7,9 @@
         <% end %>
       </div>
       <div id="state-select">
-        <%= f.label :state %>
-          <%= f.select :state,
-          collection: ['Pennsylvania', 'Ohio', 'West Virginia']
-          %>
+          <%= f.input :state,
+                      collection: ['Pennsylvania', 'Ohio', 'West Virginia'],
+                      input_html:  {class: 'chosen-select-n'}  %>
       </div>
       <div id="lease_numb">
         <%= f.label :lease_number %>
